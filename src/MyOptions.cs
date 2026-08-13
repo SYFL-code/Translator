@@ -276,8 +276,8 @@ namespace Translator
 		public static string GetAllMods()
 		{
 			//return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ModRename_allMods.txt");
-            return Path.Combine(Application.persistentDataPath, "ModRename_allMods.txt");
-        }
+			return Path.Combine(Application.persistentDataPath, "ModRename_allMods.txt");
+		}
 		public static string GetGameRoot()
 		{
 			return AppDomain.CurrentDomain.BaseDirectory;
@@ -359,11 +359,81 @@ namespace Translator
 			this.tipClearTimer = 120;
 			this.tips!.text = "添加成功！";
 		}
+		public static List<string> SortExportIds(IEnumerable<string> idsToExport, out Dictionary<string, ModManager.Mod> installedMapOut)
+		{
+			var installedMap = ModManager.InstalledMods
+				.GroupBy(m => m.id)
+				.ToDictionary(g => g.Key, g => g.First());
+
+			installedMapOut = installedMap;
+
+			var inInstalled = new List<(string id, string name)>();
+			var notInstalled = new List<string>();
+
+			foreach (string id in idsToExport)
+			{
+				if (installedMap.TryGetValue(id, out var mod))
+					inInstalled.Add((id, mod.name));
+				else
+					notInstalled.Add(id);
+			}
+
+			return inInstalled
+				.OrderBy(x => x.name, StringComparer.Ordinal)
+				.Select(x => x.id)
+				.Concat(notInstalled.OrderBy(s => s, StringComparer.Ordinal))
+				.ToList();
+		}
 		private void ExportAllButton_OnClick(UIfocusable trigger)
 		{
 			try
 			{
 				string filePath = GetAllMods();
+
+				// 1. 收集所有需要导出的模组ID
+				HashSet<string> idsToExport = new HashSet<string>();
+
+				// 从已安装模组获取
+				foreach (var mod in ModManager.InstalledMods)
+					idsToExport.Add(mod.id);
+
+
+				for (int j = 0; j < 2; j++)
+				{
+					string with = (j == 0) ? "-name" : "-description";
+
+					// 从 shortStrings 获取（包含未安装的翻译）
+					foreach (var key in inGameTranslator.shortStrings.Keys)
+					{
+						if (key.EndsWith(with))
+						{
+							string id = key.Substring(0, key.Length - with.Length); // 去掉 "-name" 或 "-description"
+							idsToExport.Add(id);
+						}
+					}
+
+					// sortStrings
+					string[] strings = MyOptions.GetStrings();
+					for (int i = 0; i < strings.Length; i++)
+					{
+						string line = strings[i];
+
+						if (!line.Contains('|')) continue;
+
+						string[] keyAndValue = line.Split(new char[] { '|' }, 2);
+						if (keyAndValue.Length != 2) continue;
+
+						string lineKey = keyAndValue[0];
+						if (lineKey.EndsWith(with))
+						{
+							string id = lineKey.Substring(0, lineKey.Length - with.Length);
+							idsToExport.Add(id);
+						}
+					}
+				}
+
+				List<string> sorted = SortExportIds(idsToExport, out var installedMap);
+
 				using (StreamWriter writer = new StreamWriter(filePath, false, Encoding.UTF8))
 				{
 					// 写入文件头注释
@@ -371,25 +441,76 @@ namespace Translator
 					writer.WriteLine("# 格式：每个模组以 '|模组ID' 开始，其后四行分别为：");
 					writer.WriteLine("# 原始名称、原始描述、翻译名称（留空或注释则不修改）、翻译描述（留空或注释则不修改）");
 					writer.WriteLine("# 以 '#' 开头的行是注释，会被忽略");
-					writer.WriteLine("# 换行请使用<LINE>标记");
-					writer.WriteLine("# 记得编辑后点击“应用全部”");
+					writer.WriteLine("# 换行请使用 '<LINE>' ");
+					writer.WriteLine("# 编辑完后保存关闭，回到模组设置页点击“应用全部”");
 					writer.WriteLine();
 
-					for (int i = 0; i < ModManager.InstalledMods.Count; i++)
+					foreach (string id in sorted)
+					{
+						string origName, origDesc;
+
+						if (installedMap.TryGetValue(id, out var mod))
+						{
+							origName = string.IsNullOrEmpty(mod.name) ? "# 没有原始名称" : mod.name;
+							origDesc = string.IsNullOrEmpty(mod.description) ? "# 没有原始描述" : mod.description.ReplaceLineEndings("<LINE>");
+						}
+						else
+						{
+							origName = "# 模组未安装，原始名称未知";
+							origDesc = "# 模组未安装，原始描述未知";
+						}
+
+                        string transName = inGameTranslator.shortStrings.TryGetValue(id + "-name", out var tn) ? tn : "# 请添加翻译名称";
+                        string transDesc = inGameTranslator.shortStrings.TryGetValue(id + "-description", out var td) ? td : "# 请添加翻译描述";
+                        transDesc = transDesc.ReplaceLineEndings("<LINE>");
+
+                        writer.WriteLine($"|{id}");
+                        writer.WriteLine(origName);
+                        writer.WriteLine(origDesc);
+                        writer.WriteLine(transName);
+                        writer.WriteLine(transDesc);
+                        writer.WriteLine();
+
+
+						// 查找是否已安装
+						/*ModManager.Mod? mod = ModManager.InstalledMods.FirstOrDefault(m => m.id == id);
+
+						// 原始名称
+						string origName = mod?.name ?? "# 模组未安装，原始名称未知";
+						// 原始描述（含换行转义）
+						string origDesc = (mod?.description ?? "# 模组未安装，原始描述未知").ReplaceLineEndings("<LINE>");
+
+						if (origName == "") origName = "# 没有原始名称";
+						if (origDesc == "") origDesc = "# 没有原始描述";
+
+						// 从翻译器读取已有的翻译（若有）
+						string transName = inGameTranslator.shortStrings.TryGetValue(id + "-name", out var tn) ? tn : "# 请添加翻译名称";
+						string transDesc = inGameTranslator.shortStrings.TryGetValue(id + "-description", out var td) ? td : "# 请添加翻译描述";
+						transDesc = transDesc.ReplaceLineEndings("<LINE>");
+
+						writer.WriteLine($"|{id}");
+						writer.WriteLine(origName);
+						writer.WriteLine(origDesc);
+						writer.WriteLine(transName);
+						writer.WriteLine(transDesc);
+						writer.WriteLine();*/
+					}
+
+					/*for (int i = 0; i < ModManager.InstalledMods.Count; i++)
 					{
 						ModManager.Mod m = ModManager.InstalledMods[i];
 
 						string id = m.id;
-						string origName = m.name ?? "# 没有原始名称";
-						string origDesc = m.description ?? "# 没有原始描述";
+						string origName = m.name ?? "# 没有原始名称或无法获取";
+						string origDesc = m.description ?? "# 没有原始描述或无法获取";
 						origDesc = origDesc.ReplaceLineEndings("<LINE>");
 
 						// 从翻译器读取已有的翻译（若有）
-						int warning_dicExz = MyOptions.GetKeyInStrings(id + "-description");
-						int warning_nameExz = MyOptions.GetKeyInStrings(id + "-name");
-
+						//int warning_dicExz = MyOptions.GetKeyInStrings(id + "-description");
+						//int warning_nameExz = MyOptions.GetKeyInStrings(id + "-name");
 						//string transName = (warning_nameExz != -1) ? GetStrings()[warning_nameExz].Split('|')[1] : "# 请添加翻译名称";
 						//string transDesc = (warning_dicExz != -1) ? GetStrings()[warning_dicExz].Split('|')[1] : "# 请添加翻译描述";
+
 						string transName = inGameTranslator.shortStrings.TryGetValue(id + "-name", out var tn) ? tn : "# 请添加翻译名称";
 						string transDesc = inGameTranslator.shortStrings.TryGetValue(id + "-description", out var td) ? td : "# 请添加翻译描述";
 						transDesc = transDesc.ReplaceLineEndings("<LINE>");
@@ -400,7 +521,7 @@ namespace Translator
 						writer.WriteLine(transName);
 						writer.WriteLine(transDesc);
 						writer.WriteLine(); // 空行分隔
-					}
+					}*/
 
 				}
 
@@ -421,6 +542,7 @@ namespace Translator
 				this.tips!.text = "导出失败，请查看日志。";
 			}
 		}
+
 		private void ImportAllButton_OnClick(UIfocusable trigger)
 		{
 			try

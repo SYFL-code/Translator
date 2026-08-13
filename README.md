@@ -2,34 +2,33 @@
 
 This is just a mod that makes it easy for Chinese players to add Chinese names and descriptions (i.e., add notes) to mods.
 
-你可使用此模组手动为没有中文翻译的模组添加你自己翻译的中文。
-（或者是你理解的....啊管他，注释你自己能看懂就够了！）
-现在可以让整个模组列表的模组全部都是中文了！
-养眼！舒服！前提是你足够耐心给那几百个模组都手动翻译一遍（
+你可使用此模组手动为没有中文翻译的模组添加你自己翻译的中文。（或者是你理解的....啊管他，注释你自己能看懂就够了！）
+现在可以让整个模组列表的模组全部都是中文了！养眼！舒服！前提是你足够耐心给那几百个模组都手动翻译一遍（
 
 目前版本只支持添加中文翻译
-只支持修改模组名称与简介，这不是一个模组字段翻译工具！
+只支持修改模组名称与简介，这不是一个模组字段翻译工具！（可能也可以是）
 
 使用方法：
-1.批量翻译：在此模组的模组设置页中，点击批量翻译。在打开文件中，按照注释翻译。记得编辑后点击“应用全部”。
+1.批量翻译：在此模组的模组设置页中，点击批量翻译。在打开文件中，按提示批量翻译（可以同时显示原文和译文）。编辑完后保存关闭，回到模组设置页点击“应用全部”。
 2.快捷按钮：如封面中部的那个按钮，会出现在模组预览界面的右上角，点击后会将打开一个文本文件，按提示将你需要替换的名称和描述输入进去，保存，关闭。（不需要特定格式，记得换行就好，以及不能出现字符：’|‘）回到游戏，再次点击重命名按钮确认修改。这时你应该能看见界面上的模组名称和描述已经被替换成了你在文本文件中输入的内容。
 3.手动索引：（不推荐）只是因为需要你手动输入模组id，较按钮来说麻烦不少，在此模组的模组设置页中使用。
-
-
+4.复制文件：如果你想的话，可以复制更改其他人的翻译文件到 C:\Users\Revision-Extra\AppData\LocalLow/Videocult/Rain World/ModConfigs\ModRename_stringsSave.txt，[url=https://github.com/SYFL-code/Translator/blob/main/mod/text/text_chi/strings.txt] 这里 [/url]是我的翻译文件。
 
 实现原理：
-通过游戏内翻译器以”翻译“的方式修改模组应该显示的名称与描述，未对模组本身进行修改。
-全部的用户自定义替换全部都保存在 AppData/LocalLow/Videocult/Rain World 这个路径下的ly.ModRename_stringsSave.txt 文件文件中。
-
-
-按钮的添加参考了 View Mod in File Explorer Button 以及 Workshop Button 。
+通过游戏内翻译器以“翻译”的方式修改模组应该显示的名称与描述，未对模组本身进行修改。
+全部的用户自定义替换全部都保存在 AppData/LocalLow/Videocult/Rain World/ModConfigs 这个路径下的ModRename_stringsSave.txt 文件文件中。
 
 注意：
-若需撤销更改，可在上文提到的 ly.ModRename_stringsSave.txt 文件中进行删除。
 移除此模组可复原所有更改。
+[strike] 若需撤销更改，可在上文提到的 ModRename_stringsSave.txt 文件中进行删除。 [/strike]
 
 如果你需要确保通过此模组添加的替换优先级高于其他翻译模组，请将此模组排序置于其他翻译模组之上。
 反之，如果您只是临时使用此模组补充如 模组翻译 模组尚未涵盖的模组名，可以使此模组较先加载（至于列表中其他翻译模组下方）因翻译索引的原因，游戏将会采用加载最晚的那一个。
 
-源代码：
-请原谅我未经许可的反编译以及开源。
+按钮的添加参考了 View Mod in File Explorer Button 以及 Workshop Button 。
+
+
+修复了修改消失、手动索引无法翻译等的问题
+
+源代码：https://github.com/SYFL-code/Translator
+请原谅我未经许可的反编译。

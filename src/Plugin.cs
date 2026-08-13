@@ -148,9 +148,9 @@ public sealed class Plugin : BaseUnityPlugin
 	}
 	#endregion
 
-	public const string Menu_tip_tip = "## 删除此行后向此文件中写入你想替换的文本，第一行为名称，其他行将作为简介（仅输入名称则不对简介进行替换），完成后请关闭此文件后点击确认替换。||你可以通过关闭此模组设置中的文件使用提示选项来使下次此文件中不会出现这行话。";
-	public const string Menu_tip_nameW = "## 警告：已有为此模组设置的名称存在！确认替换将会覆盖上次修改。";
-	public const string Menu_tip_dicW = "## 警告：已有为此模组设置的简介存在！确认替换将会覆盖上次修改。";
+	public const string Menu_tip_tip = "# 删除此行后向此文件中写入你想替换的文本，第一行为名称，其他行将作为简介（仅输入名称则不对简介进行替换），完成后请关闭此文件后点击确认替换。||你可以通过关闭此模组设置中的文件使用提示选项来使下次此文件中不会出现这行话。";
+	public const string Menu_tip_nameW = "# 警告：已有为此模组设置的名称存在！确认替换将会覆盖上次修改。";
+	public const string Menu_tip_dicW = "# 警告：已有为此模组设置的简介存在！确认替换将会覆盖上次修改。";
 
 	public OpSimpleImageButton? renameButton;
 
