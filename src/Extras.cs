@@ -40,4 +40,10 @@ internal static class Extras
             }
         };
     }
+
+    // 允许插件禁用后重新启用时再次执行资源加载（配合 OnDisable 中的注销逻辑）
+    public static void ResetInitialized()
+    {
+        _initialized = false;
+    }
 }

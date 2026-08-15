@@ -1,4 +1,4 @@
-﻿using Menu.Remix;
+using Menu.Remix;
 using Menu.Remix.MixedUI;
 using RWCustom;
 using System;
@@ -20,26 +20,26 @@ namespace Translator
 		public static InGameTranslator inGameTranslator => RainWorld.inGameTranslator;
 		public static InGameTranslator Trans => inGameTranslator;
 
-		public Configurable<bool> enabletur;
-		public Configurable<bool> startc;
-		public Configurable<bool> openc;
 		public Configurable<string> idc;
+		//public Configurable<bool> startc;
+		//public Configurable<bool> openc;
+		public Configurable<bool> enabletur;
 
 		public MyOptions()
 		{
 			Instance = this;
 
-			// 配置1: 是否启用临时文件格式提示（默认开启）
-			enabletur = this.config.Bind<bool>("LYR_ChModList_enable", true);
-
-			// 配置2: 启动时自动检查（当前未使用，预留功能）
-			this.startc = this.config.Bind<bool>("LYR_ChModList_start", false);
-
-			// 配置3: 打开临时文件相关选项（当前未使用，预留功能）
-			this.openc = this.config.Bind<bool>("LYR_ChModList_opentempfile", false);
-
 			// 配置4: 目标模组 ID 输入框绑定的配置值
 			this.idc = this.config.Bind<string>("LYR_ChModList_idc", "", new ConfigurableInfo("targetID", null, "", Array.Empty<object>()));
+
+			// 配置2: 启动时自动检查（当前未使用，预留功能）
+			//this.startc = this.config.Bind<bool>("LYR_ChModList_start", false);
+
+			// 配置3: 打开临时文件相关选项（当前未使用，预留功能）
+			//this.openc = this.config.Bind<bool>("LYR_ChModList_opentempfile", false);
+
+			// 配置1: 是否启用临时文件格式提示（默认开启）
+			enabletur = this.config.Bind<bool>("LYR_ChModList_enable", true);
 		}
 
 		private float by1 = 570f;
@@ -65,7 +65,7 @@ namespace Translator
 
 			this.Tabs = new OpTab[]
 			{
-				new OpTab(this, "Add")
+				new OpTab(this, "Options")
 			};
 			// 标题
 			OpLabel title = new OpLabel(20f, this.GetnextY(0f, 0, "null"), "模组列表中文补全计划".Tra(), true);
@@ -99,10 +99,10 @@ namespace Translator
 			// 将所有元素添加到标签页
 			this.Tabs[0].AddItems(new UIelement[]
 			{
-				title, this.tips, idInputTip, this.id,
+				title, this.tips, this.id, idInputTip,
 				this.opentempfile, this.startAdd,
-				this.enableBox, enablefiletip,
-				this.exportAllButton, this.importAllButton, batchTip
+				this.exportAllButton, this.importAllButton, batchTip,
+				this.enableBox, enablefiletip
 			});
 		}
 
@@ -156,28 +156,28 @@ namespace Translator
 			}
 			Log.LogError("无法找到 modinfo.json，请确认模组结构完整。");
 
-			try
-			{
-				string stringsRelPath = $"text/text_{LocalizationTranslator.LangShort(Trans.currentLanguage)}/strings.txt";
-				string resolvedPath = ResolveFilePathFromMod(stringsRelPath, Plugin.GUID, false);
+			//try
+			//{
+			//	string stringsRelPath = $"text/text_{LocalizationTranslator.LangShort(Trans.currentLanguage)}/strings.txt";
+			//	string resolvedPath = ResolveFilePathFromMod(stringsRelPath, Plugin.GUID, false);
 
-				if (File.Exists(resolvedPath))
-				{
-					// 从已确认存在的 strings.txt 向上推导根目录
-					// text/text_xx/strings.txt → 向上3层到模组根目录
-					string? root = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(resolvedPath)));
-					if (!string.IsNullOrEmpty(root) && Directory.Exists(root))
-					{
-						_cachedModRoot = root;
-						Log.LogInfo($"模组根目录已缓存: {root}");
-						return root;
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				Log.LogError($"解析失败: {ex.Message}");
-			}
+			//	if (File.Exists(resolvedPath))
+			//	{
+			//		// 从已确认存在的 strings.txt 向上推导根目录
+			//		// text/text_xx/strings.txt → 向上3层到模组根目录
+			//		string? root = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(resolvedPath)));
+			//		if (!string.IsNullOrEmpty(root) && Directory.Exists(root))
+			//		{
+			//			_cachedModRoot = root;
+			//			Log.LogInfo($"模组根目录已缓存: {root}");
+			//			return root;
+			//		}
+			//	}
+			//}
+			//catch (Exception ex)
+			//{
+			//	Log.LogError($"解析失败: {ex.Message}");
+			//}
 			Log.LogError($"解析失败。DLL位置: {dllDir}, GUID: {Plugin.GUID}");
 			throw new FileNotFoundException("解析失败");
 
@@ -200,7 +200,7 @@ namespace Translator
 		}
 		public static string GetTempPath()
 		{
-			string path = Path.Combine(MyOptions.GetPath(), "text", "text_" + LocalizationTranslator.LangShort(Trans.currentLanguage), "temp.txt");
+			string path = Path.Combine(MyOptions.GetPath(), "temp.txt");
 
 			if (!File.Exists(path))
 			{
@@ -244,27 +244,6 @@ namespace Translator
 
 			File.WriteAllText(GetTempPath(), "");
 		}
-		public static List<string> StringsToList(string[] strings, bool filterEmptyLines)
-		{
-			return strings
-				.Select(line =>
-				{
-					int hashIdx = line.IndexOf("#");
-					int slashIdx = line.IndexOf("||");
-
-					int idx = (slashIdx, hashIdx) switch
-					{
-						( >= 0, >= 0) => Math.Min(slashIdx, hashIdx), // 两者都有，取靠前的
-						( >= 0, _) => slashIdx,                     // 只有 ||
-						(_, >= 0) => hashIdx,                      // 只有 #
-						_ => -1                            // 都没有
-					};
-
-					return idx >= 0 ? line.Substring(0, idx).TrimEnd() : line;
-				})
-				.Where(line => !filterEmptyLines || !string.IsNullOrWhiteSpace(line))
-				.ToList();
-		}
 		public static string GetSavePath()
 		{
 			return Path.Combine(Application.persistentDataPath, "ModConfigs", "ModRename_stringsSave.txt");
@@ -275,8 +254,14 @@ namespace Translator
 		}
 		public static string GetAllMods()
 		{
+			string path = Path.Combine(MyOptions.GetPath(), "ModRename_allMods.txt");
+
+			if (!File.Exists(path))
+			{
+				using (File.Create(path)) { }
+			}
+			return path;
 			//return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ModRename_allMods.txt");
-			return Path.Combine(Application.persistentDataPath, "ModRename_allMods.txt");
 		}
 		public static string GetGameRoot()
 		{
@@ -301,7 +286,7 @@ namespace Translator
 
 			File.Move(tempPath, newPath);   // 第二步：临时名 → 最终名
 		}
-		public static void BakFile(string path)
+		public static void BackupFile(string path)
 		{
 			string newName = Path.GetFileName(path) + ".bak"; // Path.GetFileNameWithoutExtension(filePath);
 			AtomicRename(path, newName);
@@ -317,20 +302,24 @@ namespace Translator
 				string id = this.id?.value ?? "";
 
 				Log.LogDebug($"Opentempfile_OnClick: id = {id}");
+
 				if (!string.IsNullOrEmpty(id))
 				{
-					Log.LogDebug($"Opentempfile_OnClick: id = {id}, checking if mod is installed.");
-					Log.LogDebug($"tips != null: {tips != null}");
 					//Log.LogDebug($"Installed mods: {string.Join(", ", ModManager.InstalledMods.Select(m => m.id))}");
 					//Log.LogDebug($"Contains: {ModManager.InstalledMods.Contains(ModManager.GetModById(id))}");
+
 					// 检查模组是否已安装（首次点击给出警告，二次点击强制继续）
-					if (!ModManager.InstalledMods.Contains(ModManager.GetModById(id)))
+					if (!ModManager.InstalledMods.Contains(ModManager.GetModById(id)) && this.tipClearTimer == 0)
 					{
+						Log.LogDebug($"模组 {id} 未安装，提示用户确认。");
+
 						this.tipClearTimer = 120;
 						this.tips!.text = "未找到为此ID的已安装模组！\n 如果你确定要为此id添加，请再次点击。";
 					}
 					else
 					{
+						Log.LogDebug($"模组 {id} 已安装，尝试打开临时文件。");
+
 						this.tipClearTimer = 20;
 						this.tips!.text = "尝试打开文件中";
 
@@ -359,14 +348,18 @@ namespace Translator
 			this.tipClearTimer = 120;
 			this.tips!.text = "添加成功！";
 		}
-		public static List<string> SortExportIds(IEnumerable<string> idsToExport, out Dictionary<string, ModManager.Mod> installedMapOut)
+		private static Dictionary<string, ModManager.Mod> installedMap
 		{
-			var installedMap = ModManager.InstalledMods
-				.GroupBy(m => m.id)
-				.ToDictionary(g => g.Key, g => g.First());
-
-			installedMapOut = installedMap;
-
+			get
+			{
+				return _installedMap ??= ModManager.InstalledMods
+					.GroupBy(m => m.id)
+					.ToDictionary(g => g.Key, g => g.First());
+			}
+		}
+		private static Dictionary<string, ModManager.Mod>? _installedMap;
+		public static List<string> SortExportIds(IEnumerable<string> idsToExport)
+		{
 			var inInstalled = new List<(string id, string name)>();
 			var notInstalled = new List<string>();
 
@@ -397,12 +390,11 @@ namespace Translator
 				foreach (var mod in ModManager.InstalledMods)
 					idsToExport.Add(mod.id);
 
-
 				for (int j = 0; j < 2; j++)
 				{
 					string with = (j == 0) ? "-name" : "-description";
 
-					// 从 shortStrings 获取（包含未安装的翻译）
+					// 从 shortStrings 获取
 					foreach (var key in inGameTranslator.shortStrings.Keys)
 					{
 						if (key.EndsWith(with))
@@ -412,7 +404,7 @@ namespace Translator
 						}
 					}
 
-					// sortStrings
+					// 从保存文件获取（包含未安装的翻译）
 					string[] strings = MyOptions.GetStrings();
 					for (int i = 0; i < strings.Length; i++)
 					{
@@ -432,17 +424,19 @@ namespace Translator
 					}
 				}
 
-				List<string> sorted = SortExportIds(idsToExport, out var installedMap);
+				List<string> sorted = SortExportIds(idsToExport);
 
 				using (StreamWriter writer = new StreamWriter(filePath, false, Encoding.UTF8))
 				{
 					// 写入文件头注释
 					writer.WriteLine("# 本文件用于批量管理模组翻译");
+					writer.WriteLine("# 因翻译索引的原因，此模组若不在模组排序的顶部，则可能无法应用翻译");
 					writer.WriteLine("# 格式：每个模组以 '|模组ID' 开始，其后四行分别为：");
-					writer.WriteLine("# 原始名称、原始描述、翻译名称（留空或注释则不修改）、翻译描述（留空或注释则不修改）");
-					writer.WriteLine("# 以 '#' 开头的行是注释，会被忽略");
-					writer.WriteLine("# 换行请使用 '<LINE>' ");
+					writer.WriteLine("# 原始名称、原始描述、翻译名称（留空或注释表示删除该翻译）、翻译描述（留空或注释表示删除该翻译）");
+					writer.WriteLine("# 在翻译描述中，若要换行，请使用 '<LINE>' 换行");
+					writer.WriteLine("# 请不要在翻译使用字符 '|' ");
 					writer.WriteLine("# 编辑完后保存关闭，回到模组设置页点击“应用全部”");
+					writer.WriteLine("# 以 '#' 开头的行是注释，会被忽略");
 					writer.WriteLine();
 
 					foreach (string id in sorted)
@@ -460,16 +454,20 @@ namespace Translator
 							origDesc = "# 模组未安装，原始描述未知";
 						}
 
-                        string transName = inGameTranslator.shortStrings.TryGetValue(id + "-name", out var tn) ? tn : "# 请添加翻译名称";
-                        string transDesc = inGameTranslator.shortStrings.TryGetValue(id + "-description", out var td) ? td : "# 请添加翻译描述";
-                        transDesc = transDesc.ReplaceLineEndings("<LINE>");
+						//string transName = inGameTranslator.shortStrings.TryGetValue(id + "-name", out var tn) ? tn : "# 请添加翻译名称";
+						//string transDesc = inGameTranslator.shortStrings.TryGetValue(id + "-description", out var td) ? td : "# 请添加翻译描述";
+						int nameIndex = MyOptions.GetKeyInStrings(id + "-name");
+						int dicIndex = MyOptions.GetKeyInStrings(id + "-description");
+						string transName = (nameIndex != -1) ? GetStrings()[nameIndex].Split('|')[1] : "# 请添加翻译名称";
+						string transDesc = (dicIndex != -1) ? GetStrings()[dicIndex].Split('|')[1] : "# 请添加翻译描述";
+						transDesc = transDesc.ReplaceLineEndings("<LINE>").Trim();
 
-                        writer.WriteLine($"|{id}");
-                        writer.WriteLine(origName);
-                        writer.WriteLine(origDesc);
-                        writer.WriteLine(transName);
-                        writer.WriteLine(transDesc);
-                        writer.WriteLine();
+						writer.WriteLine($"|{id}");
+						writer.WriteLine(origName);
+						writer.WriteLine(origDesc);
+						writer.WriteLine(transName);
+						writer.WriteLine(transDesc);
+						writer.WriteLine();
 
 
 						// 查找是否已安装
@@ -527,13 +525,14 @@ namespace Translator
 
 
 				// 文件关闭后，统一清洗一遍换行符
-				string content = File.ReadAllText(filePath);
-				File.WriteAllText(filePath, content.ReplaceLineEndings(Environment.NewLine));
+				//string content = File.ReadAllText(filePath);
+				//File.WriteAllText(filePath, content.ReplaceLineEndings(Environment.NewLine));
+
+				this.tipClearTimer = 120;
+				this.tips!.text = "已导出全部模组，请编辑后点击“应用全部翻译”。";
 
 				// 打开文件
 				OpenFileWithDefaultProgram(filePath);
-				this.tipClearTimer = 120;
-				this.tips!.text = "已导出全部模组，请编辑后点击“应用全部翻译”。";
 			}
 			catch (Exception ex)
 			{
@@ -542,7 +541,6 @@ namespace Translator
 				this.tips!.text = "导出失败，请查看日志。";
 			}
 		}
-
 		private void ImportAllButton_OnClick(UIfocusable trigger)
 		{
 			try
@@ -557,11 +555,14 @@ namespace Translator
 				}
 
 				string[] lines = File.ReadAllLines(filePath, Encoding.UTF8);
+
+				List<string> keysToDelete = new();
 				List<(string id, string transName, string transDesc)> entries = new List<(string, string, string)>();
 
 				int i = 0;
 				int successCount = 0;
 				int failCount = 0;
+				int skipCount = 0;
 
 				while (i < lines.Length)
 				{
@@ -576,7 +577,6 @@ namespace Translator
 					// 必须是 '|' 开头的行，表示新模组开始
 					if (!line.StartsWith("|"))
 					{
-						// 容错：若遇到非 '|' 开头，可能格式错误，跳过这一行
 						Log.LogWarning($"跳过无效行: {line}");
 						i++;
 						continue;
@@ -587,46 +587,104 @@ namespace Translator
 					if (i + 4 >= lines.Length)
 					{
 						Log.LogWarning($"模组 {id} 数据不完整，跳过");
-						i++;
-						continue;
+						break;
+						//i++;
+						//continue;
 					}
 
-					string origName = lines[i + 1].Trim();
-					string origDesc = lines[i + 2].Trim();
+					//string origName = lines[i + 1].Trim();
+					//string origDesc = lines[i + 2].Trim();
 					string transName = lines[i + 3].Trim();
 					string transDesc = lines[i + 4].Trim();
 
-					// 验证该模组是否存在
-					//if (!ModManager.InstalledMods.Any(m => m.id == id))
-					//{
-					//	Log.LogWarning($"模组 {id} 未安装，跳过");
-					//	i += 5;
-					//	continue;
-					//}
-
 					// 加入更新列表
-					string finalName = !string.IsNullOrEmpty(transName) && !transName.StartsWith("#") ? transName : "";
-					string finalDesc = !string.IsNullOrEmpty(transDesc) && !transDesc.StartsWith("#") ? transDesc : "";
+					List<string> final = StripComment(new List<string> { transName, transDesc }, true);
+					for (int j = 0; j < final.Count; j++)
+					{
+						final[j] = final[j].ReplaceLineEndings("<LINE>").Trim();
+					}
+
+					//string finalName = (!string.IsNullOrEmpty(transName) && !transName.StartsWith("#")) ? transName : "";
+					//string finalDesc = (!string.IsNullOrEmpty(transDesc) && !transDesc.StartsWith("#")) ? transDesc : "";
+
+					int nameIndex = MyOptions.GetKeyInStrings(id + "-name");
+					int dicIndex = MyOptions.GetKeyInStrings(id + "-description");
+					string origName = (nameIndex != -1) ? GetStrings()[nameIndex].Split('|')[1] : "";
+					string origDesc = (dicIndex != -1) ? GetStrings()[dicIndex].Split('|')[1] : "";
+					// 变更检测的对比基准：文件中的旧值（此前误用了新值，导致永远判定为"无变更"）
+					List<string> orig = StripComment(new List<string> { origName, origDesc }, true);
+					for (int j = 0; j < orig.Count; j++)
+					{
+						orig[j] = orig[j].ReplaceLineEndings("<LINE>").Trim();
+					}
+
+					bool nameChanged = (final[0] != orig[0]);
+					bool descChanged = (final[1] != orig[1]);
+					if (nameChanged || descChanged)
+					{
+						entries.Add((
+							id,
+							nameChanged ? final[0] : "--unchange--",
+							descChanged ? final[1] : "--unchange--"
+						));
+					}
+					else
+					{
+						skipCount++;
+					}
+
+					/*
 					if (!string.IsNullOrEmpty(finalName) || !string.IsNullOrEmpty(finalDesc))
 					{
-						entries.Add((id, finalName, finalDesc));
-					}
-					//if ((!string.IsNullOrEmpty(transName) && !transName.StartsWith("#")) || (!string.IsNullOrEmpty(transDesc) && !transDesc.StartsWith("#")))
-					//{
-					//	entries.Add((id, transName, transDesc));
-					//}
+						// 获取当前内存中的翻译值用于比较
+						bool hasName = inGameTranslator.shortStrings.TryGetValue(id + "-name", out var curName);
+						bool hasDesc = inGameTranslator.shortStrings.TryGetValue(id + "-description", out var curDesc);
 
-					// 若两者都为空，表示用户希望删除该模组的翻译（不添加任何条目）
-					// 但为了简化，我们也可以选择删除现有翻译，但本设计不主动删除，仅添加或更新
-					// 若用户想删除，可留空，则不会更新，保持原样。
+						// 统一归一化后再比较：都将真实换行转为 <LINE>
+						string normCurName = hasName ? curName?.Trim() ?? "" : "";
+						string normCurDesc = hasDesc ? (curDesc?.ReplaceLineEndings("<LINE>").Trim() ?? "") : "";
+
+						// 仅在值确实发生变化时才加入更新列表
+						bool nameChanged = !string.IsNullOrEmpty(finalName) && finalName != normCurName;
+						bool descChanged = !string.IsNullOrEmpty(finalDesc) && finalDesc != normCurDesc;
+
+						if (nameChanged || descChanged)
+						{
+							entries.Add((
+								id,
+								nameChanged ? finalName : "",
+								descChanged ? finalDesc : ""
+							));
+						}
+						else
+						{
+							skipCount++;
+						}
+
+						//if (!string.IsNullOrEmpty(finalName) || !string.IsNullOrEmpty(finalDesc))
+						//{
+						//    entries.Add((id, finalName, finalDesc));
+						//}
+					}
+					if ((!string.IsNullOrEmpty(transName) && !transName.StartsWith("#")) || (!string.IsNullOrEmpty(transDesc) && !transDesc.StartsWith("#")))
+					{
+						entries.Add((id, transName, transDesc));
+					}
+					*/
+
+					// 空值（含注释被剥离后为空）表示删除该条目的翻译；
+					// "--unchange--" 表示该字段保持不变（跳过写入与内存更新）。
 
 					i += 5; // 跳到下一个模组块
+					//i++;
 				}
 
 				if (entries.Count == 0)
 				{
 					this.tipClearTimer = 120;
-					this.tips!.text = "没有找到任何有效的翻译条目。";
+					this.tips!.text = skipCount > 0
+						? $"所有翻译均已是最新，跳过 {skipCount} 个模组。"
+						: "没有找到任何有效的翻译条目。";
 					return;
 				}
 
@@ -637,16 +695,10 @@ namespace Translator
 					List<string> keys = new List<string>();
 					List<string> values = new List<string>();
 
-					if (!string.IsNullOrEmpty(entry.transName))
-					{
-						keys.Add(entry.id + "-name");
-						values.Add(entry.transName);
-					}
-					if (!string.IsNullOrEmpty(entry.transDesc))
-					{
-						keys.Add(entry.id + "-description");
-						values.Add(entry.transDesc);
-					}
+					keys.Add(entry.id + "-name");
+					values.Add(entry.transName);
+					keys.Add(entry.id + "-description");
+					values.Add(entry.transDesc);
 
 					if (keys.Count > 0)
 					{
@@ -667,7 +719,7 @@ namespace Translator
 				//}
 
 				this.tipClearTimer = 120;
-				this.tips!.text = $"应用完成：成功 {successCount} 个模组，失败 {failCount} 个。";
+				this.tips!.text = $"应用完成：更新 {successCount} 个模组，失败 {failCount} 个，跳过 {skipCount} 个（无变更）。";
 			}
 			catch (Exception ex)
 			{
@@ -678,15 +730,66 @@ namespace Translator
 		}
 		#endregion
 
-		// 检查临时文件
+		// 检查临时文件 ?
 		public static bool CheckTempFile()
 		{
 			string[] strings = MyOptions.GetTemp();
 			bool flag = strings.Length == 0 || 
-				strings[0] == Plugin.Menu_tip_tip || 
-				strings[0] == Plugin.Menu_tip_dicW || 
-				strings[0] == Plugin.Menu_tip_nameW;
+				strings[0] == Plugin.Menu_tip_tip1 || 
+				strings[0] == Plugin.Menu_tip_tip2 || 
+				strings[0] == Plugin.Menu_tip_tip3 ||
+				strings[0] == Plugin.Menu_tip_nameW || 
+				strings[0] == Plugin.Menu_tip_dicW;
 			return !flag;
+		}
+
+		public static List<string> StripComment(IEnumerable<string> strings, bool containsEmptyLines)
+		{
+			return strings
+				.Select(line =>
+				{
+					int hashIdx = line.IndexOf("#");
+					int slashIdx = line.IndexOf("||");
+
+					int idx = (slashIdx, hashIdx) switch
+					{
+						( >= 0, >= 0) => Math.Min(slashIdx, hashIdx), // 两者都有，取靠前的
+						( >= 0, _) => slashIdx,                     // 只有 ||
+						(_, >= 0) => hashIdx,                      // 只有 #
+						_ => -1                            // 都没有
+					};
+
+					return idx >= 0 ? line.Substring(0, idx).TrimEnd() : line;
+				})
+				.Where(line => !string.IsNullOrWhiteSpace(line) || containsEmptyLines)
+				.ToList();
+		}
+		// 移除指定的键
+		public static void RemoveKeysFromFile(string[] keys)
+		{
+			if (keys == null || keys.Length == 0) return;
+
+			HashSet<string> keySet = new(keys);
+			List<string> stringList = new(GetStrings());
+
+			bool changed = false;
+			for (int i = stringList.Count - 1; i >= 0; i--)
+			{
+				string line = stringList[i];
+				if (string.IsNullOrEmpty(line) || !line.Contains('|')) continue;
+
+				string[] parts = line.Split(new[] { '|' }, 2);
+				if (parts.Length == 2 && keySet.Contains(parts[0]))
+				{
+					stringList.RemoveAt(i);
+					changed = true;
+				}
+			}
+
+			if (changed)
+			{
+				WriteIn(stringList.ToArray());
+			}
 		}
 
 		// 应用到文件和翻译字典
@@ -698,14 +801,22 @@ namespace Translator
 				return;
 			}
 
-			List<string> strings = MyOptions.StringsToList(GetTemp(), false);
+			List<string> strings = MyOptions.StripComment(GetTemp(), true);
 
 			if (strings.Count == 1)
 			{
 				string name = strings[0];
 
-				string[] keys = new string[] { id + "-name" };
-				string[] values = new string[] { name };
+				string[] keys = new string[]
+				{
+					id + "-name",
+					id + "-description"
+				};
+				string[] values = new string[]
+				{
+					name.Trim(),
+					""
+				};
 
 				AddToStrings(id, keys, values);
 			}
@@ -728,11 +839,14 @@ namespace Translator
 					id + "-name",
 					id + "-description"
 				};
-				string[] values = new string[] { name, dic };
+				string[] values = new string[]
+				{
+					name.Trim(),
+					dic.ReplaceLineEndings("<LINE>").Trim()
+				};
 
 				AddToStrings(id, keys, values);
 			}
-			MyOptions.ClearTempFile();
 		}
 		public static void AddToStrings(string? id, string[] keys, string[] values)
 		{
@@ -751,6 +865,8 @@ namespace Translator
 			MyOptions.SetKeyValuesToFile(keys, values);
 			MyOptions.SetToShortStrings(keys, values);
 			MyOptions.HotReplaceModInfo(id, values);
+
+			MyOptions.ClearTempFile();
 		}
 		// 将键值对写入文件
 		public static void SetKeyValuesToFile(string[] keys, string[] values)
@@ -770,8 +886,24 @@ namespace Translator
 				{
 					continue;
 				}
+				if (values[i] == "--unchange--")
+				{
+					continue;
+				}
 
-				int index = GetKeyInStrings(keys[i]);
+				// 在本地列表上定位，保证增/改/删操作基于同一份数据
+				int index = GetKeyIndexInList(stringList, keys[i]);
+
+				if (string.IsNullOrWhiteSpace(values[i]))
+				{
+					// 空值：删除该条目
+					if (index != -1)
+					{
+						stringList.RemoveAt(index);
+					}
+					continue;
+				}
+
 				string entry = keys[i] + "|" + values[i];
 
 				if (index != -1)
@@ -786,23 +918,25 @@ namespace Translator
 					}
 					stringList.Add(entry);     // 新增条目
 				}
-
-				//if (index != -1)
-				//{
-				//	strings[index] = keys[i] + "|" + values[i];
-				//	break;
-				//}
 			}
 
-			
-			//Dictionary<string, string> dic = MyOptions.CoverStrings2Dic(MyOptions.GetStrings());
-
-			//for (int i = 0; i < keys.Length; i++)
-			//{
-			//	dic[keys[i]] = values[i];  // 有则更新，无则新增
-			//}
-
 			MyOptions.WriteIn(stringList.ToArray());
+		}
+		// 在给定的行列表中查找键（基于本地列表，避免重复读文件导致索引错位）
+		private static int GetKeyIndexInList(List<string> stringList, string key)
+		{
+			for (int i = 0; i < stringList.Count; i++)
+			{
+				string line = stringList[i];
+				if (!line.Contains('|')) continue;
+
+				string[] keyAndValue = line.Split(new char[] { '|' }, 2);
+				if (keyAndValue.Length == 2 && keyAndValue[0] == key)
+				{
+					return i;
+				}
+			}
+			return -1;
 		}
 		// 写入文件
 		public static void WriteIn(string[] strings)
@@ -813,7 +947,7 @@ namespace Translator
 			File.WriteAllLines(path, strings);
 
 			string savePath = GetSavePath();
-			BakFile(savePath);
+			BackupFile(savePath);
 
 			File.WriteAllLines(savePath, strings);
 		}
@@ -822,18 +956,24 @@ namespace Translator
 		{
 			for (int i = 0; i < keys.Length; i++)
 			{
-				if (inGameTranslator.shortStrings.ContainsKey(keys[i]))
+				if (values[i] != "--unchange--")
 				{
-					inGameTranslator.shortStrings.Remove(keys[i]);
+					if (inGameTranslator.shortStrings.ContainsKey(keys[i]))
+					{
+						inGameTranslator.shortStrings.Remove(keys[i]);
+					}
+					if (!string.IsNullOrWhiteSpace(values[i]))
+					{
+						inGameTranslator.shortStrings.Add(keys[i], values[i]);
+					}
 				}
-				inGameTranslator.shortStrings.Add(keys[i], values[i]);
 			}
 		}
 		// 热更新模组信息
 		public static void HotReplaceModInfo(string modID, string[] values)
 		{
 			string name = values.Length > 0 ? values[0] : "";
-			string desc = values.Length > 1 ? values[1] : "--unchange--";
+			string desc = values.Length > 1 ? values[1] : "";
 			HotReplaceModInfo(modID, name, desc);
 		}
 		public static void HotReplaceModInfo(string modID, string modName, string moddic = "--unchange--")
@@ -844,19 +984,71 @@ namespace Translator
 				{
 					if (modButton.ModID == modID)
 					{
-						modButton.text = modName;
+						if (modName != "--unchange--")
+						{
+							if (!string.IsNullOrWhiteSpace(modName))
+							{
+								modButton.text = modName;
+							}
+							else
+							{
+								if (installedMap.TryGetValue(modID, out var mod))
+								{
+									modButton.text = mod.name;
+								}
+								else
+								{
+									Log.LogWarning($"Mod with ID '{modID}' not found in installed mods. '模组未安装'.");
+									modButton.text = "模组未安装";
+								}
+							}
+						}
 
 						if (ConfigContainer.OptItfs[0] is InternalOI_Stats internalOI_Stats)
 						{
-							internalOI_Stats.lblName.text = modName;
+							if (modName != "--unchange--")
+							{
+								if (!string.IsNullOrWhiteSpace(modName))
+								{
+									internalOI_Stats.lblName.text = modName;
+								}
+								else
+								{
+									if (installedMap.TryGetValue(modID, out var mod))
+									{
+										internalOI_Stats.lblName.text = mod.name;
+									}
+									else
+									{
+										Log.LogWarning($"Mod with ID '{modID}' not found in installed mods. '模组未安装'.");
+										internalOI_Stats.lblName.text = "模组未安装";
+									}
+								}
+							}
+
 							if (moddic != "--unchange--")
 							{
-								internalOI_Stats.lblDescription.text = moddic;
+								if (!string.IsNullOrWhiteSpace(moddic))
+								{
+									internalOI_Stats.lblDescription.text = moddic;
+								}
+								else
+								{
+									if (installedMap.TryGetValue(modID, out var mod))
+									{
+										internalOI_Stats.lblDescription.text = mod.description;
+									}
+									else
+									{
+										Log.LogWarning($"Mod with ID '{modID}' not found in installed mods. '模组未安装'.");
+										internalOI_Stats.lblDescription.text = "模组未安装";
+									}
+								}
 							}
 						}
 						else
 						{
-							Log.LogWarning("HotReplaceModInfo: ConfigContainer.OptItfs[0] is not InternalOI_Stats");
+							Log.LogWarning("ConfigContainer.OptItfs[0] is not InternalOI_Stats");
 						}
 					}
 				}
@@ -876,7 +1068,7 @@ namespace Translator
 
 				if (!line.Contains('|')) continue;
 
-				string[] keyAndValue = line.Split(new char[] { '|' });
+				string[] keyAndValue = line.Split(new char[] { '|' }, 2);
 				if (keyAndValue.Length != 2) continue;
 
 				string lineKey = keyAndValue[0];
@@ -927,41 +1119,40 @@ namespace Translator
 			}
 			else
 			{
-				File.WriteAllText(path, $"");
+				File.WriteAllText(path, $"# 模组未安装，原始名称未知");
 			}
 
 			if (warning_dicExz != -1)
 			{
-				File.AppendAllText(path, $"\n{GetStrings()[warning_dicExz].Split('|')[1]}".ReplaceLineEndings("<LINE>"));
+				File.AppendAllText(path, $"\n{GetStrings()[warning_dicExz].Split('|')[1].ReplaceLineEndings("<LINE>")}");
 			}
 			else if (mod != null)
 			{
-				File.AppendAllText(path, $"\n{mod.description}".ReplaceLineEndings("<LINE>"));
+				File.AppendAllText(path, $"\n{mod.description.ReplaceLineEndings("<LINE>")}");
 			}
 			else
 			{
-				File.AppendAllText(path, $"");
+				File.AppendAllText(path, $"\n# 模组未安装，原始描述未知");
 			}
 
 
 			if (Instance?.enabletur.Value == true)
 			{
-				File.AppendAllText(path, $"\n{Plugin.Menu_tip_tip}");
+				File.AppendAllText(path, $"\n\n{Plugin.Menu_tip_tip1}");
+				File.AppendAllText(path, $"\n{Plugin.Menu_tip_tip2}");
+				File.AppendAllText(path, $"\n{Plugin.Menu_tip_tip3}");
+				File.AppendAllText(path, $"\n");
 			}
-			//else
-			//{
-			//	File.WriteAllText(path, "");
-			//}
-			//if (warning_nameExz != -1)
-			//{
-			//	File.AppendAllLines(path, new string[] { "" });
-			//	File.AppendAllLines(path, new string[] { Plugin.Menu_tip_nameW });
-			//}
-			//if (warning_dicExz != -1)
-			//{
-			//	File.AppendAllLines(path, new string[] { "" });
-			//	File.AppendAllLines(path, new string[] { Plugin.Menu_tip_dicW });
-			//}
+
+			if (warning_nameExz != -1)
+			{
+				File.AppendAllText(path, $"\n{Plugin.Menu_tip_nameW}");
+			}
+			if (warning_dicExz != -1)
+			{
+				File.AppendAllText(path, $"\n{Plugin.Menu_tip_dicW}");
+			}
+
 			MyOptions.OpenFileWithDefaultProgram(path);
 		}
 
@@ -1005,7 +1196,7 @@ namespace Translator
 		/// <summary>
 		/// 从指定模组目录中解析文件路径!!!
 		/// </summary>
-		public static string ResolveFilePathFromMod(string path, string modid, bool skipMergedMods = false)
+		/*public static string ResolveFilePathFromMod(string path, string modid, bool skipMergedMods = false)
 		{
 			path = path.Replace('/', Path.DirectorySeparatorChar);
 
@@ -1045,7 +1236,7 @@ namespace Translator
 				}
 			}
 			return Path.Combine(Custom.RootFolderDirectory(), path.ToLowerInvariant());
-		}
+		}*/
 
 		#region //
 		//public static Dictionary<string, string> CoverStrings2Dic(IEnumerable<string> strings)

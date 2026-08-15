@@ -3,7 +3,7 @@
 	"name": "Translator",
 	"version": "0.1.0",
 	"authors": "绿叶_NL Lvye & Redlyn",
-	"description": "目前版本只支持添加中文翻译！<LINE>你可使用此模组手动为没有中文翻译的模组添加你自己翻译的中文。<LINE>（或者是你理解的....啊管他，注释你自己能看懂就够了！）<LINE>现在可以让整个模组列表的模组全部都是中文了！<LINE>养眼！舒服！前提是你足够耐心给哪几百个模组都手动翻译一遍！<LINE>只是移除此模组就可使所有添加的修改失效<LINE>（实际上也可以覆盖已有中文翻译信息的翻译文本）",
+	"description": "目前版本只支持添加中文翻译！<LINE>现在可以让整个模组列表的模组全部都是中文了！",
 	"requirements": [],
 	"requirements_names": [],
 	"tags": [ "Tools", "Translastion", "Mod Manager" ]

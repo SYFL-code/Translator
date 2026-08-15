@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	
 	<PropertyGroup>
 		<TargetFramework>net48</TargetFramework>
@@ -21,14 +21,21 @@
 
 	<ItemGroup>
 		<!-- 1. 项目本地库 -->
-		<Reference Include="../../lib/*.dll">
+		<!-- 0Harmony20.dll 由下方带 Aliases=HarmonyLegacy 的引用单独引入，避免与 0Harmony.dll 的 HarmonyLib 类型冲突 (CS0433) -->
+		<Reference Include="../../lib/*.dll" Exclude="../../lib/0Harmony20.dll">
 			<Private>false</Private>
 		</Reference>
 
 		<!-- 2. BepInEx 核心 -->
-		<Reference Include="$(RainWorldDir)/BepInEx/core/*.dll">
+		<!-- 排除 0Harmony20.dll：其全局命名空间的 HarmonyLib 类型与 0Harmony.dll 冲突 (CS0433)，由 lib 下的别名引用提供 -->
+		<Reference Include="$(RainWorldDir)/BepInEx/core/*.dll" Exclude="$(RainWorldDir)/BepInEx/core/0Harmony20.dll">
 		<Private>false</Private>
 		</Reference>
+
+		<Reference Include="$(RainWorldDir)/BepInEx/core/0Harmony20.dll" Version="2.0.0" Aliases="Harmony20">
+			<Private>false</Private>
+		</Reference>
+
 
 		<!-- 3. BepInEx 插件（其他模组） -->
 		<Reference Include="$(RainWorldDir)/BepInEx/plugins/*.dll">

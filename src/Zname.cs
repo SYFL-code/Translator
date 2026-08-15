@@ -22,6 +22,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using System.Text;
@@ -31,6 +32,10 @@ using System.Windows.Forms;
 using System.Xml.Schema;
 using Unity.Mathematics;
 using UnityEngine;
+using BepInEx.Logging;
+using Mono.Cecil;
+using MonoMod.Utils;
+using RainMeadow;
 using static MonoMod.InlineRT.MonoModRule;
 using static SlugBase.Features.FeatureTypes;
 using static UnityEngine.Input;
@@ -162,6 +167,352 @@ internal class Zname//Scrap 废案
 	配置	考虑将容量设为可配置选项
 	兼容性	测试与其他 Mod 的兼容性
 	*/
+
+	#region 反编译
+
+	#region On 钩子
+	public void OnEnable()
+	{
+		On.Player.CanBeSwallowed += On_Player_CanBeSwallowed;
+		IL.Player.CanBeSwallowed += IL_Player_CanBeSwallowed;
+	}
+
+	public static bool On_Player_CanBeSwallowed(On.Player.orig_CanBeSwallowed orig, Player player, PhysicalObject testObj)
+	{
+		if (testObj is Rock) return true;
+
+		return orig(player, testObj);
+	}
+
+	public static void IL_Player_CanBeSwallowed(ILContext il) // 随便写的
+	{
+		ILCursor c = new ILCursor(il);
+
+		c.Index = 17;
+
+		ILLabel? proceedCond = c.Prev.Operand as ILLabel;
+
+        c.Goto(0);
+
+        c.Emit(OpCodes.Ldarg_0);
+		c.Emit(OpCodes.Ldarg_1);
+		c.EmitDelegate<Func<Player, PhysicalObject, bool>> ((player, testObj) =>
+		{
+			if (testObj is Rock)
+			{
+				return true;
+			}
+			return false;
+		});
+
+		c.Emit(OpCodes.Brtrue, proceedCond);
+	}
+	#endregion
+
+	#region Harmony
+	// 1. 定义补丁类
+	[HarmonyPatch(typeof(Player), "CanBeSwallowed")] // 定位目标类和方法
+	public static class Player_CanBeSwallowed_Patch
+	{
+		// 2. Prefix：在原方法执行前运行
+		//    __instance 指 Player 实例，ref int damage 允许修改传入的参数
+        static bool Prefix(Player __instance, PhysicalObject testObj, ref bool __result)
+        {
+            if (testObj is Rock)
+            {
+                __result = true;
+                return false; // 跳过原方法
+            }
+            return true;
+        }
+
+        // 也可以写 Postfix（执行后）或 Transpiler（修改IL中间码）
+
+        static bool Postfix(Player __instance, PhysicalObject testObj, ref bool __result)
+        {
+            return true;
+        }
+
+		// Transpiler 必须返回 IEnumerable<CodeInstruction>
+		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+		{
+			// 1. 转为 List 方便遍历和修改
+			var codes = new List<CodeInstruction>(instructions);
+
+			// 2. 遍历每一条 IL 指令
+			for (int i = 0; i < codes.Count; i++)
+			{
+				CodeInstruction instruction = codes[i];
+
+				// 此处省略...
+				/*if (instruction.opcode == System.Reflection.Emit.OpCodes.Ldc_I4_S && instruction.operand is sbyte val && val == 100)
+				{
+					// 4. 替换指令：改成加载常量 200
+					codes[i] = new CodeInstruction(System.Reflection.Emit.OpCodes.Ldc_I4_S, (sbyte)200);
+					break; // 改完退出循环（当然如果多处硬编码，可以不 break）
+				}*/
+			}
+
+			// 5. 返回修改后的 IL 指令集
+			return codes;
+		}
+
+        // 用 CodeMatcher 改写上面的例子（更稳健）
+        static void Transpiler(CodeMatcher matcher)
+        {
+            matcher.MatchForward(false,
+                new CodeMatch(System.Reflection.Emit.OpCodes.Ldc_I4_S, 100) // 查找 100
+            ).SetOperandAndAdvance(200); // 改成 200
+        }
+
+        static void A()
+		{
+			// 在模组加载时执行一次：
+			Harmony.CreateAndPatchAll(typeof(Player_CanBeSwallowed_Patch));
+		}
+	}
+	#endregion
+
+	#region MonoMod.RuntimeDetour
+	public class MyModLoader
+	{
+		private Hook? _swallowHook;
+
+		public void LoadHooks()
+		{
+			// 1. 通过反射拿到目标方法
+			MethodInfo targetMethod = typeof(Player).GetMethod("CanBeSwallowed",
+				BindingFlags.Public | BindingFlags.Instance);
+
+			// 2. 定义钩子委托（注意委托签名：必须包含原方法 + 原参数）
+			//    这里的 orig 代表原始方法的调用入口
+			Func<Func<Player, PhysicalObject, bool>, Player, PhysicalObject, bool> hookDelegate = (orig, self, testObj) =>
+			{
+				// 修改逻辑
+				if (testObj is Rock) return true;
+
+				// 调用原方法（注意这里的调用方式和 Harmony 的 Prefix 不同）
+				return orig(self, testObj);
+			};
+			//这里的Func是指有返回值的委托，泛型实参的最后一个会默认为返回值。如果只有一个泛型实参，则为有一个返回值没有参数的委托。
+			//如果需要无返回值的话，请使用Action类型的委托。 !!!
+
+			// 3. 创建钩子
+			_swallowHook = new Hook(targetMethod, hookDelegate);
+		}
+
+		public void UnloadHooks()
+		{
+			// 卸载钩子，恢复原样
+			_swallowHook?.Dispose();
+		}
+	}
+	#endregion
+
+	#region AccessTools
+	/*
+	| AccessTools 方法 | 作用 | 对应聊天内容 |
+	| --- | --- | --- |
+	| AccessTools.Method(Type, string) | 获取方法（含私有/公有） | 选部分用来挂钩 prefix 时定位方法 |
+	| AccessTools.Field(Type, string) | 获取字段 | 访问其他模组的私有变量 |
+	| AccessTools.Property(Type, string) | 获取属性（getter/setter） | 访问带 { get; set; } 的属性 |
+	| AccessTools.Constructor(Type, Type[]) | 获取构造函数 | 动态实例化私有类 |
+	| AccessTools.TypeByName(string) | 通过字符串全名找类型 | 跨程序集联动（不用引用对方DLL） |
+	*/
+
+	// 定义一个静态委托（只需初始化一次）
+	static readonly AccessTools.FieldRef<Player, int> HealthRef =
+		AccessTools.FieldRefAccess<Player, int>("_health");
+	public static string AccessTools_(Player player)
+	{
+		// ❌ 原生反射（又臭又长）
+		FieldInfo fi = typeof(Player).GetField("_health",
+			BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
+		int health = (int)fi.GetValue(player);
+
+		// ✅ Harmony AccessTools（清爽简洁）
+		int health_ = (int)AccessTools.Field(typeof(Player), "_health").GetValue(player);
+
+		// 在游戏循环里高频调用（极快，无反射损耗）
+		int currentHP = HealthRef(player);
+
+		// 直接挂钩其他模组的私有方法，名字用字符串传
+		/*
+		Harmony.Patch(
+			AccessTools.Method("OtherModNamespace.OtherClass, OtherModAssembly", "PrivateMethod"),
+			prefix: new HarmonyMethod(typeof(MyPatch), nameof(MyPatch.Prefix))
+		);
+		*/
+
+		return "反编译";
+	}
+	#endregion
+
+	#region 反射 + 委托
+	public class LegacyHook
+	{
+		private static Player? _targetPlayer; // 假设需要实例
+		private static MethodInfo? _originalMethod;
+		private static Delegate? _hookDelegate;
+
+		public static void Hook()
+		{
+			// 1. 疯狂的反射获取私有/公有方法（甚至要跨程序集 BindingFlags）
+			_originalMethod = typeof(Player).GetMethod("CanBeSwallowed",
+				BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
+
+			// 2. 定义一个匹配原方法签名的委托（用来调用原函数）
+			Func<Player, PhysicalObject, bool> originalAction = (player, testObj) =>
+			{
+				if (testObj is Rock) return true;
+
+				// 这里需要 Invoke，性能差且容易抛异常
+				return (bool)_originalMethod.Invoke(player, new object[] { testObj });
+			};
+
+			// 3. 想要拦截？没有现成的Hook机制，只能自己用 GetMethod 替换，或者
+			//    直接重写委托逻辑覆盖掉原有的委托字段（如果游戏用了委托回调）。
+			//    （绝大多数情况根本做不到无侵入拦截，非常鸡肋）
+			Console.WriteLine("此方法极难实现无侵入拦截，通常只能用于调用，而非修改!");
+		}
+	}
+	#endregion
+
+	#region Public程序集
+	/*
+针对你关心的 “雨甸（Rain Meadow）频繁更新导致手动维护Public程序集太累” 这个问题，我直接给你两套 MSBuild PreBuildTask 脚本方案。
+
+第一套是社区标准方案（推荐，零维护成本），第二套是纯手工 Exec 方案（不用装 NuGet，完全控制权）。
+方案一：使用 BepInEx.Publicizer（最推荐，行业标准）
+
+这是目前 BepInEx 模组社区的事实标准。它会在编译前自动读取你指定的原始 DLL，生成 Publicized 版本放到 obj 目录，并自动帮你加上 InternalsVisibleTo 特性，完全不需要你手动干预。
+
+在你的 .csproj 项目文件中，替换或追加以下代码：
+xml
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- 1. 定义游戏路径（方便管理和切换版本） -->
+  <PropertyGroup>
+	<GameDir>D:\Steam\steamapps\common\RainWorld\</GameDir>
+	<ManagedDir>$(GameDir)RainWorld_Data\Managed\</ManagedDir>
+  </PropertyGroup>
+
+  <!-- 2. 引入 Publicizer NuGet 包（仅编译时使用，不会打包进你的模组） -->
+  <ItemGroup>
+	<PackageReference Include="BepInEx.Publicizer" Version="1.0.1" PrivateAssets="all" />
+  </ItemGroup>
+
+  <!-- 3. 指定需要“私有变公有”的 DLL -->
+  <ItemGroup>
+	<!-- 注意：Private="False" 代表让公共化后的版本覆盖掉原始引用 -->
+	<Publicize Include="$(ManagedDir)Assembly-CSharp.dll" Private="False" />
+	<Publicize Include="$(ManagedDir)UnityEngine.dll" Private="False" />
+	<!-- 如果是联动的其他模组，例如雨甸的 Mod，也可以直接加进来 -->
+	<Publicize Include="$(ManagedDir)RainMeadow.dll" Private="False" />
+  </ItemGroup>
+
+  <!-- 4. （可选）如果你想在编译前在输出栏看到确认信息 -->
+  <Target Name="CheckPublicize" BeforeTargets="PreBuildEvent">
+	<Message Text="[Publicizer] 正在为最新游戏版本生成公共化程序集..." Importance="high" />
+  </Target>
+
+</Project>
+
+它的运作逻辑：
+
+	当你点击 Visual Studio 的“生成”或执行 dotnet build 时，BepInEx.Publicizer 会在 PreBuild 阶段 自动抓取 $(ManagedDir) 里的原始 DLL。
+
+	它会把所有 private / internal 改成 public，并自动注入 [assembly: InternalsVisibleTo("你的模组名")]。
+
+	输出文件默认在 obj\PublicizedAssemblies\ 下，你的项目引用会自动指向这个输出，无需额外配置。
+
+方案二：纯 MSBuild 手工脚本（不依赖 NuGet，适用于特殊环境）
+
+如果你因为公司内网、网络限制，或者想完全掌控每一步，可以使用 Exec 任务 配合命令行工具（如 Publicizer.exe 或自己写的小工具）。
+
+	你需要先下载一个命令行 publicizer 工具（如 CabbageRoth/Publicizer 的 CLI 版本）放到项目根目录的 Tools\ 文件夹下。
+
+xml
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<GameDir>D:\Steam\steamapps\common\RainWorld\</GameDir>
+	<ManagedDir>$(GameDir)RainWorld_Data\Managed\</ManagedDir>
+	<PublicizedOutput>$(ProjectDir)PublicizedAssemblies\</PublicizedOutput>
+	<PublicizerExe>$(ProjectDir)Tools\publicizer.exe</PublicizerExe>
+  </PropertyGroup>
+
+  <!-- 核心任务：在编译前执行 Publicizer 命令行 -->
+  <Target Name="PreBuildPublicize" BeforeTargets="PreBuildEvent">
+	<!-- 创建输出文件夹 -->
+	<MakeDir Directories="$(PublicizedOutput)" Condition="!Exists('$(PublicizedOutput)')" />
+	
+	<!-- 对 Assembly-CSharp 执行反私有化 -->
+	<Exec Command="&quot;$(PublicizerExe)&quot; &quot;$(ManagedDir)Assembly-CSharp.dll&quot; -o &quot;$(PublicizedOutput)Assembly-CSharp-publicized.dll&quot;" />
+	
+	<!-- 对雨甸模组执行反私有化（如果它在游戏目录里） -->
+	<Exec Command="&quot;$(PublicizerExe)&quot; &quot;$(ManagedDir)RainMeadow.dll&quot; -o &quot;$(PublicizedOutput)RainMeadow-publicized.dll&quot;" />
+	
+	<Message Text="[PreBuild] Publicized DLL 已生成: $(PublicizedOutput)" Importance="high" />
+  </Target>
+
+  <!-- 关键步骤：手动将生成的 Publicized 文件添加为引用，替代原始 DLL -->
+  <ItemGroup>
+	<Reference Include="Assembly-CSharp-publicized">
+	  <HintPath>$(PublicizedOutput)Assembly-CSharp-publicized.dll</HintPath>
+	  <Private>False</Private> <!-- 不复制到输出目录，避免覆盖游戏原版 -->
+	</Reference>
+	<Reference Include="RainMeadow-publicized">
+	  <HintPath>$(PublicizedOutput)RainMeadow-publicized.dll</HintPath>
+	  <Private>False</Private>
+	</Reference>
+  </ItemGroup>
+
+</Project>
+
+关于“雨甸（Rain Meadow）三天一小更”的对策
+
+这两种方案都能完美应对频繁更新：
+
+	方案一（NuGet）：每次编译时，Publicizer 都会重新读取游戏目录下最新的 DLL。你完全不需要手动替换文件，只要 Steam 更新了雨甸，你下一次编译就自动适配新版本的私有字段。
+
+	方案二（手工）：Exec 命令里没有写死版本号，直接指向 RainMeadow.dll，同样每次编译都重新生成。
+
+解决群里提到的“访问权限检测”报错（关键属性）
+
+如果你用了上述脚本，但仍然报 FieldAccessException，说明 Publicized 程序集缺少 InternalsVisibleTo 特性。
+
+在方案一中，BepInEx.Publicizer 默认会自动添加该特性，无需额外操作。
+
+在方案二中，如果你用的 CLI 工具不支持自动注入，你需要在你的模组主项目的 AssemblyInfo.cs（或 Properties\AssemblyInfo.cs）中手动声明：
+csharp
+
+// 告诉游戏和雨甸模组，允许我的模组访问你们的私有成员
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("我的模组项目名")]
+
+注意：这个声明需要双方都认。如果你的项目叫 MyRainWorldMod，就在你的项目里写上 InternalsVisibleTo("MyRainWorldMod")。严格来说，应该是目标程序集（雨甸）允许你访问，但既然我们生成了 Publicized 版本，相当于我们在编译期“欺骗”了编译器，这个特性写在你的程序集里可以绕开运行时的安全检查。
+如果你嫌配置麻烦，最简化的终极方案（复制即用）
+
+直接把这段粘贴到你的 .csproj 文件末尾（</Project> 之前）：
+xml
+
+  <!-- 极简 PreBuild：每次编译前强制重新生成 Public DLL -->
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+	<Exec Command="dotnet tool install -g BepInEx.Publicizer.Cli || true" IgnoreExitCode="true" />
+	<Exec Command="publicizer &quot;$(GameDir)RainWorld_Data\Managed\Assembly-CSharp.dll&quot; -o &quot;$(ProjectDir)Publicized\&quot;" />
+	<Exec Command="publicizer &quot;$(GameDir)RainWorld_Data\Managed\RainMeadow.dll&quot; -o &quot;$(ProjectDir)Publicized\&quot;" />
+  </Target>
+
+（依赖 .NET Core Global Tool，适合喜欢命令行的开发者）
+
+总结建议：直接上 方案一（BepInEx.Publicizer），它已经是 BepInEx 官方模板的一部分，群聊里 Nop 提到的 PUBLIC-assembly-csharp.dll 就是这种工具生成的，你只需要配置一次，以后每次编译都自动完成，彻底告别“反射地狱”和“手动更新公版 DLL”的烦恼。如果编译时遇到 NuGet 源不通的问题，再考虑切换方案二。
+
+	*/
+	#endregion
+
+	#endregion
 
 	#region LINQ & Lambda 表达式
 	/*

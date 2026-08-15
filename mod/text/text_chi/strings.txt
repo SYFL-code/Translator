@@ -631,3 +631,4 @@ scugshots-description|拍摄截图，录制标准或高品质的MP4视频，或�
 
 MiffyL.FoodRegenTime-name|[工具] 食物再生
 MiffyL.FoodRegenTime-description|允许您控制食物再生所需的循环次数。<LINE>默认再生循环次数：2-3（食物将在2或3个循环内随机再生），可在Remix菜单中进行设置。
+Translator-name|翻译器
