@@ -11,9 +11,11 @@ using Menu;
 using Menu.Remix.MixedUI;
 using MonoMod.RuntimeDetour;
 using MoreSlugcats;
+using Newtonsoft.Json;
 using Noise;
 using RWCustom;
 using SlugBase;
+using SlugBase.DataTypes;
 using SlugBase.Features;
 using System;
 using System.Collections;
@@ -34,6 +36,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Translator;
 using UnityEngine;
 using UnityEngine.UI;
 using Watcher;
@@ -77,6 +80,54 @@ public static class Helper
 		}
 		return items.ToArray();
 	}
+	#endregion
+
+	#region UITranslate
+	public static string? currentLang;
+	private static Dictionary<string, string> _dict = new();
+	private static Dictionary<string, string> Dict
+	{
+		get
+		{
+			if (currentLang != LocalizationTranslator.LangShort(Translator.currentLanguage))
+			{
+				currentLang = LocalizationTranslator.LangShort(Translator.currentLanguage);
+
+				string path = MyOptions.GetTranslatorPath();
+				if (File.Exists(path))
+				{
+					_dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(path)) ?? new();
+				}
+				else
+				{
+					Log.LogError("找不到语言文件: " + currentLang);
+
+					path = MyOptions.GetTranslatorPath("eng");
+					if (File.Exists(path))
+					{
+						_dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(path)) ?? new();
+					}
+					else
+					{
+						Log.LogError("找不到默认语言文件: eng");
+						_dict = new();
+					}
+				}
+				return _dict;
+			}
+			else
+			{
+				return _dict;
+			}
+		}
+	}
+	public static string T(string key)
+	{
+		return Dict.TryGetValue(key, out var val) ? val : key;
+	}
+    public static string T(string key, object arg0) => string.Format(T(key), arg0);
+    public static string T(string key, object arg0, object arg1) => string.Format(T(key), arg0, arg1);
+    public static string T(string key, params object[] args) => string.Format(T(key), args);
     #endregion
 
     #region String
@@ -86,5 +137,5 @@ public static class Helper
 				.Replace("\r", "\n")
 				.Replace("\n", lineEndings);
 	}
-    #endregion
+	#endregion
 }

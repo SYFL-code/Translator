@@ -32,6 +32,7 @@ using System.Xml.Linq;
 using UnityEngine;
 using Watcher;
 using static PhysicalObject;
+using static Helper;
 #endregion
 namespace Translator;
 
@@ -288,8 +289,8 @@ public sealed class Plugin : BaseUnityPlugin
 		Futile.atlasManager.LoadAtlas("assets/ModRenameButton_Icons");
 		this.renameButton = new OpSimpleImageButton(new Vector2(520f, 510f), new Vector2(30f, 30f), "ModRenameButton_Icon")// 560f 440f
 		{
-			description = "编辑该模组的名称和描述（留空删除翻译）".Tra()
-		};
+			description = T("Rename_Button_Desc"),
+        };
 		this.renameButton.OnClick += RenameButton_OnClick;
 		// 索引1 模组列表标签页?
 		self.Tabs[1].AddItems(new UIelement[] { this.renameButton });

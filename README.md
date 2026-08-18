@@ -1,4 +1,45 @@
 [h3] 描述 [/h3]
+由于原作者迟迟未更新 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3759456473]
+原模组 [/url]，故制作了此替代版本，并增加和调整了部分内容。
+This is just a mod that makes it easy for Chinese players to add Chinese names and descriptions (i.e., add notes) to mods.
+
+[h3] 功能概述 [/h3]
+可使用此模组手动为没有中文翻译的模组添加自定义中文翻译。
+现在整个模组列表都可以显示为中文了！
+翻译内容支持多语言；翻译文件中的译文语言不限（中、英、德、法等均可）。
+注意： 仅支持修改模组名称与简介，这不是一个通用的模组字段翻译工具。
+
+[h3] 使用方法 [/h3]
+
+快捷按钮： 点击模组预览界面右上方的重命名按钮。在打开的文件中按提示输入需要替换的名称和描述，保存并关闭（无需特定格式，直接换行即可，且不能包含字符 | ）。回到游戏再次点击重命名按钮确认修改，此时界面上的模组名称和描述应已替换为你输入的内容。
+批量翻译： 在此模组的设置页中点击“批量翻译”。在打开的文件中按提示进行批量编辑（可同时显示原文和译文），编辑完成后保存并关闭，回到模组设置页点击“应用全部”。
+手动索引： 在此模组的设置页中手动输入模组ID，点击“添加翻译”。在打开的文件中按提示输入内容，保存并关闭，然后点击“确认添加”。
+复制文件： 你也可以将他人的翻译文件复制到以下路径来直接使用：
+C:\Users\{你的用户名}\AppData\LocalLow\Videocult\Rain World\ModConfigs\ModRename_stringsSave.txt
+[url=https://github.com/SYFL-code/Translator/blob/main/mod/text/text_chi/strings.txt] 这里 [/url] 是我个人使用的翻译文件，可供参考。
+
+[h3] 实现原理 [/h3]
+通过游戏内翻译器以“翻译”的方式覆盖模组显示的名称与描述，未对模组本身进行任何修改。
+所有用户自定义的翻译均保存在以下文件中：
+AppData/LocalLow/Videocult/Rain World/ModConfigs/ModRename_stringsSave.txt
+移除此模组即可复原所有更改。
+
+关于加载优先级
+若需确保本模组的翻译优先级高于其他翻译模组，请将本模组在排序列表中置于其他翻译模组之上。
+反之，若只是临时补充其他翻译模组尚未涵盖的内容，可将本模组置于其他翻译模组之下。由于翻译索引机制的限制，游戏将采用最后加载的那个翻译。
+
+[h3] 更新日志 [/h3]
+1.0.0 - 修复了翻译丢失、手动索引无法生效等问题。
+
+[h3] 声明 [/h3]
+源代码：[url=https://github.com/SYFL-code/Translator] GitHub [/url]
+本模组未经原模组作者授权制作。如果您是原作者并希望从支持列表中移除您的模组，请联系我，我会立即处理。
+
+
+
+
+
+[h3] 描述 [/h3]
 由于原作者迟迟没有更新[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3759456473] 模组 [/url]，而制作的模组。其增加更改了一些内容。
 
 This is just a mod that makes it easy for Chinese players to add Chinese names and descriptions (i.e., add notes) to mods.

@@ -1,0 +1,64 @@
+{
+  "Rename_Button_Desc": "添加该模组的翻译名称和描述（留空则删除翻译）",
+  
+  "Option": "选项",
+  "Op_Translator": "模组翻译器",
+  "Op_ID_Input_Tip": "在此处输入模组ID",
+  "Op_Add_Trans": "添加翻译",
+  "Op_Add_Trans_Desc": "为当前输入的模组ID添加翻译",
+  "Op_Confirm_Replace": "确认添加",
+  "Op_Confirm_Replace_Desc": "读取文件内容并将翻译添加到该模组（需先保存文件）",
+  "Op_Batch_Trans": "批量翻译",
+  "Op_Batch_Trans_Desc": "为所有模组批量添加翻译",
+  "Op_Apply_All": "应用全部",
+  "Op_Apply_All_Desc": "读取文件内容并批量添加翻译",
+  "Op_Batch_Tip": "批量翻译后点击“应用全部”",
+  "Op_Enable_File_Tip": "启用文件格式提示",
+  
+  "Tip_Uninstalled_Mod": "未找到 {0} ID对应的已安装模组！\n如果你确定要为该ID添加翻译，请再次点击。",
+  "Tip_Opening_File": "正在尝试打开文件……",
+  
+  "Tip_Invalid_File": "文件内容无效！是否忘记保存temp文件？",
+  "Tip_Wrong_Mod": "temp文件属于ID为 {0} 的模组，不能应用到ID为 {1} 的模组。",
+  "Tip_Add_Success": "添加成功！",
+  
+  "Batch_Trans_File_Guide_1": "批量翻译文件使用说明",
+  "Batch_Trans_File_Guide_2": "1. 每个模组以 '|模组ID' 开始，后跟四行：",
+  "Batch_Trans_File_Guide_3": "   原始名称、原始描述、翻译名称、翻译描述。",
+  "Batch_Trans_File_Guide_4": "2. 翻译名称和翻译描述：",
+  "Batch_Trans_File_Guide_5": "   - 填写您想要的翻译内容。",
+  "Batch_Trans_File_Guide_6": "   - 留空 或写为 '# 注释' 表示删除此翻译。",
+  "Batch_Trans_File_Guide_7": "3. 原始名称和描述仅作为参考，修改它们不会生效。",
+  "Batch_Trans_File_Guide_8": "4. 若描述中有换行，请使用 <LINE> 标记（例如 '第一行<LINE>第二行'）。",
+  "Batch_Trans_File_Guide_9": "5. 编辑完成后，保存文件并回到游戏设置页，点击“应用全部”。",
+  "Batch_Trans_File_Guide_10": "6. 所有修改都会自动备份到模组的 backup 文件夹下，如有问题可恢复文件到：",
+  "Batch_Trans_File_Guide_11": "   - C:/Users/{你的用户名}/AppData/LocalLow/Videocult/Rain World/ModConfigs/ModTranslatorSave_{你的语言}.txt",
+  "Batch_Trans_File_Guide_12": "7. 因翻译索引机制的限制，若本模组不在模组排序顶部，部分翻译可能无法生效",
+  "Batch_Trans_File_Guide_13": "8. 以 '#' 开头的行是注释，会被忽略。",
+  
+  "No_Name": "没有原始名称",
+  "No_Desc": "没有原始描述",
+  "Name_Unknown": "模组未安装，原始名称未知",
+  "Desc_Unknown": "模组未安装，原始描述未知",
+  "Trans_Name_Unknown": "在此行添加翻译名称",
+  "Trans_Desc_Unknown": "在此行添加翻译描述",
+  "TransFile_Success": "已生成批量翻译文件，请编辑保存后点击“应用全部”。",
+  "TransFile_Failed": "生成失败，请查看日志。",
+  
+  "TransFile_NotFound": "未找到批量翻译文件，请先点击“批量翻译”。",
+  "No_New_TransLines": "所有翻译均已是最新，跳过 {0} 个模组。",
+  "No_Valid_TransLines": "没有找到任何有效的翻译条目。",
+  "Trans_Apply_Complete": "应用完成：更新 {0} 个模组，失败 {1} 个，跳过 {2} 个（无变更）。",
+  "Trans_Apply_Failed": "应用翻译失败，请查看日志。",
+  
+  "Mod_Not_Installed": "模组未安装",
+  
+  "Comments": "注释内容",
+  "TempFile_Guide_1": "在此文件中写入你想替换的文本。第一行作为翻译名称，其余行作为翻译描述（描述可使用 <LINE> 换行）。",
+  "TempFile_Guide_2": "若将翻译名称或描述留空，则表示删除该翻译并回退为原文。编辑完成后请保存并关闭文件，然后点击“确认添加”。",
+  "TempFile_Guide_3": "以 '#' 开头的行是注释，会被忽略。",
+  "TempFile_Guide_4": "你可以在设置中关闭文件格式提示，下次打开文件时将不再显示这四行说明。",
+  "TempFile_Warning_Name": "提示：该模组已设置过翻译名称！继续操作将覆盖上次的修改。",
+  "TempFile_Warning_Desc": "提示：该模组已设置过翻译描述！继续操作将覆盖上次的修改。"
+  
+}
