@@ -1,0 +1,34 @@
+Translator|Übersetzer
+
+模组列表中文补全计划|Chinesische Mod-Liste
+在此处输入模组ID|Mod-ID hier eingeben
+输入替换文本|Ersatztext eingeben
+为当前输入的ID打开临时编辑文件|Temporäre Datei für die aktuelle ID öffnen
+确认替换|Ersetzung bestätigen
+读取临时文件内容并应用到该模组（需先保存文件）|Temp-Datei lesen und auf diesen Mod anwenden (Datei zuerst speichern)
+批量翻译|Stapelübersetzung
+导出所有模组的原始信息和当前翻译到一个文本文件|Originalinfos und aktuelle Übersetzungen aller Mods in eine Textdatei exportieren
+应用全部|Alle anwenden
+从导出的文件中读取所有修改并批量应用（仅更新有变化的条目）|Alle Änderungen aus der exportierten Datei lesen und stapelweise anwenden (nur geänderte Einträge werden aktualisiert)
+编辑导出的文件后点击“应用全部”|Exportierte Datei bearbeiten und dann „Alle anwenden“ klicken
+启用文件格式提示|Dateiformat-Hinweise aktivieren
+未找到为此ID的已安装模组！|Kein installierter Mod mit dieser ID gefunden!
+如果你确定要为此id添加，请再次点击。|Wenn du sicher bist, dass du ihn hinzufügen möchtest, klicke erneut.
+尝试打开文件中|Datei wird geöffnet...
+文件内容无效！是否忘记保存temp文件？|Ungültiger Dateiinhalt! Hast du vergessen, die Temp-Datei zu speichern?
+临时文件属于模组 {0}，不能应用到 {1}。|Temp-Datei gehört zu Mod {0} und kann nicht auf {1} angewendet werden.
+添加成功！|Erfolgreich hinzugefügt!
+已导出全部模组，请编辑后点击“应用全部翻译”。|Alle Mods wurden exportiert. Datei bearbeiten und dann „Alle Übersetzungen anwenden“ klicken.
+导出失败，请查看日志。|Export fehlgeschlagen. Siehe Log.
+未找到导出文件，请先点击“导出全部翻译”。|Exportdatei nicht gefunden. Bitte zuerst „Stapelübersetzung“ klicken.
+所有翻译均已是最新，跳过 {0} 个模组。|Alle Übersetzungen sind aktuell; {0} Mod(s) übersprungen.
+没有找到任何有效的翻译条目。|Keine gültigen Übersetzungseinträge gefunden.
+应用完成：更新 {0} 个模组，失败 {1} 个，跳过 {2} 个（无变更）。|Anwenden abgeschlossen: {0} aktualisiert, {1} fehlgeschlagen, {2} übersprungen (keine Änderung).
+导入失败，请查看日志。|Import fehlgeschlagen. Siehe Log.
+编辑该模组的名称和描述（留空删除翻译）|Name und Beschreibung dieses Mods bearbeiten (leer lassen löscht die Übersetzung)
+此文件中写入你想替换的文本，第一行为名称，其他行将作为简介；某一行留空表示删除该行的翻译并回退为原文，完成后请保存关闭此文件，点击确认替换。|Schreibe den Text, den du ersetzen möchtest, in diese Datei. Die erste Zeile ist der Name; die übrigen Zeilen werden als Beschreibung verwendet. Eine leere Zeile löscht die Übersetzung und stellt das Original wieder her. Speichere und schließe die Datei, dann klicke auf „Ersetzung bestätigen“.
+以 '#' 开头的行是注释，会被忽略|Zeilen, die mit „#“ beginnen, sind Kommentare und werden ignoriert
+你可以通过关闭此模组设置中的文件使用提示选项来使下次此文件中不会出现这三行话。|Du kannst die Datei-Hinweise in den Einstellungen dieses Mods deaktivieren, damit diese drei Zeilen beim nächsten Mal nicht mehr erscheinen.
+警告：已有为此模组设置的名称存在！确认替换将会覆盖上次修改。|Warnung: Für diesen Mod existiert bereits ein Name! Bestätigen überschreibt die letzte Änderung.
+警告：已有为此模组设置的简介存在！确认替换将会覆盖上次修改。|Warnung: Für diesen Mod existiert bereits eine Beschreibung! Bestätigen überschreibt die letzte Änderung.
+

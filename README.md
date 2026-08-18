@@ -3,11 +3,11 @@
 
 This is just a mod that makes it easy for Chinese players to add Chinese names and descriptions (i.e., add notes) to mods.
 
-[h3] 功能 [/h3]
+[h3] 功能概述 [/h3]
 你可使用此模组手动为没有中文翻译的模组添加你自己翻译的中文。
 现在可以让整个模组列表的模组全部都是中文了！
 
-目前版本只支持添加中文翻译
+界面支持多语言；翻译文件中的译文语言不限（中、英、德、法等均可）。
 只支持修改模组名称与简介，这不是一个模组字段翻译工具。
 
 [h3] 使用方法 [/h3]
@@ -31,3 +31,24 @@ This is just a mod that makes it easy for Chinese players to add Chinese names a
 [h3] 声明 [/h3]
 源代码：https://github.com/SYFL-code/Translator
 本模组未经原模组作者授权制作。如果您是原模组的作者，并希望您的模组从支持列表中移除，请联系我，我会立即处理。
+
+[h3] English [/h3]
+This mod makes it easy for players to add translated names and descriptions (or notes) to installed mods. It does not modify the mods themselves; it uses Rain World's built-in translator, so removing this mod restores the original names and descriptions.
+
+[h3] Features [/h3]
+- Add your own translations to mods that lack them.
+- Batch export/import every installed mod's name and description.
+- Manual mod-ID input for single mods.
+- The mod UI is available in multiple languages.
+
+[h3] How to use [/h3]
+1. Quick rename: In the mod preview page, click the rename button in the top-right corner. Edit the opened temp file: the first line is the name, the remaining lines are the description. Save and close it, then click the rename button again to apply.
+2. Batch translate: Open this mod's Remix settings page and click "Batch translate". Edit the exported file (it shows the original text and the current translation), save and close it, then click "Apply all".
+3. Manual index: In the mod settings page, enter the target mod ID, click "Input replacement text", edit the opened temp file, save and close it, then click "Confirm replacement".
+4. Copy a translation file: You can also copy a translation file to C:\Users\<YourUserName>\AppData\LocalLow\Videocult\Rain World\ModConfigs\ModRename_stringsSave.txt.
+
+[h3] Notes [/h3]
+- Lines starting with '#' are ignored when applying temp files.
+- The character '|' cannot be used in the text you enter.
+- All user replacements are saved in AppData/LocalLow/Videocult/Rain World/ModConfigs/ModRename_stringsSave.txt.
+- To make this mod's replacements take priority over other translation mods, place this mod above them in the mod list. If you only want to fill gaps, place this mod below them (the last loaded translation wins).

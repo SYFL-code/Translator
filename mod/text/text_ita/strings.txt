@@ -1,0 +1,34 @@
+Translator|Traduttore
+
+模组列表中文补全计划|Completamento cinese della lista mod
+在此处输入模组ID|Inserisci qui l'ID del mod
+输入替换文本|Inserisci testo sostitutivo
+为当前输入的ID打开临时编辑文件|Apri file temporaneo per l'ID corrente
+确认替换|Conferma sostituzione
+读取临时文件内容并应用到该模组（需先保存文件）|Leggi il file temporaneo e applicalo a questo mod (salva prima il file)
+批量翻译|Traduzione in blocco
+导出所有模组的原始信息和当前翻译到一个文本文件|Esporta info originali e traduzioni correnti di tutti i mod in un file di testo
+应用全部|Applica tutto
+从导出的文件中读取所有修改并批量应用（仅更新有变化的条目）|Leggi tutte le modifiche dal file esportato e applicale in blocco (solo le voci modificate vengono aggiornate)
+编辑导出的文件后点击“应用全部”|Modifica il file esportato e poi clicca su «Applica tutto»
+启用文件格式提示|Attiva suggerimenti sul formato file
+未找到为此ID的已安装模组！|Nessun mod installato trovato per questo ID!
+如果你确定要为此id添加，请再次点击。|Se sei sicuro di volerlo aggiungere, clicca di nuovo.
+尝试打开文件中|Apertura file...
+文件内容无效！是否忘记保存temp文件？|Contenuto del file non valido! Hai dimenticato di salvare il file temporaneo?
+临时文件属于模组 {0}，不能应用到 {1}。|Il file temporaneo appartiene al mod {0}; non può essere applicato a {1}.
+添加成功！|Aggiunto con successo!
+已导出全部模组，请编辑后点击“应用全部翻译”。|Tutti i mod sono stati esportati. Modifica il file e poi clicca su «Applica tutte le traduzioni».
+导出失败，请查看日志。|Esportazione non riuscita. Controlla il registro.
+未找到导出文件，请先点击“导出全部翻译”。|File di esportazione non trovato. Prima clicca su «Traduzione in blocco».
+所有翻译均已是最新，跳过 {0} 个模组。|Tutte le traduzioni sono aggiornate; {0} mod saltati.
+没有找到任何有效的翻译条目。|Nessuna voce di traduzione valida trovata.
+应用完成：更新 {0} 个模组，失败 {1} 个，跳过 {2} 个（无变更）。|Applicazione completata: {0} aggiornati, {1} non riusciti, {2} saltati (nessuna modifica).
+导入失败，请查看日志。|Importazione non riuscita. Controlla il registro.
+编辑该模组的名称和描述（留空删除翻译）|Modifica il nome e la descrizione di questo mod (lascia vuoto per eliminare la traduzione)
+此文件中写入你想替换的文本，第一行为名称，其他行将作为简介；某一行留空表示删除该行的翻译并回退为原文，完成后请保存关闭此文件，点击确认替换。|Scrivi in questo file il testo che vuoi sostituire. La prima riga è il nome; le altre righe saranno la descrizione. Una riga vuota elimina quella traduzione e ripristina l'originale. Salva e chiudi il file, poi clicca su «Conferma sostituzione».
+以 '#' 开头的行是注释，会被忽略|Le righe che iniziano con «#» sono commenti e verranno ignorate
+你可以通过关闭此模组设置中的文件使用提示选项来使下次此文件中不会出现这三行话。|Puoi disattivare l'opzione dei suggerimenti sul formato nelle impostazioni di questo mod per non mostrare più queste tre righe la prossima volta.
+警告：已有为此模组设置的名称存在！确认替换将会覆盖上次修改。|Attenzione: esiste già un nome per questo mod! Confermando sovrascriverai l'ultima modifica.
+警告：已有为此模组设置的简介存在！确认替换将会覆盖上次修改。|Attenzione: esiste già una descrizione per questo mod! Confermando sovrascriverai l'ultima modifica.
+

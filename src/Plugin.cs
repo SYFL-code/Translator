@@ -42,7 +42,7 @@ public sealed class Plugin : BaseUnityPlugin
 	public const string NAME = "Translator";
 	public const string VERSION = "0.1.0";
 
-	public const string version = "0.1.1";
+	public const string version = "0.1.0";
 	public const string Name = "Translator";
 
 #if DEBUG
@@ -66,11 +66,11 @@ public sealed class Plugin : BaseUnityPlugin
 		Debugger.Update();
 	}
 
-    // 已注册的钩子委托实例，OnDisable 时据此准确注销
-    private static On.RainWorld.hook_OnModsInit? _onModsInitHook;
-    private static On.Menu.Remix.InternalOI_Stats.hook_Initialize? _statsInitHook;
-    private static On.Menu.Remix.InternalOI_Stats.hook__PreviewMod? _statsPreviewHook;
-    public void OnEnable()
+	// 已注册的钩子委托实例，OnDisable 时据此准确注销
+	private static On.RainWorld.hook_OnModsInit? _onModsInitHook;
+	private static On.Menu.Remix.InternalOI_Stats.hook_Initialize? _statsInitHook;
+	private static On.Menu.Remix.InternalOI_Stats.hook__PreviewMod? _statsPreviewHook;
+	public void OnEnable()
 	{
 		if (Plugin.isEnabled)
 		{
@@ -152,13 +152,8 @@ public sealed class Plugin : BaseUnityPlugin
 		}
 	}
 
-	public const string Menu_tip_tip1 = "# 此文件中写入你想替换的文本，第一行为名称，其他行将作为简介；某一行留空表示删除该行的翻译并回退为原文，完成后请保存关闭此文件，点击确认替换。";
-    public const string Menu_tip_tip2 = "# 以 '#' 开头的行是注释，会被忽略";
-    public const string Menu_tip_tip3 = "# 你可以通过关闭此模组设置中的文件使用提示选项来使下次此文件中不会出现这三行话。";
-    public const string Menu_tip_nameW = "# 警告：已有为此模组设置的名称存在！确认替换将会覆盖上次修改。";
-	public const string Menu_tip_dicW = "# 警告：已有为此模组设置的简介存在！确认替换将会覆盖上次修改。";
 
-	public OpSimpleImageButton? renameButton;
+	public OpSimpleImageButton? renameButton; // 模组信息页的编辑按钮
 	public static ModManager.Mod? CurrentPreviewMod { get; private set; }
 
 	// 读取并同步字符串文件
@@ -172,7 +167,7 @@ public sealed class Plugin : BaseUnityPlugin
 		if (File.Exists(oldPath))
 		{
 			Log.LogDebug($"迁移旧版字符串文件： oldPath:{oldPath}, savePath:{savePath}");
-			MergeStringsFiles(oldPath, savePath);
+			MergeModStringsFiles(oldPath, savePath);
 			File.Delete(oldPath);
 		}
 
@@ -181,19 +176,38 @@ public sealed class Plugin : BaseUnityPlugin
 			Log.LogDebug($"同步字符串文件： savePath:{savePath}, stringsPath:{stringsPath}");
 			// 先合并模组随更新带来的新条目（save 中没有的键才补入），避免模组更新被用户存档遮蔽；
 			// 用户已删除的键同样不在 save 中，不会被补回
-			MergeStringsFiles(stringsPath, savePath);
-			File.WriteAllLines(stringsPath, File.ReadAllLines(savePath));
+			MergeModStringsFiles(stringsPath, savePath);
+			WriteStringsSaveToLanguageFile(savePath, stringsPath);
 		}
 		else if (File.Exists(stringsPath))
 		{
 			Log.LogDebug($"反向同步字符串文件： savePath:{savePath}, stringsPath:{stringsPath}");
-			MyOptions.BackupFile(savePath);
-			File.WriteAllLines(savePath, File.ReadAllLines(stringsPath));
+			WriteModStringsToSaveFile(stringsPath, savePath);
 		}
+
+		// 修复 bug1：把同步后的翻译表加载到游戏翻译器内存，确保非中文语言下立即生效，而不必等到下一次启动
+		MyOptions.ReloadShortStrings();
+
+		MyOptions.ClearTempFile();
+	}
+
+
+	// 从 "key|value" 行中取出 key；不含 '|' 的行返回 null
+	private static string? GetKey(string line)
+	{
+		if (string.IsNullOrEmpty(line) || !line.Contains('|')) return null;
+		string[] parts = line.Split(new char[] { '|' }, 2);
+		return parts.Length == 2 ? parts[0] : null;
+	}
+	// 判断是否为模组翻译键（ModID-name / ModID-description），用于与 UI 译文键区分
+	private static bool IsModKey(string? key)
+	{
+		return key != null && (key.EndsWith("-name") || key.EndsWith("-description"));
 	}
 
 	// 将 fromPath 中不存在于 toPath 的键追加到 toPath（保留 toPath 原有顺序与内容，按键去重，重复键以 toPath 为准）
-	private static void MergeStringsFiles(string fromPath, string toPath)
+	// 仅把 fromPath 中的模组翻译键合并到 toPath，忽略 UI 译文键，避免语言切换后 UI 被旧语言覆盖
+	private static void MergeModStringsFiles(string fromPath, string toPath)
 	{
 		if (!File.Exists(fromPath)) return;
 
@@ -205,27 +219,66 @@ public sealed class Plugin : BaseUnityPlugin
 
 		foreach (string line in toLines)
 		{
-			string? key = GetStringsKey(line);
+			string? key = GetKey(line);
 			if (key != null && !seen.Add(key)) continue; // 重复键只保留第一条
 			merged.Add(line);
 		}
 		foreach (string line in fromLines)
 		{
-			string? key = GetStringsKey(line);
-			if (key == null || !seen.Add(key)) continue; // 只补入缺失的键
+			string? key = GetKey(line);
+			if (key == null || !IsModKey(key) || !seen.Add(key)) continue;
 			merged.Add(line);
 		}
 
 		File.WriteAllLines(toPath, merged);
 	}
 
-	// 从 "key|value" 行中取出 key；不含 '|' 的行返回 null
-	private static string? GetStringsKey(string line)
+	// 将 savePath 中的模组翻译写回当前语言 stringsPath，同时保留 stringsPath 中的 UI 译文行
+	private static void WriteStringsSaveToLanguageFile(string savePath, string stringsPath)
 	{
-		if (string.IsNullOrEmpty(line) || !line.Contains('|')) return null;
-		string[] parts = line.Split(new char[] { '|' }, 2);
-		return parts.Length == 2 ? parts[0] : null;
+		string[] uiLines = File.ReadAllLines(stringsPath);
+		string[] saveLines = File.Exists(savePath) ? File.ReadAllLines(savePath) : Array.Empty<string>();
+
+		List<string> result = new List<string>();
+		HashSet<string> seen = new HashSet<string>();
+
+		foreach (string line in uiLines)
+		{
+			string? key = GetKey(line);
+			if (key == null || IsModKey(key)) continue; // 保留 UI 译文
+			if (!seen.Add(key)) continue;
+			result.Add(line);
+		}
+
+		foreach (string line in saveLines)
+		{
+			string? key = GetKey(line);
+			if (key == null || !IsModKey(key) || !seen.Add(key)) continue;
+			result.Add(line);
+		}
+
+		File.WriteAllLines(stringsPath, result);
 	}
+
+	// 将 stringsPath 中的模组翻译键写入 savePath，*忽略 UI 译文，避免污染存档*
+	private static void WriteModStringsToSaveFile(string stringsPath, string savePath)
+	{
+		string[] stringsLines = File.ReadAllLines(stringsPath);
+		List<string> result = new List<string>();
+		HashSet<string> seen = new HashSet<string>();
+
+		foreach (string line in stringsLines)
+		{
+			string? key = GetKey(line);
+			//if (key == null || !IsModKey(key) || !seen.Add(key)) continue;
+			if (key == null || !seen.Add(key)) continue;
+			result.Add(line);
+		}
+
+		File.WriteAllLines(savePath, result);
+	}
+
+	
 
 	// 初始化时在模组信息界面添加按钮
 	private void InternalOI_Stats_InitializeHook(On.Menu.Remix.InternalOI_Stats.orig_Initialize orig, InternalOI_Stats self)
@@ -234,8 +287,8 @@ public sealed class Plugin : BaseUnityPlugin
 
 		Futile.atlasManager.LoadAtlas("assets/ModRenameButton_Icons");
 		this.renameButton = new OpSimpleImageButton(new Vector2(520f, 510f), new Vector2(30f, 30f), "ModRenameButton_Icon")// 560f 440f
-        {
-			description = "修改模组名称及简介"
+		{
+			description = "编辑该模组的名称和描述（留空删除翻译）".Tra()
 		};
 		this.renameButton.OnClick += RenameButton_OnClick;
 		// 索引1 模组列表标签页?
@@ -247,7 +300,16 @@ public sealed class Plugin : BaseUnityPlugin
 	{
 		if (MyOptions.CheckTempFile())
 		{
-			MyOptions.AddToStrings(CurrentPreviewMod?.id);
+			if (MyOptions.CheckTempFileFor(CurrentPreviewMod?.id))
+			{
+				MyOptions.AddToStrings(CurrentPreviewMod?.id);
+			}
+			else
+			{
+				// 修复 bug2：临时文件属于其它模组时，不要误应用；为当前预览模组重新打开临时文件
+				Log.LogWarning($"临时文件属于模组 {MyOptions.TempFileModId}，当前预览为 {CurrentPreviewMod?.id}。已为当前模组重新打开临时文件，原内容将被覆盖。");
+				MyOptions.OpenTempFile(CurrentPreviewMod?.id);
+			}
 		}
 		else
 		{
@@ -262,7 +324,8 @@ public sealed class Plugin : BaseUnityPlugin
 		CurrentPreviewMod = self.previewMod;
 		if (this.renameButton != null)
 		{
-			if (Custom.rainWorld.processManager.mySteamManager != null || true)
+			//if (Custom.rainWorld.processManager.mySteamManager != null)
+			if (true)
 			{
 				this.renameButton.Show();
 			}

@@ -93,5 +93,15 @@
 		<Delete Condition="'$(Configuration)' == 'Release'"
 				Files="../mod/plugins/*.pdb" />
 	</Target>
+
+	<!-- 修复 bug1：确保所有语言目录都存在，各语言 strings.txt 由 mod/text/text_xx/strings.txt 提供 UI 译文 -->
+	<Target Name="PopulateLanguageFiles" AfterTargets="GenerateMod">
+		<ItemGroup>
+			<TranslatorLanguages Include="chi;eng;fre;ger;ita;jap;kor;por;rus;spa" />
+		</ItemGroup>
+		<MakeDir Directories="@(TranslatorLanguages->'..\mod\text\text_%(Identity)')" />
+		<!-- 各语言 strings.txt 的译文条目直接保存在对应文件里，不依赖 text_chi -->
+	</Target>
+
 	
 </Project>

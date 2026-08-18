@@ -1,5 +1,0 @@
-Show Kills On Death<LINE>Show kill counts even when you die. This is a purely visual change, and does not affect your stats.
-
-# 此文件中写入你想替换的文本，第一行为名称，其他行将作为简介；某一行留空表示删除该行的翻译并回退为原文，完成后请保存关闭此文件，点击确认替换。
-# 以 '#' 开头的行是注释，会被忽略
-# 你可以通过关闭此模组设置中的文件使用提示选项来使下次此文件中不会出现这三行话。

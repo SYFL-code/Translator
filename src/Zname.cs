@@ -89,6 +89,13 @@ internal class Zname//Scrap 废案
 	// https://gist.github.com/EtiTheSpirit/655d8e81732ba516ca768dbd7410ddf4 这里有一个文档讲了一些关于rw shader的注意事项
 	// 可以看看Menu.StoryGameStasticsScreen里的AddBkgIllustration
 
+	/*在用 slugbase 的情况下，将你的头像图片命名为 multiplayerportrait<X><Y>-<Z>.png，
+	其中 X 取 0~4，0~3 对应竞技场 1~4 号头像，4 对应探险模式头像；
+	Y 取 0~1，0 对应死亡头像，1 对应生存头像；
+	Z 取猫的 Name 值（大小写须与代码中相同）。
+	注意，图片尺寸必须为 84×84，否则需要另外 hook 处理。
+	完成后，将图片放入你的模组根文件夹下的 illustrations（注意大小写一致）文件夹即可*/
+
 	// 就是开发者工具里面可以按
 	// i->重播这一段的画面
 	// m->出现可以更改整体cg移动方向的线，可以用鼠标拖动来改变移动轨迹
@@ -153,25 +160,28 @@ internal class Zname//Scrap 废案
 		return "";
 	}
 
-	// bool ? true : false
+    // bool ? true : false
 
-	// tree /f
-	// 文件目录树
+    // tree /f
+    // 文件目录树
 
-	// Before
-	// After
+    // Before
+    // After
 
-	/*
+    /*
 	测试	多场景测试：吞咽、吐出、消化、存档读档、容量满、超容读档
 	日志	保留关键日志，方便排查问题
 	配置	考虑将容量设为可配置选项
 	兼容性	测试与其他 Mod 的兼容性
 	*/
 
-	#region 反编译
+    #region DateTime
+    #endregion
 
-	#region On 钩子
-	public void OnEnable()
+    #region 反编译
+
+    #region On 钩子
+    public void OnEnable()
 	{
 		On.Player.CanBeSwallowed += On_Player_CanBeSwallowed;
 		IL.Player.CanBeSwallowed += IL_Player_CanBeSwallowed;
