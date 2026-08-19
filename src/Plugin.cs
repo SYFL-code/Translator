@@ -194,14 +194,14 @@ public sealed class Plugin : BaseUnityPlugin
 
 
 	// 从 "key|value" 行中取出 key；不含 '|' 的行返回 null
-	private static string? GetKey(string line)
+	public static string? GetKey(string line)
 	{
 		if (string.IsNullOrEmpty(line) || !line.Contains('|')) return null;
 		string[] parts = line.Split(new char[] { '|' }, 2);
 		return parts.Length == 2 ? parts[0] : null;
 	}
-	// 判断是否为模组翻译键（ModID-name / ModID-description），用于与 UI 译文键区分
-	private static bool IsModKey(string? key)
+    // 判断是否为模组翻译键（ModID-name / ModID-description），用于与 UI 译文键区分
+    public static bool IsModKey(string? key)
 	{
 		return key != null && (key.EndsWith("-name") || key.EndsWith("-description"));
 	}

@@ -1,0 +1,3431 @@
+﻿# ============================================
+# 批量翻译文件使用说明
+# ============================================
+# 1. 每个模组以 '|模组ID' 开始，后跟四行：
+#    原始名称、原始描述、翻译名称、翻译描述。
+# 2. 翻译名称和翻译描述：
+#    - 填写您想要的翻译内容。
+#    - 留空 或写为 '# 注释' 表示删除此翻译。
+# 3. 原始名称和描述仅作为参考，修改它们不会生效。
+# 4. 若描述中有换行，请使用 <LINE> 标记（例如 '第一行<LINE>第二行'）。
+# 5. 编辑完成后，保存文件并回到游戏设置页，点击“应用全部”。
+# 6. 所有修改都会自动备份到模组的 backup 文件夹下，如有问题可恢复文件到：
+#    - C:/Users/{你的用户名}/AppData/LocalLow/Videocult/Rain World/ModConfigs/ModTranslatorSave_{你的语言}.txt
+# 7. 因翻译索引机制的限制，若本模组不在模组排序顶部，部分翻译可能无法生效
+# 8. 以 '#' 开头的行是注释，会被忽略。
+# ============================================
+
+[litrovski.tinkerer]
+name= The Tinkerer(BETA)
+desc=A caring mother.
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[nat.100_catch_spear]
+name=100% Catch spear
+desc=Slugcat can catch flying spear with bare hands
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[3518645564]
+name=3518645564
+desc=No Description.
+trans_name=3518645564？
+trans_desc=无描述？/n?<LINE>@
+
+[DragonSlayer.SlowMode]
+name=3761411554
+desc=Hold right-click or a controller trigger to activate mushroom slow-motion for as long as it's held. Controller may need some tweaking, I cannot test as I do not own a controller. LOL
+trans_name=[无障碍] 慢动作模式
+trans_desc=按住鼠标右键或手柄扳机键，即可在按住期间激活蘑菇慢动作。手柄可能需要一些调整，我无法测试，因为我没有手柄。LOL
+
+[euruscrow]
+name=A Friend in the Sky
+desc=Offline crow companion named Eurus: rideable flight, automatic Phoenix rescue, firework gifts and an unlimited spear stash. No network, no AI required.<LINE><LINE>Controls / 操作 — these use your vanilla jump / grab / throw bindings, so they follow the game's own control settings, keyboard or controller. 复用原版键位，跟随游戏自身的控制设置。<LINE><LINE>Up + Jump: ride on its back 骑到背上<LINE>Down + Jump: switch between riding and hanging underneath 趴背／脚挂切换<LINE>Jump alone: dismount 脱离<LINE>Up + Grab: store or take back a spear 存矛／取回物品<LINE>Down + Grab: feed it or take food back 喂食／取回食物<LINE>Up + Throw with a direction: fetch an item or scout 取物／侦察<LINE>V: Phoenix, rebindable in this mod's config page 凤凰，可在本模组配置页改键<LINE>Hold Map: firework charge, Phoenix cooldown, spear count 长按地图键看状态<LINE><LINE>Config page: select this entry in Remix and press Jump. 在 Remix 选中本条目按跳跃键进入配置页。
+trans_name=[生物] 欧若斯乌鸦？
+trans_desc=离线欧若斯乌鸦同伴，具有骑乘、持续饥饿驱动的能力计时器、自动凤凰救援、烟花礼物和无限长矛物品栏。？
+
+[euruscrow-ai]
+name=A Friend in the Sky · AI Connector
+desc=Optional add-on that lets a remote character AI talk and act as the crow: in-game chat, configurable name, bounded observation, edible-prey hunting, item fetching and screenshots. Requires your own AI host; the base mod plays fully offline without it.<LINE><LINE>T opens the chat box; Enter sends, Escape cancels. 按 T 打开对话框，Enter 发送，Escape 取消。<LINE><LINE>Config page — AI name, chat key, gateway URL: enable this add-on, Apply Mods, restart once, then select this entry in Remix and press Jump. It ships with an empty gateway and no bundled service, so it stays inert until you point it at your own endpoint and store a device token.<LINE>配置页（AI 名字／对话键／同步地址）：启用后执行 Apply Mods 并重启一次，再在 Remix 选中本条目按跳跃键。默认不带任何服务端地址，未配置时完全不启动。<LINE><LINE>Crow controls are in the base mod's page. 乌鸦本身的操作说明在主模组条目里。
+trans_name=[依赖项] 欧若斯乌鸦·AI连接器
+trans_desc=为可独立游玩的离线欧若斯乌鸦同伴提供可配置角色名称的可选远程角色AI连接器。
+
+[a_template_to_help_you_do_world_file_formatting]
+name=A Template To Help You Do World File Formatting
+desc=Hello there, I have not seen a mod that hasn't done anything like this before so I did. Now lets get started when you download the mod you will need to go here D:teamLibraryteamappsorkshopontent12520 this is how you find your workshop mods. Now find the id of this mod in there, after you are done that copy the folder to D:teamLibraryteamappsommonain WorldainWorld_DatatreamingAssetsods after that, name the folder you what you want, and follow the instuctions I added in the folder.
+trans_name=[工具] 世界文件格式化帮助模板
+trans_desc=你好，我之前没见过有模组做过类似的事情，所以我做了这个。现在开始，当你下载模组后，你需要去 D:teamLibraryteamappsorkshopontent12520 这是你找到创意工坊模组的方式。现在在里面找到此模组的ID，完成后将文件夹复制到 D:teamLibraryteamappsommonain WorldainWorld_DatatreamingAssetsods 之后，给你想要的文件夹命名，并按照我添加到文件夹中的说明操作。
+
+[invadd]
+name=Add Inv to Campaign Select
+desc=Adds Inv's campaign to the campaign select screen forever, so you do not need to do the password thing.
+trans_name=[无障碍] 在战役选择中添加Inv
+trans_desc=将Inv的战役永久添加到战役选择界面，这样你就不需要输入密码了。
+
+[xuanzebufeng.advancedtranslationcore]
+name=Advanced Translation Core
+desc=The ultimate translation tool, a mod developed based on numerous real translation scenarios that can solve 90% of translation problems.
+trans_name=[翻译] 高级翻译核心
+trans_desc=终极翻译工具，一款基于众多真实翻译场景开发的模组，可解决90%的翻译问题。
+
+[alduris.entities]
+name=Alduris's Pack
+desc=Some funky little doodads and scrunklies for Rain World. Free for usage in regions.
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[the_fucking_barnacle]
+name=Angry Barnacle!!畜生藤壶
+desc=畜生藤壶!!(Angry Barnacle!!)<LINE><LINE>[h1]ENGLISH INTRODUCTION IS BELOW[/h1]<LINE><LINE>[h1]现在此模组不再需要Watcher DLC[/h1]<LINE>只需要基础游戏即可启用此模组<LINE><LINE>这个模组把藤壶的特性改回了观望者(Watcher)刚发布那一天的时候,同时添加了一些新特性让他变得更加畜生!<LINE><LINE>[b]如果启动游戏没有自动更新mod请重新订阅.[/b]<LINE><LINE>[h1]藤壶护盾[/h1]<LINE>1.在设置页手动打开后可以拾取藤壶作为护盾,占用一只手,可以格挡拾荒的矛等攻击并电击其他生物开路.<LINE>2.为工匠新存档开局增加一只藤壶护盾(工匠快乐盾)<LINE>3.[spoiler]不仅可以格挡普通矛,也能反弹炸矛和炸弹,但是有小概率被穿盾,可以通过调节藤壶大小修改格挡范围[/spoiler]<LINE>4.[spoiler]双手持藤壶可以开启究极防护模式,免疫炸弹眩晕[/spoiler]<LINE><LINE>[h1]新特性:[/h1]<LINE>1.(New)反击机制:现在你可以用石头打他或者矛戳他,然后你会被愤怒的藤壶追着电,[spoiler]水中一样电你,而且藤壶不会溺水和释放氧气,玩家过于靠近藤壶也有概率触发反击机制,在藤壶群里会被反复触发导致一直被电~请小心哦.[/spoiler]<LINE>2.(New)爆炸重组:用炸弹炸散藤壶群以后藤壶群会立刻重新列队<LINE>3.破壳机制已经删除,现在藤壶基本无敌<LINE>4.拓展了藤壶生成的位置,现在你可以在海岸线,海滨设施,冷冽海岸,新旧垃圾堆,排水系统找到藤壶,并可以在设置页分别开关对应区域的藤壶生成<LINE><LINE>[h1]生物互动重置:[/h1]<LINE>1.遇到雨鹿(Rain Deer)[spoiler]会疯狂电击,争夺畜生之王的宝座,现在可以在避难所保存藤壶带到农场电击雨鹿[/spoiler]<LINE>2.青蛙(Frog)会被电死<LINE>3.琵琶鱼(Angler)[spoiler]会挑衅藤壶然后被电,被激怒后会尝试吃掉藤壶[/spoiler]<LINE>4.拾荒者(Scavenger)[spoiler]会攻击藤壶,于是你能看到藤壶追着猴子电,然后美美爆装备,被电怕了会逃跑[/spoiler]<LINE>5.泥鳅(loach)可以吃掉藤壶<LINE>6.波动龟(Snail)会和藤壶互相电击波动对方<LINE>7.落网虫(Dropwig)会尝试捕食藤壶<LINE>8.保留蜥蜥弗斯特性<LINE>9.利维坦(Leviathan)会主动捕食藤壶<LINE><LINE>[hr][/hr]<LINE><LINE>Angry Barnacle!!<LINE><LINE>[h1]This mod no longer requires The Watcher DLC[/h1]<LINE>Only the base game is required to use this mod.<LINE><LINE>This mod restores Barnacles to the way they behaved on the day The Watcher was first released, while adding some new features to make them even more Fucking!<LINE><LINE>[b]If the mod does not update automatically when you launch the game, please unsubscribe and resubscribe.[/b]<LINE><LINE>[h1]Barnacle Shield[/h1]<LINE>1.Once manually enabled on the settings page, you can pick up a Barnacle and use it as a shield. It occupies one hand, can block attacks such as Scavenger spears, and can shock other creatures to clear a path.<LINE>2.Add a Barnacle at the start of artificer campaign.(Artificer happy shield)<LINE>3.[spoiler]It can block not only normal spears, but also deflect Explosive Spears and Bombs. However, there is a small chance that an attack may penetrate the shield. Adjusting Barnacle size changes its blocking range.[/spoiler]<LINE>4.[spoiler]Holding a Barnacle in each hand activates Ultra Protection Mode, making you immune to Bomb stun (Artificer's Happy Shield).[/spoiler]<LINE><LINE>[h1]New features:[/h1]<LINE>1.(New) Retaliation: You can now hit a Barnacle with a rock or stab it with a spear, after which an angry Barnacle will chase you down and shock you.[spoiler]It can still shock you underwater, and it neither drowns nor releases oxygen, Getting too close to a Barnacle also has a chance to trigger the retaliation mechanic. In a group of Barnacles, it can trigger repeatedly, causing you to be shocked continuously~ Please be careful.[/spoiler]<LINE>2.(New) Explosion Regrouping: After you blow a group of Barnacles apart with a Bomb, the group will immediately reform its formation.<LINE>3.The shell-breaking mechanic has been removed. Barnacles are now basically invincible.<LINE>4.Barnacle spawn locations have been expanded. You can now find Barnacles in Shoreline, Waterfront Facility, Frigid Coast, the old and new Garbage Wastes, and Drainage System. You can also toggle Barnacle spawns for each corresponding region on the settings page.<LINE><LINE>[h1]Reworked creature interactions:[/h1]<LINE>1.Rain Deer encounters:[spoiler]Barnacles will shock deer like crazy and fight for the throne of the most Fucking creature.[/spoiler]Now you can store barnacle in shelter and take them to farm array to electro~cute them.<LINE>2.Frogs can be shocked to death.<LINE>3.Anglers:[spoiler]They will provoke Barnacles and get shocked. Once enraged, they will attempt to eat the Barnacles.[/spoiler]<LINE>4.Scavengers:[spoiler]They will attack Barnacles, so you can watch Barnacles chase the scavs around, shock them, and make them drop their weapons. Once they have been shocked enough to become afraid, they will run away.[/spoiler]<LINE>5.Loaches can eat Barnacles.<LINE>6.Snails and Barnacles will exchange shockwaves with each other.<LINE>7.Dropwigs will attempt to prey on Barnacles.<LINE>8.The Lizard Sisyphus mechanic is retained.<LINE>9.Leviathans will actively prey on Barnacles.
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[jam.aridbarrens]
+name=Arid Barrens
+desc=An inhospitable desert connecting the Farm Arrays to the Shoreline, left dry only by a huge dam blocking the sea's waters. Made by the Rain World Community.<LINE>The following mods are recommended but not required: The Downpour DLC, Scorched District code stuff, Water Spitter, Fat Firefly, Red Horror Centipede & Bouncing Ball
+trans_name=[区域] 干旱荒原
+trans_desc=一片连接农场阵列和海岸线的荒凉沙漠，因一座巨大水坝阻挡了海水而干涸。由雨世界社区制作。<LINE>推荐但不必须的模组：倾盆大雨DLC、焦灼地区代码内容、喷水者、胖萤火虫、红色恐怖蜈蚣和弹跳球。
+
+[willowwisp.audiofix]
+name=Audio Fix
+desc=Fixes the audio problems in v1.9.15. (Nevermind it's still needed for Watcher)
+trans_name=[修复] 音频修复
+trans_desc=修复 v1.9.15 中的音频问题。（不过观望者仍然需要它。）
+
+[babylizards.sharkboi2701]
+name=Baby Lizards
+desc=contains a baby variant for all base game lizards
+trans_name=[生物] 幼年蜥蜴
+trans_desc=包含所有基础游戏蜥蜴的幼年变种。
+
+[babylizardsdownpour.sharkboi2701]
+name=Baby Lizards DOWNPOUR
+desc=contains a baby variant for all downpour lizards
+trans_name=[生物] 幼年蜥蜴 倾盆大雨
+trans_desc=包含所有倾盆大雨DLC蜥蜴的幼年变种。
+
+[babylizardswatcher.sharkboi2701]
+name=Baby Lizards WATCHER
+desc=contains a baby variant for almost all watcher lizards
+trans_name=[生物] 幼年蜥蜴 观望者
+trans_desc=包含几乎所有观望者蜥蜴的幼年变种。
+
+[fyre.BeastMaster]
+name=BeastMaster
+desc=Allows you to spawn a variety of creatures and items at will, in all game types including story mode and arena.
+trans_name=[工具] 兽王
+trans_desc=允许你在所有游戏类型（包括故事模式和竞技场）中随意生成各种生物和物品。
+
+[NoirCatto.BeastMasterPupExtras]
+name=BeastMasterPupExtras
+desc=Some fixes to SlugNPC (Slugpups) that annoyed me
+trans_name=[工具] 兽王幼崽扩展
+trans_desc=对SlugNPC（蛞蝓幼崽）的一些让我烦恼的修复。
+
+[orchid.BeeLizard]
+name=Bee Lizard
+desc=A slow, bulky lizard that can shoot beehives.
+trans_name=[生物] 蜜蜂蜥蜴
+trans_desc=一种缓慢、笨重的蜥蜴，可以射出蜂巢。
+
+[spearhit.betterchitrans]
+name=Better Chinese Translation
+desc=Overhauls of the Chinese translation, brought to you by the same members listed in Chinese Translation Assistance credits <LINE><LINE> Features: <LINE> 1. Overhaul of Vanilla Rain World, Remix, Downpour, Watcher DLC texts. <LINE>2. Configurable Chinese region titles<LINE>3. INV campaign and Dating Sim translation <LINE>4. Translation of Dev Commentary<LINE>5. Prevents the game from crashing when switching language display
+trans_name=[翻译] 更好的中文翻译
+trans_desc=由中文翻译协助名单中相同的成员带来的中文翻译大修。<LINE><LINE>功能：<LINE>1. 对原版雨世界、混音、倾盆大雨、观望者DLC文本的大修。<LINE>2. 可配置的中文区域标题。<LINE>3. INV战役和恋爱模拟翻译。<LINE>4. 开发者评论翻译。<LINE>5. 防止切换语言显示时游戏崩溃。
+
+[overseerfix]
+name=Better Iggy
+desc=Improves Iggy's (overseer's) responsiveness by lightly changing the parameters in Rain World's     guidance pipeline in order to fix dropped navigation calls. Does not tamper with the chance of the guidance appearing, as the game includes its own "forcedDirectionToGive" field when you get lost. This mod makes the guidance more reliable, not more occurent. Also includes a bind to summon the creature instantly on the screen, but it's against the games core design :(.
+trans_name=[无障碍] 更好的小黄
+trans_desc=通过轻微调整雨世界引导流程中的参数来改进小黄（监视者）的响应能力，以修复丢失的导航调用。不会篡改引导出现的概率，因为游戏在你迷路时会包含自己的“forcedDirectionToGive”字段。此模组使引导更可靠，而不是更频繁。还包括一个绑定按键来立即召唤生物到屏幕上，但这违背了游戏的核心设计:(。
+
+[betterpaws]
+name=Better Paws
+desc=Allows manual control of a slugcat hand with separate keybinds or the right gamepad stick.
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[alduris.betterworkshop]
+name=Better Workshop Uploader
+desc=Improves the built-in workshop uploader by adding extra checks and the abililty to upload to a particular workshop id.
+trans_name=[工具] 更好的创意工坊上传器
+trans_desc=通过添加额外检查以及上传到特定创意工坊ID的能力，改进内置的创意工坊上传器。
+
+[eav.bettersnap]
+name=BetterSnap
+desc=Better snapping action (i.e. "OV") saving your sanity<LINE>Usage: When dragging the slugcat near the border, press space bar to move into the next screen
+trans_name=[无障碍] 更好的抓边
+trans_desc=更好的抓边动作（即“OV”），拯救你的理智。<LINE>用法：拖拽蛞蝓猫靠近边界时，按空格键移动到下一个房间。
+
+[bindlemod]
+name=Bindle
+desc=물리 기반 보따리 모드.<LINE><LINE>보따리는 비어 있을 땐 헝겊 조각처럼 바닥에 퍼지고, 돌 같은 물건을 넣으면 그 물건들이 안에서 실제로 굴러다니고 서로 부딪힙니다. 넣은 양에 비례해서 보따리가 부풀어 커지고, 너무 많이 넣으면 찢어져서 터집니다.<LINE><LINE>제작 중입니다.
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[harvie.biography]
+name=Biography [Beta]
+desc=an in-game biography for all rainworld creatures
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[biteflies]
+name=Biteflies
+desc=Batflies now have a random chance of biting the player when grabbed.
+trans_name=[生物] 咬人蝇
+trans_desc=蝙蝠蝇现在在被抓住时有随机几率咬玩家。
+
+[Croken.bombardier-vulture]
+name=Bombardier Vulture
+desc=Adds a new Vulture that drops proximity explotive seeds.
+trans_name=[生物] 轰炸秃鹫
+trans_desc=添加一种新的秃鹫，会投掷接近引爆的爆炸种子。
+
+[entomatadas.candylizards]
+name=Candy Lizards
+desc=Adds a fragile, skittish variant of the Lizard that's preyed upon even by Slugcat!
+trans_name=[生物] 糖果蜥蜴
+trans_desc=添加一种脆弱、胆小的蜥蜴变种，甚至会被蛞蝓猫捕食！
+
+[harvie.catpunchpunch]
+name=CatPunchPunch
+desc=punch!
+trans_name=[游戏机制,战斗] 猫猫拳拳
+trans_desc=出拳！
+
+[centipede-shields]
+name=Centipede Shields
+desc=When a centipede's shell falls off, it has a chance to become an item that you can wield as a shield.<LINE><LINE>Code at https://github.com/Dual-Iron/fisobs/tree/master/examples/centipede-shields
+trans_name=[物品] 蜈蚣盾牌
+trans_desc=当蜈蚣的甲壳脱落时，有一定几率成为一件你可以用作盾牌的物品。<LINE><LINE>代码位于 https://github.com/Dual-Iron/fisobs/tree/master/examples/centipede-shields。
+
+[C.D.T]
+name=Chinese Dev Tools
+desc=Only produce Chinese localization
+trans_name=[翻译,工具] 中文开发者工具
+trans_desc=仅生成中文本地化。
+
+[CowBoySLug.ShanKa]
+name=CowBoySLugCat
+desc=Add new slug ,CowBoySlug<LINE>Only put [pickup]to drag your spear<LINE>if you want spear go back more fast use [up]+[pickup]<LINE>only click onece you can use spear damege other creature<LINE>when your spear stack in some place than you hold [jump]+[pickup]to move that direction<LINE><LINE>when you damage lot of time you can make hat use creature throw than use your head catch to wear hat<LINE><LINE>when you wear hat you can use rope skill
+trans_name=[Slugcat] 牛仔蛞蝓猫
+trans_desc=添加新蛞蝓猫，牛仔蛞蝓猫。<LINE>只需按[拾取]来拖动你的长矛。<LINE>如果你想让长矛更快返回，使用[上]+[拾取]<LINE>只需点击一次，你就可以用长矛伤害其他生物。<LINE>当你的长矛卡在某处时，按住[跳跃]+[拾取]向该方向移动。<LINE><LINE>当你造成大量伤害后，你可以用生物投掷物制作帽子，然后用你的头接住来戴上帽子。<LINE><LINE>当你戴上帽子后，你可以使用绳索技能。
+
+[CreatureChat]
+name=CreatureChat
+desc=A tool that can create a dialog box that follows any item.<LINE>Here are the instructions for use: https://github.com/whdzy-a/creatureChat
+trans_name=[工具] 生物对话
+trans_desc=一个可以创建跟随任何物品的对话气泡的工具。<LINE>使用说明在这里：https://github.com/whdzy-a/creatureChat
+
+[lb-fgf-m4r-ik.custom-centis]
+name=Custom Centipede Maker
+desc=A tool that lets you make your own centipede variants without code.
+trans_name=[工具,生物] 自定义蜈蚣制作器
+trans_desc=一个工具，让你无需代码即可制作自己的蜈蚣变种。
+
+[crs]
+name=Custom Regions Support
+desc=Support for modded regions! Thumbnail by @Nautillo1
+trans_name=[工具,依赖项] 自定义区域支持
+trans_desc=对模组区域的支持！缩略图由 @Nautillo1 提供。
+
+[customslugcatutils]
+name=Custom Slugcat Utils
+desc=A utility mod designed to assist modders in developing custom Slugcat mods.
+trans_name=[工具,依赖项] Custom Slugcat Utils
+trans_desc=一个工具模组，旨在帮助模组制作者开发自定义蛞蝓猫模组。
+
+[auroscug.DMStechnique.resource]
+name=DMS Templates & Techniques
+desc=A handy guide for all the quirks of Rain World spriting! Contains templates, visual guides and more.
+trans_name=[DMS] DMS模板与技巧
+trans_desc=一份关于雨世界像素画所有特性的便捷指南！包含模板、视觉指南及更多内容。
+
+[kadw.deathcount]
+name=Deathcount
+desc=Shows each slugcat's number of deaths on the sleep/death screen and save file select screen.
+trans_name=[体验优化] 死亡计数
+trans_desc=在休眠/死亡界面和存档选择界面上显示每只蛞蝓猫的死亡次数。
+
+[vendily.deathplayerghosts]
+name=Deaths are Player Ghosts
+desc=Gives you full control over the ideal player ghost count in the ending.<LINE>Intended to make the ghost count equal to the death count on the save.<LINE>And then I got hit with scope creep.
+trans_name=[体验优化] 死亡数即玩家鬼魂数
+trans_desc=让你完全控制结局中理想的玩家鬼魂数量。<LINE>旨在使鬼魂数量等于存档上的死亡次数。<LINE>然后我就被范围蔓延击中了。
+
+[XuYangJerry.DetailedIcon]
+name=Detailed Icon
+desc=Make the small icon in the bottom right corner of multiplayer match the Slugcats you're using, not only Survivors.<LINE>[让多人游戏中右下角的小图标符合你使用的蛞蝓猫，而不仅仅是求生者。]<LINE><LINE>At the same time, change the icon displayed when opening the map and the Region/Safer button icon to the corresponding SlugCats.<LINE>[同时让打开地图时显示的图标、Region/Safair 按钮图标 也更改成对应的蛞蝓猫。]<LINE><LINE>Support custom Slug Cat, please refer to GitHub for details.<LINE>[支持自定义蛞蝓猫，详情请见GitHub。]<LINE><LINE><LINE>github：https://github.com/YangXu636/DetailedIcon
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[slime-cubed.devconsole]
+name=Dev Console
+desc=Adds an extensible in-game command console to Rain World inspired by the Source engine.<LINE>Find the full list of commands on GitHub: https://github.com/SlimeCubed/DevConsole/wiki/Built-In-Commands
+trans_name=[工具] 开发者控制台
+trans_desc=为雨世界添加了一个受Source引擎启发的可扩展游戏内命令控制台。<LINE>在GitHub上查找完整命令列表：https://github.com/SlimeCubed/DevConsole/wiki/Built-In-Commands
+
+[devtools]
+name=Dev Tools
+desc=Enables the in-game Developer Tools which provide the tools necessary to edit maps and regions, and to help with the process of modding the game.<LINE> <LINE>Press O in-game to enable/disable Dev Tools, and press H to bring up the main Dev Tools interface.
+trans_name=开发者工具
+trans_desc=启用游戏内开发者工具，它提供编辑地图和区域的必要工具，<LINE>并且可以帮助你为游戏添加模组。<LINE><LINE>在游戏中按“O”即可启用/禁用开发者工具，<LINE>然后按“H”即可调出主要开发者工具界面。
+
+[DevTranslation]
+name=Devtools Translation
+desc=This mod is used to translate devtools.
+trans_name=[翻译,工具] 开发者工具翻译
+trans_desc=此模组用于翻译开发者工具。
+
+[diverse_shelters]
+name=Diverse Shelters
+desc=A port of the mod Better Shelters but also changing the shelters you can find in More Slugcats or Downpour and now Watcher
+trans_name=[体验优化] 多样化避难所
+trans_desc=Better Shelters 模组的移植版，同时也改变了你在更多蛞蝓猫或倾盆大雨以及现在的观望者中找到的避难所。
+
+[Dreamscape]
+name=Dreamscape Expansion
+desc=This expansion includes 2 small regions that I made to test out all the new watcher stuff<LINE>Note that these regions are made without too much effort put into them!<LINE>This expansion is Watcher exclusive!<LINE>Entrance to the fisrt region is in WTDB
+trans_name=[区域] 梦境扩展
+trans_desc=这个扩展包包含2个小型区域，用于测试所有新的观望者内容。<LINE>注意这些区域制作时并未投入太多精力！<LINE>此扩展包为观望者独占！<LINE>第一个区域的入口在 WTDB。
+
+[dressmyslugcat]
+name=Dress My Slugcat
+desc=Dress My Slugcat <LINE>Note: if the Get Fancy button does not appear on the main menu, disable the mod, restart the game, and re-enable the mod.
+trans_name=[DMS] Dress My Slugcat
+trans_desc=装扮我的蛞蝓猫。<LINE>注意：如果“Get Fancy”按钮没有出现在主菜单上，请禁用模组、重启游戏，然后重新启用模组。
+
+[drop-button]
+name=Drop Button
+desc=Adds a dedicated button to politely toss or drop held objects.<LINE>Assigning this button with disable the vanilla drop key.
+trans_name=[无障碍] 丢弃按钮
+trans_desc=添加一个专用按钮来礼貌地投掷或放下持有的物品。<LINE>分配此按钮将禁用原版丢弃键。
+
+[sanygame.edible]
+name=Edible Everything
+desc=If you can grab it, you can eat it. Hunger knows no bounds.
+trans_name=[游戏机制] 万物可食
+trans_desc=只要你能抓住它，你就能吃掉它。饥饿没有界限。
+
+[bebra.gregtech_lizard]
+name=Electric Lizard
+desc=Adds Electic Lizard. Because this creature was eating copper wires it gained various electric abilities.<LINE>- It releases electric zap every 1-2 seconds, (frequency and power of zap is determined by distance from nearest zap coil).<LINE>- Whenever lizard bites you, it will release energy zap thus creating 'splash' attack.<LINE>- Lizard will move faster when zap coil is nearby.<LINE>- If lizard will get too close to zap coil, lizard will drain electricity from it and turn it off.<LINE>- You can charge electric spear by throwing it in lizard.<LINE> - If you throw already charged electric spear in it, lizard will be in an 'overcharged' state and will release huge energy zap in huge radius until it blows up.<LINE> - If lizard releases energy in water, he will explode with lethal damage and huge radius.<LINE><LINE>Was created for 'Drain' region (coming soon tm), but if you want you can use it in your regions.<LINE><LINE>Artwork by: imlzy<LINE>Coding by: me
+trans_name=[生物] 电击蜥蜴
+trans_desc=添加电击蜥蜴。因为这种生物吃铜线，所以获得了各种电击能力。<LINE>- 它每1-2秒释放一次电击（电击的频率和强度取决于与最近电击线圈的距离）。<LINE>- 每当蜥蜴咬到你时，它会释放能量电击，造成“溅射”攻击。<LINE>- 当电击线圈附近时，蜥蜴会移动得更快。<LINE>- 如果蜥蜴离电击线圈太近，它会从中吸取电力并将其关闭。<LINE>- 你可以通过将电击长矛投掷到蜥蜴身上来为其充电。<LINE>- 如果你将已充电的电击长矛投掷到蜥蜴身上，它会进入“过载”状态，并在大范围内释放巨大能量电击，直至爆炸。<LINE>- 如果蜥蜴在水中释放能量，它会爆炸，造成致命伤害和大范围波及。<LINE><LINE>为“排水”区域（即将推出）创建，但如果你愿意，可以在你的区域中使用它。<LINE><LINE>美术由：imlzy<LINE>编码由：me
+
+[emgtx]
+name=EmgTx
+desc=Note: This mod does not offer any gameplay, but rather some libraries provide many functions.<LINE>This mod is still in beta, and the documentation is not yet complete.Please keep this in mind if you want use this, and keep an eye on mod updates.<LINE>github : https://github.com/HarvieSorroway/EmgTx
+trans_name=[工具,依赖项] EmgTx
+trans_desc=注意：此模组不提供任何游戏玩法，而是提供许多功能的库。<LINE>此模组仍处于测试阶段，文档尚未完成。如果你想使用它，请记住这一点，并关注模组更新。<LINE>GitHub：https://github.com/HarvieSorroway/EmgTx
+
+[syhnne.gametweaks]
+name=Emily's Fixes and Tweaks
+desc=Some fixes and tweaks I made for RainWorld
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Ender_Pearl.LH]
+name=Ender Pearl
+desc=Added the Ender Pearls from Minecraft to Rain world.<LINE>In the story mode, there's a chance for Ender Pearls to be generated.<LINE><LINE>Thanks to 绿叶_Natural_leaf for the code assistance.<LINE><LINE>Code at https://github.com/SYFL-code/EnderPearl<LINE>Feel free to use it if you want.
+trans_name=[物品] 末影珍珠
+trans_desc=在雨世界中加入了《我的世界》的末影珍珠。<LINE>在故事模式中，末影珍珠有几率自然生成。<LINE><LINE>感谢 绿叶_Natural_leaf 提供的代码协助。<LINE><LINE>代码位于 https://github.com/SYFL-code/EnderPearl<LINE>欢迎随意使用。
+
+[enderpearlmod]
+name=Ender Pearl Mod
+desc=Adds a throwable Ender Pearl to Rain World, inspired by Minecraft.<LINE><LINE>Found naturally in the world or carried by scavengers, this dark-purple pearl can be picked up and thrown like a rock. When it hits terrain, the slugcat who threw it is instantly teleported to the impact point.<LINE><LINE>Features:<LINE>• Configurable spawn rate (default ~3%)<LINE>• Procedurally rendered ender-pearl sprite<LINE>• Safe teleportation with wall-collision prevention<LINE>• Particle and sound effects<LINE>• Scavenger integration<LINE>• Works in all campaigns and game modes
+trans_name=[物品] 末影珍珠模组
+trans_desc=向雨世界添加了可投掷的末影珍珠，灵感来自《我的世界》。<LINE><LINE>自然生成于世界中或由拾荒者携带，这种深紫色珍珠可以像石头一样捡起和投掷。当它击中地形时，投掷它的蛞蝓猫会立即传送到撞击点。<LINE><LINE>功能：<LINE>• 可配置的生成率（默认约3%）<LINE>• 程序化渲染的末影珍珠精灵<LINE>• 防止撞墙的安全传送<LINE>• 粒子和音效<LINE>• 与拾荒者整合<LINE>• 适用于所有战役和游戏模式
+
+[xuanzebufeng.Endurance]
+name=Endurance
+desc=Survive 10 waves of increasing danger. Defeat all creatures or hold out until time runs out to advance.
+trans_name=[游戏模式] 坚持到底
+trans_desc=在日益危险的10波攻击中生存。击败所有生物或坚持到时间结束即可前进。
+
+[entitiesinden]
+name=Entities In Den
+desc=Displays creatures and items on the sleep screen depending on which entities are in the shelter.
+trans_name=[外观] 巢穴中的实体
+trans_desc=根据避难所中存在的实体，在休眠屏幕上显示生物和物品。
+
+[expandedindustrial]
+name=Expanded Industrial
+desc=A small expansion on mostly the lower parts of Industrial Complex
+trans_name=[区域] 扩展工业区
+trans_desc=对工业区下部大部分区域的小型扩展。
+
+[expandedlegsolorace]
+name=Expanded Leg
+desc=A small expansion of the Leg and Underhang to add some variety to routing.
+trans_name=[区域] 扩展支架
+trans_desc=对支架区域和悬桥的小型扩展，为路线规划增加一些多样性。
+
+[expanded_outskirts]
+name=Expanded Outskirts
+desc=An expansion to Outskirts in multiple places, including a new path to Industrial Complex.
+trans_name=[区域] 扩展外围
+trans_desc=对外围的多个区域进行扩展，包括一条通往工业区的新路径。
+
+[alphappy.expedite]
+name=Expedite
+desc=Expedite allows you to always immediately skip the karma ladder animation on the sleep/death screen.  While intended for Expedition, where the animation can never be skipped, it also functions in Story, where the animation is unskippable if a Passage has just been earned.
+trans_name=[体验优化] 快速跳过
+trans_desc=Expedite 允许你始终立即跳过休眠/死亡界面上的业力阶梯动画。虽然是为远征设计的（该模式下动画永远无法跳过），但它在故事模式中同样有效，在故事模式中如果刚刚获得通行证，动画也是不可跳过的。
+
+[expedition]
+name=Expedition
+desc=Set out on an Expedition in this challenging new game mode. Complete random challenges whilst avoiding permadeath and work towards unlocking new useful perks, punishing burdens, and music tracks to play in the Jukebox.
+trans_name=探险
+trans_desc=在这个具有挑战性的新游戏模式中开始探险吧。你可以在完成随机挑战的同时避免永久死亡，并努力解锁新的额外有用奖励、惩罚性的负担和可以在音乐盒中播放的音乐曲目。
+
+[franklygd.extendedcollectiblestracker.fixed]
+name=Extended Collectibles Tracker (Fixed)
+desc=Where the remaining stuff at?
+trans_name=[无障碍] 扩展收藏品追踪器（修复版）
+trans_desc=剩余的东西在哪里？
+
+[xuanzebufeng.ExtendedJokeRifle]
+name=Extended Joke Rifle
+desc=Ultrafire
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[extension-lib.Redlyn]
+name=Extension Lib
+desc=Extension library
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[futility]
+name=FUtility
+desc=Library of utilities for Futile, the game's sprite engine. Does nothing on its own.
+trans_name=[依赖项] FUtility
+trans_desc=为游戏精灵引擎Futile提供的工具库。本身不执行任何操作。
+
+[ddemile.fake_achievements]
+name=Fake Achievements
+desc=A mod to display Steam-like achievements.
+trans_name=[体验优化] 虚假成就
+trans_desc=一个显示类似Steam成就的模组。
+
+[gelbi.faster-world]
+name=Faster World
+desc=Silly mod with some optimizations.
+trans_name=[体验优化] 更快的世界
+trans_desc=包含一些优化的傻乎乎的模组。
+
+[firmly-grasp-it]
+name=Firmly Grasp It
+desc=Lets animals climb spears stuck in walls. Help out your friends and foes!<LINE><LINE>Code at github.com/Dual-Iron/firmly-grasp-it
+trans_name=[游戏机制] 牢牢抓住它
+trans_desc=让动物能够攀爬插在墙上的长矛。帮助你的朋友和敌人！<LINE><LINE>代码位于 github.com/Dual-Iron/firmly-grasp-it
+
+[fisobs]
+name=Fisobs
+desc=A library that simplifies adding new objects to Rain World.<LINE><LINE>Learn to use at github.com/Dual-Iron/fisobs
+trans_name=[工具,依赖项] Fisobs
+trans_desc=一个简化向雨世界添加新对象的库。<LINE><LINE>在 github.com/Dual-Iron/fisobs 学习使用。
+
+[codeax.fogandsmog]
+name=Fog and Smog
+desc=Makes regions like Shoreline, Drainage System, and Garbage Wastes more foggy and smoggy to match their respective humidities and pollution!
+trans_name=[外观] 雾与烟雾
+trans_desc=使海岸线、排水系统和垃圾堆等区域更雾蒙蒙，以匹配各自的湿度和污染程度！
+
+[MiffyL.FoodRegenTime]
+name=Food Regeneration
+desc=Let you control the number of cycles needed for food to regenerate.<LINE>Default regen cycles: 2-3 (food will randomly regenerate in 2 or 3 cycles), configurable in remix menu.
+trans_name=[工具] 食物再生
+trans_desc=允许您控制食物再生所需的循环次数。<LINE>默认再生循环次数：2-3（食物将在2或3个循环内随机再生），可在Remix菜单中进行设置。
+
+[leemoriya.forecast]
+name=Forecast
+desc=Adds a new dynamic weather system to the game with many configurable settings.
+trans_name=[外观] 天气预报
+trans_desc=为游戏添加新的动态天气系统，具有许多可配置设置。
+
+[pocky-raisin.forecrafts]
+name=Foresight Crafting
+desc=Allows Gourmand players to forsee the result of their crafting, before they complete the craft.
+trans_name=[无障碍] 预见制作
+trans_desc=允许饕餮玩家在完成制作之前预见制作的结果。
+
+[ForgottenofAnotherWorld]
+name=Forgotten of Another World-Sanctum of Stillness
+desc=Beyond the domains of Looks to the Moon and Five Pebbles, the forgotten artificial structure has long stood there, and after enduring the relentless drizzle and years of wind erosion, it shall eventually crumble.<LINE>This region connects the Industrial Complex and Sky Islands. It can only be accessed from the Industrial Complex, and serves as the return path to Sky Islands. A Karma Gate has been added to link the Industrial Complex and Sky Islands.<LINE>Please note :<LINE>Due to my poor command of English, all the text in this mod has been AI-translated, which may lead to misunderstandings or inaccuracies.(Though, the title 'Forgotten of Another World' is pretty much what I meant and won't be misleading.)
+trans_name=[区域] 异界遗忘者-寂静圣所
+trans_desc=在仰望之月和五卵石的领域之外，被遗忘的人造结构已长久矗立在那里，在经受无情的细雨和多年的风蚀之后，它终将崩塌。<LINE>此区域连接工业区和天空群岛。只能从工业区进入，并作为返回天空群岛的路径。新增了一道业力门连接工业区和天空群岛。<LINE><LINE>请注意：<LINE>由于我的英语能力有限，此模组中的所有文本均经过AI翻译，可能会导致误解或不准确。（不过，标题“异界遗忘者”基本就是我想表达的意思，不会有误导。）
+
+[forsaken_station]
+name=Forsaken Station
+desc=A expansive region where all tracks meet a common place, lost through the time.
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[fof]
+name=Friends of Friends
+desc=Makes lizards, scavengers, and slugcats avoid attacking each other if they have a mutual friend.<LINE><LINE>This is a reimplementation of Peace Among Friends by "the one who screams" on RainDB.<LINE><LINE>Code at github.com/Dual-Iron/friends-of-friends
+trans_name=[无障碍] 朋友的朋友
+trans_desc=使蜥蜴、拾荒者和蛞蝓猫在拥有共同朋友时避免互相攻击。<LINE><LINE>这是 RainDB 上“the one who screams”的“朋友间的和平”的重制实现。<LINE><LINE>代码位于 github.com/Dual-Iron/friends-of-friends。
+
+[com.tolian.galeforcewind]
+name=Gale Force Wind
+desc=Dynamic wind (Gale Force) on open-sky rooms (Sky Islands, Chimney Canopy). Periodically changes a global wind vector and pushes light items (Rubbish, FlareBombs) and bends the trajectory of thrown spears while airborne.
+trans_name=[游戏机制] 强风
+trans_desc=在开阔天空房间（天空群岛、烟囱顶棚）中的动态风（强风）。定期改变全局风向矢量，推动轻量物品（垃圾、信号弹）并改变投掷长矛在空中的轨迹。
+
+[kass.grabcarrycombined]
+name=Grab and Carry
+desc=Full grab mode configuration for creatures and items. Grab conscious/stunned/tamed creatures. Hotkey-based easy carry for heavy objects.
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[toast6631.dripping.creatures]
+name=Grey moss the mod
+desc=Adds one edible item that can be used in other mods.
+trans_name=[物品] 灰色苔藓模组
+trans_desc=添加一种可食用的物品，可用于其他模组。
+
+[vigaro.guardian]
+name=Guardian
+desc=Guardian
+trans_name=[工具] 守护者
+trans_desc=守护者
+
+[hanging.gardens]
+name=Hanging Gardens
+desc=A towering greenhouse structure which acts as a sanctuary for many exotic creatures.
+trans_name=[区域] 空中花园
+trans_desc=一座高耸的温室结构，是许多奇异生物的避难所。
+
+[healthbars]
+name=Health Bars
+desc=Adds health bars to the creatures that have health!
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[mrlagman.helpinghand]
+name=Helping Hand
+desc=Collection of different things that are both helpful and useful for modders and regular players:<LINE>	<LINE><LINE>1. Null-avoiders for famous problems, such as Loaches causing softlocks when being deleted from the room via commands such as Mouse Drag,<LINE>	or HUDs causing NRE when the player gets revived, for example when using DevConsole.<LINE><LINE>	<LINE><LINE>2. Quality-of-life code:<LINE>	<LINE><LINE>* Scavengers can now use Hazers when they don't have any better weapons.<LINE>	Hazers and Bubble Grass can be traded to scavengers with special conditions upping or lowering their value.<LINE>	For example, dead Hazer can't be traded, and Bubble Grass has 3 value in Submerged Superstructure or Shoreline.<LINE>	<LINE><LINE>* Reimagined trading: Scavengers now trade slightly differently and have different items that Merchants spawn with, all depending on the region.<LINE>	<LINE><LINE>* Yeeks no longer get sent into the atmosphere upon being mauled.<LINE>	<LINE><LINE>* Slugpups don't get stuck in shelter terrain upon being spawned.<LINE>	<LINE><LINE>* Lizards in Undergrowth, Lush Den, and Saint's Farm Arrays lack fur/thorn structures on top of their heads.<LINE>	<LINE><LINE>* Looks to the Moon finally describes Batnip instead of just ignoring it.<LINE>	<LINE><LINE>* Centipedes don't get too stretched when moving too quickly. This is especially seen when an Infant Centipede is held by a spinning Lizard.<LINE>	<LINE><LINE>* Remix Menu shows mod names instead of their IDs.<LINE>	<LINE><LINE>* Rain World automatically restarts after clicking 'apply changes'.<LINE>	<LINE><LINE>* Karma no longer gets lowered to the minimum when the game crashes. Note that it saves your karma only if the game itself crashed,<LINE>	not you pressing Alt + F4, the latter would definately lower your karma as if you quit 30 seconds into the cycle.<LINE>	<LINE><LINE>* Collectible tokens that are set to unlock something, when the unlock itself doesn't exist or is invalid, won't unlock anything and will stay inactive.<LINE>	<LINE><LINE>* Albino Green Lizards have a certain chance of occuring (every 37th ID or so).<LINE>	<LINE><LINE>* Rocks now have slight tint variation to not be so boring.<LINE>	<LINE><LINE>* Sandbox editor now displays the name of the item picked.<LINE>	<LINE><LINE>* Popcorn Plants spawn two Seeds upon being opened.<LINE>	<LINE><LINE>* Menus are sped up, so you won't have to wait a bajillion of years.<LINE>	<LINE><LINE>* Compatibility with The Outsider and Ultrakill Slugcats: colorful wings to match the winged characters. Disable swallow tail and antennae for best looks.<LINE>	<LINE><LINE>* Hunter can finally maul creatures.<LINE>	<LINE><LINE>* The game itself can be restarted by pressing a specific button (customisible in the menu, F5 by default).<LINE>	<LINE><LINE>* While in a tunnel-crawling state and facing down, spears can be thrown down.<LINE>	<LINE><LINE>* Batflies are finally stored in a shelter instead of magically disappearing. They are also now vulnerable to Echo sedation. If dead, Batflies slide less on the ground.<LINE>	<LINE><LINE>* Eating food and producing spears as Spearmaster can now be heard by nearby creatures.<LINE><LINE>	<LINE><LINE>3. Customisable and expandable crafting system.<LINE><LINE>	<LINE><LINE>4. Customizable creature dialogue boxes that follow a creature and get deleted upon switching rooms.<LINE><LINE>	<LINE><LINE>5. Certain code 'cheats' or 'shortcuts':<LINE>	<LINE><LINE>* Time-control that can be used in code to speed up or slow down time.<LINE>	<LINE><LINE>* Special piece of code that allows to make a certain action appear after a delay.<LINE>	<LINE><LINE>* Piece of code that allows loading text from .TXT files in 'YourMod/text' directory. This is exactly what's used for Iterator dialogue, but the official code is privated by creators.<LINE>	<LINE><LINE>* Two ways of making dialogue: one is for interrupting the current dialogue and destroying any that would've played, and the other for writing the dialogue itself.<LINE>	<LINE><LINE>* Small piece of code that allows locking and unlocking shortcuts like Iterators do during a conversation.<LINE>	<LINE><LINE>* A few nifty pieces of code that allow quickly removing any sound emitter an object or a creature has; creating temporary UpdatableAndDeletables in the room, and only once in a room it was spawned in, no clones and race-conditions; marking placed edible objects as consumed.<LINE>	<LINE><LINE>* Few methods that make calculating the amount of HP a creature has much easier. The amount of HP is calculated in spears hits (1 point).<LINE>	Some of the details that can be calculated: health of Tardigrade based on its mass; lizards: how much damage do tentacles absorb (rotten lizards only),<LINE>	how much damage is dealt to the head shield, how much damage is dealt to the throat; how much damage,<LINE>	considering the base damage resistances and extra damage resistances, is dealt to a creature;<LINE>	in Arena mode, the resistances are calculated by a slightly different valuable, and if the creature is set to be invinsible, the calculator shows zero damage dealt.<LINE>	<LINE><LINE>* Boolean that checks if the mod is available and currently on. Useful for writing code that depends on a certain mod.<LINE>	<LINE><LINE>* Shortcuts for writing IL code.<LINE>	<LINE>	<LINE><LINE>~And more coming~<LINE>	<LINE><LINE>This mod can be called finished, but I'm searching for more Rain World errors, such as Fire Sprites not deleting their light after being deleted themselves.<LINE>	<LINE><LINE>If you stumbled upon a bug, both of this mod and just Rain World mod, write it in the comments and I'll try to fix it when I'll have time to.
+trans_name=[修复,体验优化] 援手
+trans_desc=为模组制作者和普通玩家提供各种有用且实用的功能集合：<LINE><LINE>1. 针对已知问题的空值避免器，例如泥鳅在通过鼠标拖拽等命令从房间删除时导致软锁，或HUD在玩家复活时导致NRE（例如使用开发者控制台时）。<LINE><LINE>2. 生活质量代码：<LINE><LINE>* 拾荒者现在可以在没有更好武器时使用烟雾果。烟雾果和泡泡草可以交易给拾荒者，特殊条件会提高或降低其价值。例如，死掉的烟雾果不能交易，而泡泡草在浸没式超级结构和海岸线有3点价值。<LINE><LINE>* 重新构想的交易：拾荒者现在的交易方式略有不同，商人携带的物品也因区域而异。<LINE><LINE>* 牦牛在被攻击后不会再被抛入大气层。<LINE><LINE>* 蛞蝓幼崽在生成时不会再卡在避难所地形中。<LINE><LINE>* 地下丛林、茂密巢穴和圣徒农场阵列中的蜥蜴头顶没有毛皮/刺结构。<LINE><LINE>* 仰望之月终于会描述蝙蝠草，而不再忽略它。<LINE><LINE>* 蜈蚣在快速移动时不会再过度拉伸。这在幼年蜈蚣被旋转的蜥蜴抓住时尤其明显。<LINE><LINE>* 混音菜单显示模组名称而非其ID。<LINE><LINE>* 点击“应用更改”后，雨世界会自动重启。<LINE><LINE>* 游戏崩溃时业力不再降至最低。注意，只有在游戏本身崩溃时才会保存业力，如果你按Alt+F4退出，则肯定会降低业力，就像你在周期开始30秒后退出一样。<LINE><LINE>* 设置为解锁某物的收藏品令牌，当解锁本身不存在或无效时，将不会解锁任何东西并保持非活跃状态。<LINE><LINE>* 白化绿色蜥蜴有固定几率出现（大约每37个ID出现一次）。<LINE><LINE>* 石头现在有轻微的颜色变化，不再那么单调。<LINE><LINE>* 沙盒编辑器现在显示所选物品的名称。<LINE><LINE>* 爆米花植物在被打开时会生成两颗种子。<LINE><LINE>* 菜单速度加快，这样你就不必等待漫长的时间。<LINE><LINE>* 与局外人和ULTRAKILL蛞蝓猫的兼容性：为有翅膀的角色提供彩色翅膀。禁用燕尾和触角以获得最佳外观。<LINE><LINE>* 猎手终于可以撕咬生物了。<LINE><LINE>* 游戏本身可以通过按下特定按钮重启（可在菜单中自定义，默认为F5）。<LINE><LINE>* 在隧道爬行状态且面朝下时，可以向下投掷长矛。<LINE><LINE>* 蝙蝠蝇终于可以储存在避难所中，而不是神秘消失。它们现在也容易受到回响镇静的影响。如果死亡，蝙蝠蝇在地面上的滑动会减少。<LINE><LINE>* 作为长矛大师进食和制造长矛的声音现在可以被附近的生物听到。<LINE><LINE>3. 可自定义和可扩展的制作系统。<LINE><LINE>4. 可自定义的生物对话气泡，跟随生物并在切换房间时被删除。<LINE><LINE>5. 某些代码“秘籍”或“快捷方式”：<LINE><LINE>* 可在代码中使用的时间控制，用于加速或减速时间。<LINE><LINE>* 特殊代码片段，允许在延迟后执行某个动作。<LINE><LINE>* 用于从“YourMod/text”目录中的.TXT文件加载文本的代码片段。这正是用于迭代器对话的代码，但官方代码被创作者私有化了。<LINE><LINE>* 两种制作对话的方式：一种用于中断当前对话并销毁任何本应播放的对话，另一种用于编写对话本身。<LINE><LINE>* 用于像迭代器在对话期间那样锁定和解锁快捷方式的小代码片段。<LINE><LINE>* 一些便捷的代码片段，用于快速移除对象或生物拥有的任何声音发射器；在房间中创建临时的UpdatableAndDeletable，且仅在生成它的房间中创建一次，无克隆和竞争条件；将放置的可食用对象标记为已消耗。<LINE><LINE>* 一些使计算生物生命值更容易的方法。生命值以长矛命中次数计算（1点）。可计算的细节包括：基于质量的缓步动物生命值；蜥蜴：触手吸收多少伤害（仅腐烂蜥蜴）、头部护盾受到多少伤害、喉咙受到多少伤害；考虑到基础伤害抗性和额外伤害抗性后，对生物造成多少伤害；在竞技场模式中，抗性由略有不同的值计算，如果生物被设置为无敌，计算器显示造成零伤害。<LINE><LINE>* 检查模组是否可用且当前开启的布尔值。对编写依赖于特定模组的代码很有用。<LINE><LINE>* 编写IL代码的快捷方式。<LINE><LINE>~更多功能即将到来~<LINE><LINE>此模组可以称为已完成，但我正在寻找更多雨世界错误，例如火精灵在自身被删除后未删除其光源。<LINE><LINE>如果你遇到了BUG，无论是此模组的还是雨世界本身的，请在评论中写下，我会在有时间时尝试修复。
+
+[iihope.hitstop]
+name=HitStop
+desc=Add a simple hitstop effect to the weapons' attack and Gourmand's slam.
+trans_name=[无障碍] 打击停顿
+trans_desc=为武器攻击和饕餮的猛击添加简单的打击停顿效果。
+
+[VioVayo.HoldItTightly]
+name=Hold It Tightly
+desc=Take stuff on one-way trips to Facility Roots and Bitter Aerie without losing it forever.
+trans_name=[修复] 紧紧抓住它
+trans_desc=带着东西前往设施根源和苦涩荒原的单程旅行，而不会永久失去它们。
+
+[Aureuix.SquidHand]
+name=Hold Squidcada With One Hand!
+desc=Hold Squidcada With One Hand!
+trans_name=[游戏机制] 单手抓握蝉乌贼！
+trans_desc=单手抓握蝉乌贼！
+
+[magica.hookinglibrary]
+name=Hooking Library
+desc=Library for magica's mods.
+trans_name=[工具,依赖项] 钩子库
+trans_desc=用于 magica 模组的库。
+
+[howling_rift]
+name=Howling Rift
+desc=A crumbling mining site connecting Memory Crypts and Subterranean.
+trans_name=[区域] 嚎叫裂谷
+trans_desc=连接记忆墓穴和地下的一个崩塌的采矿场。
+
+[hugyourfriends]
+name=Hug Your Friends
+desc=Hug consenting players, slugpups, friendly lizards and iterators.
+trans_name=[游戏机制] 拥抱你的朋友
+trans_desc=拥抱同意的玩家、蛞蝓幼崽、友好的蜥蜴、仰望之月和五卵石。
+
+[Quaeledy.hunterexpansion]
+name=Hunter Expansion
+desc=Six dream scenes and a new ending (with two variations) have been added for the Hunter. Basic behaviors for NSH have been implemented, along with parts of his superstructure. NSH's dialogues have been added to the [Collection] section. <LINE>I dedicate this work to my friends. This mod is not canon. I made it for my friends who wanted to see NSH in the game. I hope you enjoy this mod.
+trans_name=[战役] 猎手扩展
+trans_desc=为猎手添加了六个梦境场景和一个新结局（含两种变体）。实现了NSH的基本行为及其超级结构的部分内容。NSH的对话已添加到[收藏]部分。<LINE>我将此作品献给我的朋友们。此模组非官方设定。我为我那些想在游戏中看到NSH的朋友们制作了它。希望你喜欢这个模组。
+
+[immersivehibernationsounds]
+name=Immersive Hibernation Sounds
+desc=Makes the hibernation screen ambience dynamic based on the location of the shelter.
+trans_name=[体验优化] 沉浸式冬眠音效
+trans_desc=根据避难所的位置使冬眠界面的环境音效变得动态。
+
+[sanygame.immersivemusic]
+name=Immersive Music
+desc=Makes enviroment affect music
+trans_name=[体验优化] 沉浸式音乐
+trans_desc=使环境影响音乐。
+
+[fargegoty.ImmersiveWorld]
+name=Immersive World
+desc=A mod that adds dynamic effects that make your Rain World more vibrant and immersive. Feel every breath and every movement.
+trans_name=[体验优化] 沉浸式世界
+trans_desc=一个添加动态效果的模组，让你的雨世界更加生动和沉浸。感受每一次呼吸和每一个动作。
+
+[immortalpups]
+name=Immortal Pups
+desc=Makes slug pups unable to be killed. Now protects against death holes!
+trans_name=[游戏机制，无障碍] 不朽幼崽
+trans_desc=使蛞蝓幼崽无法被杀死。现在还能防止掉入死亡深渊！
+
+[improved-input-config]
+name=Improved Input Config: Extended
+desc=Extends the input system to allow other mods to add new custom keybinds easily.<LINE><LINE>Rewritten for better mouse / controller support.<LINE>Compatible with The Watcher DLC
+trans_name=[工具,无障碍] 改进的输入配置：扩展版
+trans_desc=扩展输入系统，允许其他模组轻松添加新的自定义按键绑定。<LINE><LINE>为更好的鼠标/手柄支持而重写。<LINE>与观望者DLC兼容。
+
+[leemoriya.inventory]
+name=Inventory
+desc=A customizable player inventory accessible by holding the MAP button. Use the movement keys and JUMP to store and retrieve items and press PICK UP to switch to the map.
+trans_name=[游戏机制] 物品栏
+trans_desc=一个可自定义的玩家物品栏，通过按住地图按钮访问。使用方向键和跳跃键存储和取出物品，按拾取键切换到地图。
+
+[jollycoop]
+name=Jolly Co-op
+desc=Local co-op story and other gamemodes with up to 4 players. The journey is better with friends!
+trans_name=惬意合作模式
+trans_desc=最多4名玩家的本地合作剧情和其他游戏模式。有朋友的旅程会更加美好！
+
+[JollyReviveFix]
+name=Jolly Revive Fixes
+desc=Small fixes when reviving with Jolly Coop, including a new revive animation.
+trans_name=[游戏机制] 欢乐复活修复
+trans_desc=对欢乐合作中复活时的小型修复，包括新的复活动画。
+
+[Wu_JollyCoopFix]
+name=JollyCoop Player1 unlock
+desc=Unlocked the first player in JollyCoop
+trans_name=[体验优化] 欢乐合作玩家1解锁
+trans_desc=在欢乐合作中解锁了第一个玩家。
+
+[olaycolay.jukeboxanywhere]
+name=Jukebox Anywhere
+desc=Use the Expedition Jukebox during gameplay!
+trans_name=[体验优化] 随处点唱机
+trans_desc=在游戏过程中使用远征点唱机！
+
+[xuanzebufeng.moyushuang]
+name=Konjac Snack
+desc=Mysterious eastern cuisine
+trans_name=[物品] 魔芋爽
+trans_desc=神秘的东方美食。
+
+[moyushuang]
+name=Konjac snacks[DMS]
+desc=wawa,Please turn it into konjac snacks to give to lizards as a gift, awa
+trans_name=[DMS] 魔芋爽
+trans_desc=哇哇，请把它变成魔芋零食作为礼物送给蜥蜴，啊哇。
+
+[000rwx64ll]
+name=Library Loader
+desc=Rain World but its now searching native libraries (x86/x86_64) in all mod folders.
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[lizardcustomizer]
+name=Lizard Customizer
+desc=Edit lizards!
+trans_name=[工具,生物] 蜥蜴自定义器
+trans_desc=编辑蜥蜴！
+
+[falesk.lizardeggs]
+name=Lizard Eggs
+desc=A mod that adds a new edible item to the game - Lizard eggs that were in alpha versions
+trans_name=[物品] 蜥蜴蛋
+trans_desc=一个在游戏中添加新可食用物品的模组——Alpha版本中出现过的蜥蜴蛋。
+
+[fetchlizard]
+name=Lizard Fetcher
+desc=Allows tamed lizards to fetch food. They will not fetch live prey or food given as a gift.
+trans_name=[游戏机制] 蜥蜴拾取者
+trans_desc=允许驯服的蜥蜴为你拾取食物。它们不会拾取活猎物或作为礼物给予的食物。
+
+[drainagelizards.sharkboi2701]
+name=Lizard Variants
+desc=adds a 3 lizards that are adapted to drainage! more will come.
+trans_name=[生物] 蜥蜴变种
+trans_desc=添加了3种适应排水系统的蜥蜴！后续还会有更多。
+
+[useless.fallthroughmap]
+name=Logical Pits
+desc=When playing Rain World, have you ever thought that deathpits are sometimes illogical?<LINE>For example, you can clearly see the lower room on the map below your room, and it even seems like it wouldn't be a deadly fall if you were to fall down there from this room.<LINE>With this mod, you can now fall in the lower room after falling into a deathpit.<LINE><LINE>And yes, this makes precipice leap possible aswell.<LINE><LINE>If you find any bugs or want to suggest something, don't hesitate to send me a message on discord: uzelezz<LINE>(This mod doesn't change any region and is purely code-based)<LINE><LINE><LINE><LINE>(Will probably add the possibility to fall into other regions later, as well as the ability to modify initial velocity of the creature after it teleported)
+trans_name=[游戏机制] 逻辑性深渊
+trans_desc=在玩雨世界时，你是否曾觉得死亡深渊有时不合逻辑？<LINE>例如，你可以在地图上清楚地看到下方房间就在你所在房间的下面，甚至看起来如果你从这个房间掉下去并不会致命。<LINE>有了这个模组，你现在掉入死亡深渊后可以掉到下方的房间。<LINE><LINE>是的，这也使得悬崖飞跃成为可能。<LINE><LINE>如果你发现任何BUG或有任何建议，请随时在Discord上给我发消息：uzelezz<LINE>（此模组不更改任何区域，纯基于代码。）<LINE><LINE>（后续可能会添加掉入其他区域的可能性，以及修改生物传送后的初始速度的能力。）
+
+[RSMacrocosmCreatures]
+name=Macrocosm Creature Pack
+desc=A creature pack of variants to be used as a dependency for other mods. <LINE><LINE>Please read the README text document in the mod folder for: info on the creatures, their world file names, and where they should spawn.
+trans_name=[生物] Macrocosm生物包
+trans_desc=一个生物变种包，作为其他模组的依赖项使用。<LINE><LINE>请阅读模组文件夹中的README文本文档，了解：生物信息、它们的世界文件名以及它们应生成的位置。
+
+[RSMacrocosmSpawnSwaps]
+name=Macrocosm Spawn Swaps
+desc=adds simple spawn swapper support for Macrocosm's creatures as a way to have partial support for modded regions and give the creatures actual spawns for now
+trans_name=[游戏机制] Macrocosm生成替换
+trans_desc=为Macrocosm的生物添加简单的生成替换器支持，作为对模组区域的部分支持方式，并为这些生物提供实际的生成点。
+
+[MenuFixes]
+name=Many Menu Fixes
+desc=A compilation of many menu fixes, mostly for the remix menu.
+trans_name=[菜单优化] 多项菜单修复
+trans_desc=多项菜单修复的合集，主要针对混音菜单。
+
+[henpemaz_mapwarp]
+name=Map Warp
+desc=Lets you warp using the dev-tools map by clicking on rooms
+trans_name=[工具] 地图传送
+trans_desc=允许你通过开发者工具地图点击房间进行传送。
+
+[bro.mergefix]
+name=Merge Fix
+desc=Makes mods reload exponentially faster,<LINE>and fixes a handful of bugs.
+trans_name=[修复] 合并修复
+trans_desc=使模组重新加载速度呈指数级加快，<LINE>并修复了一些BUG。
+
+[metastasis]
+name=Metastasis
+desc=Explore a new region with new rooms, creatures to encounter and music! Based around themes of meat and flesh (trypophobia). Warnings for those uncomfortable with such! Take care first and enjoy!
+trans_name=[区域,生物] 转移
+trans_desc=探索一个拥有新房间、新生物和音乐的新区域！主题围绕肉与血肉（密集恐惧症）。对此感到不适者请留意！请先照顾好自己再享受游戏！
+
+[Croken.Mimic-Long-Legs]
+name=Mimic Long Legs
+desc=Adds the Mimic Long Legs which turns invisible to take you by surprise.
+trans_name=[生物] 拟态长腿菌
+trans_desc=添加拟态长腿菌，它会隐身以出其不意地攻击你。
+
+[darkninja.ModInfoButton]
+name=Mod Info Button
+desc=Adds a button that shows miscellaneous mod info to the remix menu.
+trans_name=[工具,外观] 模组信息按钮
+trans_desc=在混音菜单中添加一个显示各种模组信息的按钮。
+
+[Kridi8606.ModSetManager]
+name=Mod Set Manager
+desc=Allows you to save mod setups and switch between them in just a few clicks. No more manually enabling and disabling dozens of mods whenever you switch between different modpacks.
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Dreamstars.ModTranslation]
+name=Mod Translation
+desc=This mod is used to translate text that other mod added.<LINE><LINE> WARNING: There may be some difference between this mod's translation and official. If you apply this mod, official one will be covered.translate covers:<LINE>mod regions<LINE>mod slugcats<LINE>custom pearls<LINE>custom dialogs<LINE>custom missons<LINE>custom dev comments<LINE>and so on<LINE><LINE>non-steam version here: https://github.com/InkCloudStarsDream/Rainworld-ModTranslation<LINE><LINE>Currently support Chinese and Spanish(partly), welcome to help us to translate into other languages.<LINE><LINE>If you want to help us to translate or put up some advice, feel free to DM us on Discord:@Wings Echo, @havenoideawhatismyname<LINE><LINE>Contributors:<LINE>@MoseYanyun，@Exmeow，@Celen，@W1LD1CECA7，@zbiotr，@Wings Echo，@havenoideawhatismyname, @XuanZeBuFen, @Tragulari, @yuze
+trans_name=[翻译] 模组翻译
+trans_desc=此模组用于翻译其他模组添加的文本。<LINE><LINE>警告：此模组的翻译可能与官方翻译存在差异。如果你应用此模组，官方翻译将被覆盖。翻译涵盖：<LINE>模组区域<LINE>模组蛞蝓猫<LINE>自定义珍珠<LINE>自定义对话<LINE>自定义任务<LINE>自定义开发者评论<LINE>等等<LINE><LINE>非Steam版本在此：https://github.com/InkCloudStarsDream/Rainworld-ModTranslation<LINE><LINE>目前支持中文和西班牙语（部分），欢迎帮助我们翻译成其他语言。<LINE><LINE>如果你想帮助我们翻译或提出建议，欢迎在Discord上私信我们：@Wings Echo、@havenoideawhatismyname<LINE><LINE>贡献者：<LINE>@MoseYanyun、@Exmeow、@Celen、@W1LD1CECA7、@zbiotr、@Wings Echo、@havenoideawhatismyname、@XuanZeBuFen、@Tragulari、@yuze
+
+[notchoc.ModTags]
+name=ModTags
+desc=Organize your mods into easy-to-manage collections!<LINE><LINE>To assign tags, hold tag button for 1 second (or press Right); repeat to exit tagging mode.<LINE>To reorder tags, hold and press Up/Down.<LINE>Customize tags by entering tagging mode: press Enter to rename, and click (or shift+click) to change icon!
+trans_name=[菜单优化] 模组标签
+trans_desc=将你的模组组织成易于管理的合集！<LINE><LINE>按住标签按钮1秒（或按右键）分配标签；重复操作退出标签模式。<LINE>要重新排序标签，按住并按上/下键。<LINE>进入标签模式自定义标签：按回车键重命名，点击（或Shift+点击）更改图标！
+
+[aetherius.moddedcreaturesspawns]
+name=Modded Creatures Spawns
+desc=Adds various modded creatures spawns in all Vanilla and Downpour regions for all slugcats except Inv and Watcher, following Aetherius' headcanons.<LINE>Mostly compatible with other mods that modify spawns and/or rooms.
+trans_name=[生物] 模组生物生成
+trans_desc=在所有原版和倾盆大雨区域中为除Inv和观望者外的所有蛞蝓猫添加各种模组生物生成，遵循 Aetherius 的个人设定。<LINE>与修改生成和/或房间的其他模组大多兼容。
+
+[ModlistUploader]
+name=Modlist Uploader
+desc=Adds a button in the remix menu to upload the current modlist as a collection on the steam workshop.
+trans_name=[工具] 模组列表上传器
+trans_desc=在混音菜单中添加一个按钮，用于将当前模组列表作为合集上传到Steam创意工坊。
+
+[Isbjorn52.ModPresets]
+name=Modpacks (Mod Presets)
+desc=This mod allows you to create, manage and share modpacks!<LINE><LINE>Previously known as Mod Presets if you're confused!
+trans_name=[菜单优化] 模组包（模组预设）
+trans_desc=此模组允许你创建、管理和分享模组包！<LINE><LINE>如果你感到困惑，之前称为模组预设！
+
+[ap.morepebbles]
+name=More Pebbles
+desc=allows you to add your own rock sprites for game to choose from
+trans_name=[体验优化] 更多卵石
+trans_desc=允许你添加自己的岩石精灵供游戏选择。
+
+[SUGW_cflk]
+name=More Region Gates
+desc=adds a few more region gates haphazardly
+trans_name=[区域] 更多区域业力门
+trans_desc=随意添加了更多区域业力门。
+
+[moreslugcats]
+name=More Slugcats Expansion
+desc=An expansion adding five new playable campaigns, each unique in its spot on the timeline. This expansion includes new regions, creatures, items, music, alternate endings, new game modes, and much more.
+trans_name=更多蛞蝓猫扩展包
+trans_desc=扩展包添加了五个新的可玩剧情，每个剧情都有独自的时间线。此扩展包内含新区域、生物、物品、音乐、替代结局、新游戏模式等等。
+
+[Blujai.Titles]
+name=More Titles Screens
+desc=Adds more title screens when you open the game past the credits
+trans_name=[外观] 更多标题画面
+trans_desc=在通关制作人员名单后，添加更多游戏启动标题画面。
+
+[mosquitoes]
+name=Mosquitoes
+desc=Adds the mosquito!!! Note:They do not spawn naturally
+trans_name=[生物] 蚊子
+trans_desc=添加了蚊子！！！注意：它们不会自然生成。
+
+[kizorke.deszcworlde2]
+name=Mossy Rifts
+desc=Enter a land of ruined structures intertwined with wild flora, delve deeper to discover the barrier that separates the inner machinery from the outer lands<LINE> <LINE> This region is almost finished ( ~ 80% ), so expect unfinished rooms and other unusual things.,<LINE> anyway, have fun!
+trans_name=[区域,生物] 苔藓裂谷
+trans_desc=进入一片被野生植物缠绕的废墟之地，深入探索以发现分隔内部机械与外部土地屏障。<LINE><LINE>这个区域几乎已完成（约80%），所以请期待未完成的房间和其他不寻常的东西。<LINE>总之，玩得开心！
+
+[maxi-mol.mousedrag]
+name=Mouse Drag
+desc=Tool which allows editing in-game objects outside sandbox-mode using your mouse.
+trans_name=[工具] 鼠标拖拽
+trans_desc=允许在沙盒模式之外使用鼠标编辑游戏内对象的工具。
+
+[sabreml.musicannouncements]
+name=Music Announcements
+desc=Adds a small pop-up showing the track name when music starts playing.
+trans_name=[体验优化] 音乐提示
+trans_desc=当音乐开始播放时，添加一个显示曲目名称的小弹出窗口。
+
+[chililisoup.nameyourfriends]
+name=Name Your Friends
+desc=Give names to tamed creatures that appear above their heads!
+trans_name=[外观] 给朋友起名
+trans_desc=给驯服的生物起名字，名字会显示在它们头顶！
+
+[pkuyo.nofriendfire]
+name=No Friend Fire
+desc=A small mod that prevents you from hurting your scavenger and lizard friends. And also prevents scavenger hurting you when you have high reputation.
+trans_name=[无障碍] 无友军伤害
+trans_desc=一个小模组，防止你伤害你的拾荒者和蜥蜴朋友。也防止拾荒者在你声望高时伤害你。
+
+[zohnannor.nohiddenpipes]
+name=No Hidden Pipes
+desc=Makes all hidden pipes visible.
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[magica.nomenuinput]
+name=No Menu Input On Unfocus
+desc=One hook to stop Rain World from taking inputs in menus if the game isn't focused.
+trans_name=[工具,无障碍] 失焦时无菜单输入
+trans_desc=一个钩子，当游戏未获得焦点时，阻止雨世界在菜单中接受输入。
+
+[nomoreblur]
+name=No More Fullscreen Blur
+desc=Are you tired of playing in fullscreen and getting that SMELLY fullscreen blur? Worry not! I wasted a couple minutes of my life making a fix! Its a bit weird to get used to but its much nicer once you do :)
+trans_name=[体验优化] 无全屏模糊
+trans_desc=你厌倦了在全屏模式下玩游戏时看到那讨厌的全屏模糊吗？别担心！我花了几分钟时间做了个修复！虽然需要一点适应，但适应之后会好很多 :)
+
+[RSMoreLizardVoices]
+name=No More Mute Lizards
+desc=Adds voices to the mute lizards (train and watcher lizards)
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[gelbi.no_stuck_pups]
+name=No stuck pups
+desc=Sometimes in the beginning of the cycle pups spawn in shelter walls(mostly when you have more than 2 pups or mods with custom shelters, like "Diverse shelters"). This mod fixes that behaviour by teleporting all pups to some player or 1st pup, in case you're playing as one.
+trans_name=[体验优化] 幼崽不卡住
+trans_desc=有时在周期开始时，幼崽会生成在避难所墙壁中（主要在你拥有超过2只幼崽或使用自定义避难所的模组时，如“多样化避难所”）。此模组通过将所有幼崽传送到某个玩家或第一只幼崽（如果你扮演的是幼崽的话）来修复此行为。
+
+[Noisy_Pup]
+name=Noisy Pups
+desc=Let every slugpups express their feelings! This mod adds real-time speech function for your pups companions, which will generate unique dialogue bubbles based on feelings, environment, and interaction.
+trans_name=[体验优化] 吵闹的幼崽
+trans_desc=让每只蛞蝓幼崽表达它们的感受！此模组为你的幼崽同伴添加实时语音功能，根据感受、环境和互动生成独特的对话气泡。
+
+[nonescreatures]
+name=None's Creature Pack
+desc=All the creatures I've made so far.
+trans_name=[生物] None的生物包
+trans_desc=我迄今为止制作的所有生物。
+
+[Zero490.ODSSInventory]
+name=ODSS Inventory
+desc=Do you need some space to store your scavenges and hunts?<LINE>Well, I introduce you to the ODSS INVENTORY MOD made by the local slugcat community.<LINE><LINE>Credits to the slugcat engineer Leemoriya for creating the original mod<LINE>and the slugcat volunteer SageisNice for finding BUGS and giving IDEAS
+trans_name=[游戏机制] ODSS物品栏
+trans_desc=需要一些空间来存放你的拾取物和猎物吗？<LINE>那么，我向你介绍由本地蛞蝓猫社区制作的ODSS物品栏模组。<LINE><LINE>感谢蛞蝓猫工程师 Leemoriya 创建了原始模组<LINE>以及蛞蝓猫志愿者 SageisNice 发现了BUG并提供了想法
+
+[osha-gates]
+name=OSHA Compliant Gates
+desc=Prevents region gates from closing until all objects have safely passed through. Never worry about losing another pearl, spear, corpse, friend, or what-have-you to those accursed doors!<LINE><LINE>Code at github.com/Dual-Iron/osha-compliant-gates
+trans_name=[无障碍] OSHA合规业力门
+trans_desc=防止区域业力门在所有物体安全通过之前关闭。再也不用担心把珍珠、长矛、尸体、朋友或其他东西丢在那该死的门里了！<LINE><LINE>代码位于 github.com/Dual-Iron/osha-compliant-gates。
+
+[franklygd.offscreenindicators]
+name=Offscreen Indicators
+desc=Helps you gauge where and how far offscreen creatures are from your current view. Adds other tools that help show what is on the other side.<LINE><LINE>Thumbnail art by IADhunter
+trans_name=[游戏机制] 屏幕外指示器
+trans_desc=帮助你判断屏幕外生物相对于当前视野的位置和距离。添加其他有助于显示另一侧情况的工具。<LINE><LINE>缩略图美术由 IADhunter 提供。
+
+[VioVayo.OopsMyBad]
+name=Oops, My Bad
+desc=Because scavengers stab each other by accident all the time!<LINE>Lose less reputation when accidentally hurting scavs while trying to save them.<LINE><LINE>Lose no reputation if you return stolen items.
+trans_name=[无障碍] 哎呀，我的错
+trans_desc=因为拾荒者们总是在意外中互相捅刀子！<LINE>在试图拯救拾荒者时意外伤害他们，损失更少的声望。<LINE><LINE>如果你归还了偷走的物品，则不损失声望。
+
+[kingmaxthe2.oegate]
+name=Outer Expanse Gate Unlock for slugbase slugs
+desc=use 'oegate/unlock' in your json files
+trans_name=[工具] 外层空间业力门解锁（适用于SlugBase蛞蝓猫）
+trans_desc=在你的json文件中使用 'oegate/unlock'。
+
+[deszcworlde]
+name=Outer Outskirts
+desc=The consequences of my vast imagination are right here: prepare yourself for Outskrits 2 because it is right there and it is almost twice the size of base game Outskrits!<LINE><LINE>!!! Accesible for all of slugcats besides Watcher and Inv !!! <LINE><LINE>One region - Outer Outskirts (contains 123 rooms, 204 screens, blah blah blah, region acronym:VQ)<LINE>There is also a gate to another modded region Mossy Rifts, but you need to download another mod for that ^^<LINE>- Entrance to the new region can be found in Outskirts room SU_A38 and in Farm Arrays room LF_D01, also there is one in Undergrowth? . <LINE><LINE> Special thanks to:<LINE> - derzox for some lore in only two Data pearls <LINE> - Lolight2 for making video about my mod <LINE> - Three Leaf Clover for one of soundtracks
+trans_name=[区域] 外围外围
+trans_desc=我广阔想象的成果就在这里：准备好迎接外围外围2吧，因为它就在那里，而且规模几乎是基础游戏外围的两倍！<LINE><LINE>!!! 除观望者和Inv外的所有蛞蝓猫均可进入 !!!<LINE><LINE>一个区域 - 外围外围（包含123个房间、204个屏幕等等，区域缩写：VQ）<LINE>还有一个通往另一个模组区域“苔藓裂谷”的业力门，但你需要下载另一个模组才能进入 ^^<LINE>- 新区域的入口可以在外围房间 SU_A38 和农场阵列房间 LF_D01 找到，另外地下丛林也有一个？<LINE><LINE>特别感谢：<LINE> - derzox 提供了两颗数据珍珠中的一些背景故事<LINE> - Lolight2 制作了关于我模组的视频<LINE> - Three Leaf Clover 提供了一首配乐
+
+[overgrown_sanctuary]
+name=Overgrown Sanctuary
+desc=This mod adds a new region for Rain World called Overgrown Sanctuary
+trans_name=[区域] 过度生长的圣所
+trans_desc=此模组为雨世界添加了一个名为“过度生长的圣所”的新区域。
+
+[vali_overgrownurban]
+name=Overgrown Urban
+desc=Explore old, overgrown city overtaken by nature.
+trans_name=[区域] 过度生长的都市
+trans_desc=探索被自然重新占领的古老过度生长的城市。
+
+[pom]
+name=POM
+desc=DevUI extender for placed objects and effects.<LINE>Source code and instructions can be found here: https://github.com/Rain-World-Modding/Pom
+trans_name=[工具,依赖项] POM
+trans_desc=用于放置对象和效果的DevUI扩展。<LINE>源代码和说明可在此找到：https://github.com/Rain-World-Modding/Pom
+
+[sequoia.parascutigera-creature]
+name=Parascutigera
+desc=Adds a new Scutigera variation: the Parascutigera. (requires Fisobs, The M4rbleLous Entity Pack). Much appreciation to M4rbleL1ne for sharing Scutigera code and troubleshooting some issues.
+trans_name=[生物] 副蜈蚣
+trans_desc=添加一种新的蜈蚣变种：副蜈蚣。（需要 Fisobs、The M4rbleLous Entity Pack）。非常感谢 M4rbleL1ne 分享了蜈蚣代码并排除了一些问题。
+
+[Sampy.PassagePerks]
+name=Passage Perks
+desc=Earn perks by completing passages!<LINE>Passages no longer sit around waiting to be used.<LINE><LINE>Bonus Perk for Struggle Mod users. (Togglable for all users in Remix menu.)
+trans_name=[游戏机制] 通行证增益
+trans_desc=通过完成通行证来获得增益！<LINE>通行证不再闲置等待使用。<LINE><LINE>为挣扎模组用户提供的额外增益。（所有用户可在混音菜单中切换开关。）
+
+[pearlcat]
+name=Pearlcat
+desc=A curious scholar with the unusual ability to harness pearls to their advantage.<LINE><LINE>Configure inputs, difficulty, cheats and more via the Remix config!<LINE><LINE>More Slugcats is optional, but strongly recommended.
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[casheww.physical_object_tools]
+name=Physical Object Tools
+desc=Adds visual debugging markers for index-labelling PhysicalObjects' sprites and body chunks, tile grids, etc. Contributions from Dual.
+trans_name=[工具,依赖项] 物理对象工具
+trans_desc=为 PhysicalObjects 的精灵和身体块、瓷砖网格等添加用于标记索引的可视调试标记。由 Dual 贡献。
+
+[tsunochizu.precipiceleap]
+name=Precipice Leap
+desc=A mod that allows you to leap from the precipice down into shoreline waters below.
+trans_name=[区域] 悬崖飞跃
+trans_desc=一个允许你从悬崖飞跃到下方海岸线水域的模组。
+
+[preservatory]
+name=Preservatory
+desc=A new path awaits at hanging garden's peak, offering secrets and unforeseen dangers.
+trans_name=[区域] 温室
+trans_desc=一条新路径在悬挂花园的顶峰等待着，充满秘密和不可预见的危险。
+
+[zamtreon.smorterpups]
+name=Pup Pathfinding Patch
+desc=Allows for Slugpups to thrive in situations normal creatures would by filling some gaps in their pathfinding.
+trans_name=[无障碍] 幼崽寻路补丁
+trans_desc=通过填补蛞蝓幼崽寻路中的一些空白，使其能够在普通生物能生存的环境中茁壮成长。
+
+[hb.slayerpups]
+name=Pups: The Scavenger Slayer
+desc=When your reputation with scavengers falls below a certain level, your tamed pup will always be hostile to the scavengers.<LINE><LINE>Caution: If slugpup picks up a bomb, take it away immediately. Children do not fully understand the dangers of bombs.
+trans_name=[游戏机制] 幼崽：拾荒者杀手
+trans_desc=当你的拾荒者声望低于一定水平时，你驯服的幼崽将始终对拾荒者保持敌意。<LINE><LINE>注意：如果蛞蝓幼崽捡起了炸弹，请立即夺走。孩子们并不完全理解炸弹的危险性。
+
+[pushtomeow]
+name=Push To Meow
+desc=slug cat go meow meow :3<LINE>meow button can be rebound in settings but its M by default<LINE>you can also select alternate sound for rivulet here (there's two versions)
+trans_name=[体验优化] 按一下喵
+trans_desc=蛞蝓猫发出喵喵声 :3<LINE>喵喵键可以在设置中重新绑定，默认为M键。<LINE>你也可以在这里为溪流选择替代音效（有两个版本）。
+
+[tpz.kawkawscug]
+name=Push to Nyon
+desc=This 5-minute mod will bless your slugcat with the voice of the greatest creature to ever live. Use this power wisely (or don't)
+trans_name=[体验优化] 按一下喵
+trans_desc=这个5分钟的模组将赋予你的蛞蝓猫有史以来最伟大生物的声音。明智地使用这份力量（或者不用）。
+
+[henpemaz_rainmeadow]
+name=Rain Meadow
+desc=A multiplayer engine, custom game mode inspired by Might & Delight's 'Meadow', and online arena / story experience.<LINE><LINE>For the full credits see the workshop or the credits page in the Meadow menu.
+trans_name=[游戏模式] 雨甸
+trans_desc=一个多人游戏引擎，受 Might & Delight 的《Meadow》启发的自定义游戏模式，以及在线竞技场/故事体验。<LINE><LINE>完整制作人员名单请查看创意工坊或草原菜单中的制作人员名单页面。
+
+[twofour2.rainReloader]
+name=Rain Reloader
+desc=Hot code reloading for rainworld mod developers. RainReloader allows you to build and test new code without restarting the game. <LINE>Please read the github page for instructions on setting up this mod.<LINE> <LINE>https://github.com/Twofour2/RainReloader
+trans_name=[工具] 雨世界热重载
+trans_desc=为雨世界模组开发者提供代码热重载。RainReloader 允许你在不重启游戏的情况下构建和测试新代码。<LINE>请阅读 GitHub 页面了解设置此模组的说明。<LINE><LINE>https://github.com/Twofour2/RainReloader
+
+[rwimgui]
+name=Rain World ImGUI API
+desc=For when you need that itch of Dear ImGUI in your life
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[rwremix]
+name=Rain World Remix
+desc=A wide variety of configurable accessibility features and community requested features, including new gameplay mechanics and bonus features. Use the configuration screen to toggle individual features on or off.
+trans_name=雨世界拓展
+trans_desc=各种可配置的辅助功能和社区请求功能，包括新的游戏机制和奖励功能。使用配置界面即可打开或关闭各个功能。
+
+[lb-fgf-m4r-ik.rw-trycatch]
+name=Rain World Try Catch
+desc=Adds a try catch block around RainWorld.Update so that it logs more exceptions in the exceptionLog.txt file. Add a logToBep.txt file in the main Rain World folder so that it also logs exceptions in logOutput.log. Useful for debugging but may slightly affect performance.
+trans_name=[工具] 异常捕获
+trans_desc=在 RainWorld.Update 周围添加 try catch 块，以便将更多异常记录到 exceptionLog.txt 文件中。在雨世界主文件夹中添加一个 logToBep.txt 文件，以便也将异常记录到 logOutput.log 中。对调试有用，但可能略微影响性能。
+
+[uzugu_wallpapermod]
+name=Rain World Wallpaper Mode
+desc=Turns Rain World into a dynamic wallpaper with smooth transitions between random locations. Choose different slugcat campaigns and regions through the Remix menu!
+trans_name=[外观] 雨世界壁纸模式
+trans_desc=将雨世界变成一个动态壁纸，在随机地点之间平滑切换。通过混音菜单选择不同的蛞蝓猫战役和区域！
+
+[xuanzebufeng.randomcodestuff]
+name=Random Code Stuff(RCS)
+desc=Integrate the code I have done into a mod.
+trans_name=[依赖项] 随机代码内容（RCS）
+trans_desc=将我编写的代码整合成一个模组。
+
+[reaperlizard]
+name=Reaper Lizard
+desc=Adds reaper lizards!
+trans_name=[生物] 收割者蜥蜴
+trans_desc=添加收割者蜥蜴！
+
+[temp]
+name=Region Mod Template
+desc=Template
+trans_name=[区域] 区域模组 模板
+trans_desc=模板
+
+[Kridi8606.RegionModsOptimizer]
+name=Region Mods Optimizer
+desc=Reduces room-transition hitches while exploring a single region when many region packs are enabled. Cold-filters assets of non-active regions; gate freezes remain expected.
+trans_name=[体验优化] 区域模组优化器
+trans_desc=区域模组优化器在使用大量区域模组时减少卡顿和加载时间。<LINE>启用多个区域包时，探索单个区域时可减少房间切换的卡顿。会对非活动区域的资源进行冷加载。<LINE>传送门冻结现象仍属正常。
+
+[regionkit]
+name=RegionKit
+desc=All-in-one custom region dependency pack.<LINE>Source code and detailed descriptions are hosted here: https://github.com/Rain-World-Modding/RegionKit<LINE>[b]Reporting bugs[/b]<LINE>If you have a problem to report, please do it via github issues, Rain World discord server, or leave a post on discussions under this workshop item. Try to first look if anyone has already reported similar problem, attach logs and other materials if relevant!<LINE>[b]Common issue and ways to fix[/b]<LINE>If the game crashes without logs, try manually deleting BepInEx folder and re-verifying game files.
+trans_name=[工具,依赖项] RegionKit
+trans_desc=一体化自定义区域依赖包。<LINE>源代码和详细描述托管在这里：https://github.com/Rain-World-Modding/RegionKit<LINE>[b]报告BUG[/b]<LINE>如果你有问题要报告，请通过GitHub issues、雨世界Discord服务器或在创意工坊项目下留言。请先尝试查看是否已有人报告了类似问题，如有相关材料请附上日志等！<LINE>[b]常见问题及解决方法[/b]<LINE>如果游戏崩溃但没有日志，请尝试手动删除BepInEx文件夹并重新验证游戏文件。
+
+[AwriLynn.Remix_Menu_Template_examples]
+name=Remix Menu Template examples
+desc=Remix Menu Template examples is entirely just a menu mod to help modders make their own Remix menu, using dnSpy to look into the mod's code or downloading it from the wiki / Community. Try out the menu widgets then take the parts that you want from the code knowing that they will work. Source code in the workshop mod folder where the subscribed mods are downloaded to, also Tab 2 :eyes:? 
+trans_name=[菜单] 混音菜单模板示例
+trans_desc=混音菜单模板示例只是一个菜单模组，旨在帮助模组制作者制作自己的混音菜单，通过使用dnSpy查看模组代码或从维基/社区下载。尝试菜单小部件，然后从代码中提取你需要的部分，确保它们能正常工作。源代码在创意工坊模组文件夹中（订阅的模组下载位置），还有选项卡2 :eyes:？
+
+[Tuanzi.ResolutionTweak]
+name=ResolutionTweak
+desc=使得雨世界支持自定义分辨率如1080p,2k,并且可以调整清晰度来减少模糊感,和像素非整数缩放的扭曲感,可自行配置<LINE>目前只保证在16:9分辨率下正常工作,理论上Linux平台也可使用,但作者未测试过<LINE>重要:与其他分辨率模组很可能冲突,导致黑屏等严重后果,如Sharpener
+trans_name=[体验优化] 分辨率调整
+trans_desc=使雨世界支持自定义分辨率，如1080p、2k，并可调整清晰度以减少模糊感和像素非整数缩放造成的扭曲感，可自行配置。<LINE>目前只保证在16:9分辨率下正常工作，理论上Linux平台也可使用，但作者未测试过。<LINE>重要：与其他分辨率模组很可能冲突，导致黑屏等严重后果，如Sharpener。
+
+[revivify]
+name=Revivify
+desc=Revive slugcat and slugpup corpses, in co-op or not! Lay your friend flat on a solid floor and rhythmically tap GRAB twice per second to resuscitate them. Returning from death's door is an ordeal, so take care of them afterwards.<LINE><LINE>Configurable. Art by twitter.com/GarbageWastes and code at github.com/Dual-Iron/revivify
+trans_name=[游戏机制] 复苏
+trans_desc=复活蛞蝓猫和蛞蝓幼崽的尸体，无论是否在合作模式下！将你的朋友平放在坚实的地面上，有节奏地每秒按两次抓取键来复苏他们。从死亡之门归来是一项艰难的考验，之后要好好照顾他们。<LINE><LINE>可配置。美术由 twitter.com/GarbageWastes 提供，代码位于 github.com/Dual-Iron/revivify。
+
+[NoirCat.RideableLizards]
+name=Rideable Lizards
+desc=Grab onto your tamed lizards and ride along with them!
+trans_name=[游戏机制] 可骑乘的蜥蜴
+trans_desc=抓住你驯服的蜥蜴，骑上它们一起前进！
+
+[rotwall.morepearls]
+name=Rot's Pearls
+desc=Adds a handful of new pearls to find along your journey. Currently features 10.
+trans_name=[物品] 腐烂的珍珠
+trans_desc=在你的旅程中增加一些新的珍珠可供发现。目前包含10颗。
+
+[willowwisp.bellyplus]
+name=Rotund World
+desc=Sprinkle rotundness into Rain World, for both you and the creatures around you. <LINE>Pleeeease contact me willowwisp89 on Discord if you have any issues, errors, or mod incompatibilities!!
+trans_name=[游戏机制] 胖世界
+trans_desc=将圆润感洒入雨世界，包括你和周围的生物。<LINE>如果你有任何问题、错误或模组不兼容，请在Discord上联系我 willowwisp89！！
+
+[SBCameraScroll]
+name=SBCameraScroll
+desc=Creates a smooth, scrolling camera that moves with the slugcat. Based on pipi toki's CameraScroll mod.<LINE><LINE>INCOMPATIBILITIES:<LINE>- The zoom camera option in the Slugcat Eyebrow Raise mod.
+trans_name=[无障碍] SB摄像机滚动
+trans_desc=创建一个平滑滚动的摄像机，跟随蛞蝓猫移动。基于 pipi toki 的 CameraScroll 模组。<LINE><LINE>不兼容：<LINE>- 蛞蝓猫挑眉模组中的缩放摄像机选项。
+
+[xuanzebufeng.saintouterexpanse]
+name=Saint's Outer Expanse
+desc=Added Outer Expanse for saint.
+trans_name=[区域] 圣徒的外层空间
+trans_desc=为圣徒添加了外层空间。
+
+[salmonlizardleaflizardsharkboi2701]
+name=Salmon Lizards and Leaf Lizards
+desc=adds 2 new lizards which i think fit into the base game quite well
+trans_name=[生物] 鲑鱼蜥蜴和叶蜥蜴
+trans_desc=添加2种我认为非常适合基础游戏的新蜥蜴。
+
+[oneofscavs.gardens]
+name=Scavenger Gardens
+desc=Adds scav changes to the world of Watcher 1.5
+trans_name=[生物,观望者] 拾荒者花园
+trans_desc=为观望者1.5的世界添加拾荒者相关改动。
+
+[screen-lady.diversebehavior]
+name=Screen Lady's Diverse Behavior
+desc=Changes the behavior of nearly every entity in the game to influence interactions in the ecosystem and shuffle up the food chain.
+trans_name=[无障碍] 多样化行为
+trans_desc=改变游戏中几乎每个实体的行为，以影响生态系统中的互动并打乱食物链。
+
+[uql.scribe]
+name=Scribe
+desc=[h1]Scribe: Unified Persistent Save Data for YOUR MOD![/h1]<LINE>Scribe is a utility mod that provides a shared, extensible save system for Rain World mods.<LINE>Instead of every mod creating its own save format and handling storage separately, Scribe allows mods to register their own data, save it per-campaign, and access other mods' stored data in a consistent way.<LINE>[hr][/hr]<LINE>[h2]Features[/h2]<LINE>[list]<LINE>[*]Reliable persistent save data<LINE>[*]GUID-based registration to prevent data collisions<LINE>[*]Simple API for loading and saving data<LINE>[*]Support for observing and requesting other mods' save data<LINE>[*]Flexible structured data format<LINE>[*]Automatic serialization and parsing<LINE>[/list]<LINE><LINE>[hr][/hr]<LINE>[h2]For Mod Developers[/h2]<LINE>Scribe provides several ways for mods to interact with persistent data:<LINE><LINE>[b]IRegistry[/b]<LINE>Register your mod's own save data. Your data will be loaded when a campaign starts and saved when the game saves.<LINE><LINE>[b]IObserver[/b]<LINE>Observe another mod's saved data without owning it.<LINE><LINE>[b]RequestLoad()[/b]<LINE>Request another mod's save data when needed, such as from menus or other non-campaign contexts.<LINE><LINE>[hr][/hr]<LINE>[h2]UQLTag Data Format[/h2]<LINE>Scribe uses UQLTag, a compact tree-based data format designed for structured save data.<LINE>It supports:<LINE>[list]<LINE>[*]Labels<LINE>[*]Records<LINE>[*]Groups<LINE>[*]Named Groups<LINE>[*]Nested structures<LINE>[/list]<LINE><LINE>Scribe stores its data in the Rain World save string inside a dedicated data block:<LINE>[code]<LINE>[scribesaves:<uql.scribe:0><uql.terminus:J<JX<help:JX_FALL01:RM>>>]<LINE>[/code]<LINE>Each registered mod receives its own entry inside the block, identified by its GUID. Mods can store arbitrary structured data using the UQLTag format.<LINE><LINE>[hr][/hr]<LINE>[h2]Why Scribe?[/h2]<LINE>Persistent data should not require every mod to reinvent its own save system.<LINE>Scribe provides a shared foundation for mods to safely store information, keep data organized, and cooperate with other mods.<LINE>Made for Rain World mod developers.<LINE>Documentation can be found in Scribe's GitHub Repository: https://github.com/upquilled/uql-scribe<LINE><LINE>[b]Not compatible with Rain Meadow.[/b]
+trans_name=[工具] Scribe
+trans_desc=[h1]Scribe：为你的模组提供统一的持久存档数据！[/h1]<LINE>Scribe是一个工具模组，为雨世界模组提供共享的、可扩展的存档系统。<LINE>与其让每个模组创建自己的存档格式并单独处理存储，Scribe允许模组注册自己的数据、按战役保存数据，并以一致的方式访问其他模组存储的数据。<LINE>[hr][/hr]<LINE>[h2]功能[/h2]<LINE>[list]<LINE>[*]可靠的持久存档数据<LINE>[*]基于GUID的注册以防止数据冲突<LINE>[*]用于加载和保存数据的简单API<LINE>[*]支持观察和请求其他模组的存档数据<LINE>[*]灵活的结构化数据格式<LINE>[*]自动序列化和解析<LINE>[/list]<LINE><LINE>[hr][/hr]<LINE>[h2]供模组开发者使用[/h2]<LINE>Scribe提供了几种方式让模组与持久数据交互：<LINE><LINE>[b]IRegistry[/b]<LINE>注册你自己模组的存档数据。你的数据会在战役开始时加载，在游戏保存时保存。<LINE><LINE>[b]IObserver[/b]<LINE>观察其他模组的存档数据而不拥有它。<LINE><LINE>[b]RequestLoad()[/b]<LINE>在需要时请求其他模组的存档数据，例如从菜单或其他非战役上下文中。<LINE><LINE>[hr][/hr]<LINE>[h2]UQLTag数据格式[/h2]<LINE>Scribe使用UQLTag，一种紧凑的树状数据格式，专为结构化存档数据设计。<LINE>支持：<LINE>[list]<LINE>[*]标签<LINE>[*]记录<LINE>[*]组<LINE>[*]命名组<LINE>[*]嵌套结构<LINE>[/list]<LINE><LINE>Scribe将数据存储在雨世界存档字符串内的专用数据块中：<LINE>[code]<LINE>[scribesaves:<uql.scribe:0><uql.terminus:J<JX<help:JX_FALL01:RM>>>]<LINE>[/code]<LINE>每个已注册的模组在数据块内通过其GUID标识获得自己的条目。模组可以使用UQLTag格式存储任意结构化数据。<LINE><LINE>[hr][/hr]<LINE>[h2]为什么选择Scribe？[/h2]<LINE>持久数据不应该让每个模组都重新发明自己的存档系统。<LINE>Scribe为模组提供了一个共享基础，用于安全存储信息、保持数据有序，并与其他模组协作。<LINE>为雨世界模组开发者制作。
+
+[scugshots]
+name=Scugshots!
+desc=Take screenshots and standard or high-quality MP4 recordings, or GIF recordings, then view them in an in-game gallery.
+trans_name=[体验优化] 截图！
+trans_desc=拍摄截图，录制标准或高品质的MP4视频，或录制GIF动图，然后在游戏内的图库中查看。
+
+[pjb3005.sharpener]
+name=Sharpener
+desc=Provides better upscaling and resolution controls for Rain World<LINE><LINE>Trans Rights.
+trans_name=[体验优化] 锐化器
+trans_desc=为雨世界提供更好的上采样和分辨率控制。<LINE><LINE>跨性别权利。
+
+[nope.collectibles.on.char.select]
+name=Show Collectibles on Slugcat Select
+desc=This mod makes the tokens (or collectibles) appear on character select menu.<LINE>This is threaded and should not impact performance, but it can be switched on and off dynamically from the Remix page and/or using a keybind.<LINE>This mod requires Rain World Remix to be enabled. It is compatible with ImprovedCollectiblesTracker
+trans_name=[体验优化] 选择界面显示收藏品
+trans_desc=此模组使令牌（或收藏品）出现在角色选择菜单上。<LINE>这是线程化的，不应影响性能，但可以从混音页面动态开关和/或使用按键绑定。<LINE>此模组需要启用雨世界混音。它与 ImprovedCollectiblesTracker 兼容。
+
+[zohnannor.showkillsondeath]
+name=Show Kills On Death
+desc=Show kill counts even when you die. This is a purely visual change, and does not affect your stats.
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[nope.show.me.my.echoes]
+name=Show Me My Echoes
+desc=This mod shows regions where you met an echo inside the Collectibles Tracker.<LINE>From the Remix menu, you can configure if the mod is enabled, if you want primed echoes to show up, and if you want never-before seen echoes to show up.
+trans_name=[无障碍] 显示我的回响
+trans_desc=此模组在收藏品追踪器中显示你遇到过回响的区域。<LINE>从混音菜单中，你可以配置是否启用模组、是否显示已准备的回响，以及是否显示从未见过的回响。
+
+[com.rainworldgame.shroudedassembly.plugin]
+name=Shrouded Assembly Code
+desc=Code stuff for Shrouded Assembly and other mods.
+trans_name=[依赖项] 暗影组装代码
+trans_desc=为暗影组装和其他模组提供的代码内容。
+
+[ap.shhh]
+name=Silent Scenery
+desc=An industrial area to the west of Industrial Complex, that supplies Sky Islands, connecting to both<LINE>Made with love <3
+trans_name=[区域] 寂静风景
+trans_desc=工业区西侧的一个工业区域，供应天空群岛，连接两者。<LINE>用爱制作 <3
+
+[silkcitadel]
+name=Silk Citadel
+desc=Gives Shaded Citadel enhanced visuals by decorating it with spider webs!
+trans_name=[外观] 丝绸城堡
+trans_desc=通过用蜘蛛网装饰阴影城堡来增强其视觉效果！
+
+[simplespawnswapper]
+name=Simple Spawn Swapper
+desc=Lets modders swap some creature spawns with new ones
+trans_name=[工具] 简单生成替换器
+trans_desc=让模组制作者能够将一些生物生成替换为新的。
+
+[SixtyFPSMenus]
+name=Sixty FPS Menus
+desc=Speeds up all menus from 40 updates per second to 60. This makes all menus 50% faster and more responsive.
+trans_name=[菜单优化] 60FPS菜单
+trans_desc=将所有菜单从每秒40次更新加速到60次。这使所有菜单快50%，响应更灵敏。
+
+[knightragu.slopeworld]
+name=Slope World
+desc=Gives all slopes the same physics as the TerrainCurves from watcher,<LINE> allowing for more movement options, including crawl turns and slides!
+trans_name=[游戏机制] 斜坡世界
+trans_desc=赋予所有斜坡与观望者中的地形曲线相同的物理效果，允许更多移动选项，包括爬行转身和滑行！
+
+[slime-cubed.slugbase]
+name=SlugBase
+desc=A framework for adding new characters to the game.<LINE>Get started making your own here: https://slimecubed.github.io/slugbase/
+trans_name=[工具,依赖项] SlugBase
+trans_desc=一个为游戏添加新角色的框架。<LINE>从这里开始制作你自己的：https://slimecubed.github.io/slugbase/
+
+[E2312.slugnpcscavologic]
+name=SlugNPC Scavologic
+desc= # 没有原始描述
+trans_name=[无障碍] SlugNPC 声望系统
+trans_desc=无描述。
+
+[yeliah.slugpupFieldtrip]
+name=Slugpup Safari
+desc=The Slugpup QoL and Bugfix Mod!
+trans_name=[修复] 蛞蝓幼崽 Safari
+trans_desc=蛞蝓幼崽的生活质量改善和BUG修复模组！
+
+[VioVayo.SoundTest]
+name=Sound Test
+desc=Play sound effects from the main menu.
+trans_name=[工具] 音效测试
+trans_desc=从主菜单播放音效。
+
+[spitanything]
+name=Spit Anything
+desc=Lets you make lizards spit out anything! (Look in Lizard Customizer's Abilities tab for the settings)
+trans_name=[游戏机制] 吐出任何东西
+trans_desc=让你可以让蜥蜴吐出任何东西！（在蜥蜴自定义器的“能力”选项卡中查看设置。）
+
+[damoonlord.Splash]
+name=Splash texts
+desc=Adds a variety of splash texts to spice up your menu!<LINE>you can add your own through the Splash.txt file in the mod's folder.
+trans_name=[外观] 启动标语
+trans_desc=添加各种启动标语来点缀你的菜单！<LINE>你可以通过模组文件夹中的Splash.txt文件添加自己的标语。
+
+[henpemaz_splitscreencoop]
+name=SplitScreen Co-op
+desc=Two player co-op with splitscreen for the base game, or up to four players sharing two or four cameras if using Jolly Co-op.<LINE><LINE>Supports players splitting up far away and sleeping in different shelters (not fully supported if using Jolly). Currently, both players will still wake up in the same shelter.<LINE><LINE>Planned features:<LINE>- Saving in different shelters<LINE>- Collor picker for player 2<LINE><LINE>Originally by Henpemaz<LINE>Github link: https://github.com/henpemaz/RemixMods<LINE>Special thanks to:<LINE>- Intikus, helped with the trailer<LINE>- NoirCatto, playtesting and support<LINE>- Kert, implemented 4-way split and zoom feature!
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[JautiAGurgan]
+name=Spooky Creatures
+desc=Adds the not so famous Jautia, an obscure rain world cryptid as a centipede aswell as the Gurgan Lizard
+trans_name=[生物] 恐怖生物
+trans_desc=添加了不太著名的 Jautia，一种作为蜈蚣的神秘雨世界生物，以及 Gurgan 蜥蜴。
+
+[zigzoo3.Striders]
+name=Striders
+desc=Adds the Strider, a tall biomechanical creature.It should spawn in Shorelinebut it doesnt you might need to install Beastmaster Mod to spawn them in
+trans_name=[生物] 漫步者
+trans_desc=添加漫步者，一种高大的生物机械生物。它应该生成在海岸线，但实际上没有。你可能需要安装野兽大师模组来生成它们。
+
+[harvie.strongscavs]
+name=Strong Scavs
+desc=Spawn much stronger scavs when playing Artificer, ready for the challenges?<LINE><LINE>(ps. ID of the Scavengerking was modified to 26456, which is one of my favorite scavengers lol)
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Y0z64.strugglemod]
+name=Struggle Mod
+desc=Allows to struggle out of creature grabs by spaming inputs <LINE> Alternative of HPbar's struggle without the extra mechanics
+trans_name=[游戏机制] 挣扎模组
+trans_desc=允许通过狂按输入来挣脱生物的抓取。<LINE>HPbar的挣扎模组的替代方案，不含额外机制。
+
+[hb.tamedlizardchat]
+name=Tamed Lizard Chat
+desc=Makes tamed lizards talk. The dialogue changes depending on their personalities.<LINE>It doesn't have any special features, but it is cute.
+trans_name=[体验优化] 驯服蜥蜴聊天
+trans_desc=让驯服的蜥蜴说话。对话内容会根据它们的个性而变化。<LINE>它没有任何特殊功能，但很可爱。
+
+[yourregionname]
+name=Template Region
+desc=A Region mod Template, complete with one starting room set up already.
+trans_name=[区域] 模板区域
+trans_desc=一个区域模组模板，已设置好一个起始房间。
+
+[testarenas]
+name=Testing Arenas
+desc=Want to test something? Well, here is the solution to your needs!
+trans_name=[竞技场] 测试竞技场
+trans_desc=想测试点什么？这里就是你需要的解决方案！
+
+[echoify.abyssal]
+name=The Abyssal
+desc=Lost in the depths of a missing civilization, will you find your way out?<LINE>Currently lacks some intended features.
+trans_name=[战役] 深渊
+trans_desc=迷失在一个失落文明的深处，你能找到出路吗？<LINE>目前缺少部分预期功能。
+
+[Emberlizard]
+name=The Ember Lizard
+desc=The ember lizard in all it's glory.
+trans_name=[生物] 余烬蜥蜴
+trans_desc=展现余烬蜥蜴的全部荣耀。
+
+[cloudtailmod]
+name=The Forager
+desc=Explore these frozen wastes as the Forager, a Gourmand descendant! 
+trans_name=[Slugcat] 觅食者
+trans_desc=作为饕餮的后裔——觅食者，探索这片冰封的废土！
+
+[randomspace]
+name=The Jumblezone
+desc=Buried under a unasuming hill in the garbadge wastes lies a gateway to a blah blah blah<LINE>Every room is diferent, lots to see! Adding over 500 difrerent screens to aimlessly explore.
+trans_name=[区域] 混乱地带
+trans_desc=埋在垃圾堆中一个不起眼的小山丘下，有一个通往……等等等等的门户。<LINE>每个房间都不同，有很多可看的东西！增加了超过500个不同屏幕可供漫无目的地探索。
+
+[Blaze.Lurker]
+name=The Lurker (Template Slugcat)
+desc=A quiet predator with a hunger for Lizards. Ambushing prey will be your key to survive.<LINE>This is almost 100% the only mod i will ever make, and it will most likely not be updated after this. <LINE>i made this as a template slucat that you can access by going into your files under steam/steamapps/workshop/content/312520.<LINE>from there copy and paste this mod under steam/steamapps/common/Rain World/rainworld_data/StreamingAssets/Mods.<LINE>then just edit the slugcat to your liking and upload it to the workshop!<LINE><LINE>oh, and you need SlugBase for this to work.
+trans_name=[Slugcat] 潜伏者（模板）
+trans_desc=一个安静的捕食者，对蜥蜴有着强烈的饥饿感。伏击猎物将是你生存的关键。<LINE><LINE>这几乎100%是我唯一会做的模组，此后很可能不会更新。<LINE>我将其作为模板蛞蝓猫制作，你可以通过进入 steam/steamapps/workshop/content/312520 文件来访问。<LINE>从那里将此模组复制粘贴到 steam/steamapps/common/Rain World/rainworld_data/StreamingAssets/Mods。<LINE>然后只需将蛞蝓猫编辑成你喜欢的样式并上传到创意工坊！<LINE><LINE>哦，你需要 SlugBase 才能让这个模组工作。
+
+[lb-fgf-m4r-ik.modpack]
+name=The M4rblelous Entity Pack
+desc=A creature and item pack to use as a dependency for other mods.
+trans_name=[生物,物品] The M4rblelous 实体包
+trans_desc=一个作为其他模组依赖项使用的生物和物品包。
+
+[themast]
+name=The Mast
+desc=A new region in the form of a large transmission spire in the western area of the world.
+trans_name=[区域] 桅杆
+trans_desc=位于世界西部区域的一个大型传输塔形式的新区域。
+
+[yourname.millipede]
+name=The Millipede
+desc=Turns the unused millipede into an actual enemy.
+trans_name=[生物] 马陆
+trans_desc=将未使用的马陆变成一个真正的敌人。
+
+[The_Similar]
+name=The Similar
+desc=在自然选择中进化的蛞蝓猫，善于伪装，能够灵活地隐匿在环境中,为了寻求舒适的庇护所而踏上旅途
+trans_name=[Slugcat] Similar
+trans_desc=在自然选择中进化的蛞蝓猫，善于伪装，能够灵活地隐匿在环境中，为了寻求舒适的庇护所而踏上旅途。
+
+[watcher]
+name=The Watcher
+desc=An expansion adding a new campaign: The Watcher. This expansion includes new regions, creatures, mechanics, items, over 150 tracks of new music and much more.
+trans_name=观望者
+trans_desc=扩展包添加了一个新剧情：观望者。本扩展包包含新的区域、生物、机制、物品、150余首全新音乐曲目，还有更多内容等你发现。
+
+[xuanzebufeng.translatetools]
+name=Translate Tools
+desc=A mod that can collect all untranslated text on the screen and output the text.
+trans_name=[翻译,工具] 翻译工具
+trans_desc=一个可以收集屏幕上所有未翻译文本并输出文本的模组。
+
+[Lvye_Translator]
+name=Translator
+desc=为已安装模组手动添加翻译名称与简介。<LINE>Add translated names and descriptions to installed mods.
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Kridi8606.TwoFriends]
+name=Two Friends
+desc=Adds two tamed lizards that won't leave you even after they die.
+trans_name=[游戏机制] 两个朋友
+trans_desc=添加两只驯服的蜥蜴，即使在它们死后也不会离开你。
+
+[nacu.ultrakilltitles]
+name=ULTRAKILL Style Region Titles
+desc=Displays region and subregion names in the style of Ultrakill's level name pop-ups.
+trans_name=[外观] ULTRAKILL风格区域标题
+trans_desc=以ULTRAKILL关卡名称弹出风格显示区域和子区域名称。
+
+[xuanzebufeng.USRTMultiLanguageFix]
+name=ULTRAKILL Style Region Titles Tweaks And Translations
+desc=Actually, this mod can be run whitout ULTRAKILL Style Region Titles. LOL
+trans_name=[翻译] ULTRAKILL风格区域标题调整与翻译
+trans_desc=实际上，这个模组可以在没有ULTRAKILL风格区域标题的情况下运行。LOL
+
+[Kridi8606.UnbeatenPaths]
+name=Unbeaten Paths
+desc=Locks vanilla-vanilla region gates with OELock when a path through mod regions exists for the current campaign (or all V-V if configured). Optional: hide pipe highlights into blocked gates and feeder corridors.
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[underpass_will]
+name=Underpass
+desc=A sprawling facility of long distance transport tubes. Created so that other region mods could exist in remote locations of the world without needing to shoehorn in connections to the base game regions themselves. The exact location of the Underpass and everything it still connects to is unknown...
+trans_name=[区域] 地下通道
+trans_desc=一个拥有长距离运输管道的庞大设施。为了让其他区域模组能够存在于世界的偏远角落，而无需强行接入基础游戏区域本身而创建。地下通道的确切位置及其仍连接的一切都未知……
+
+[jhokey.updownupupdown]
+name=Up, Down, Up Up Down!
+desc=Toggle anti-gravity in-game via a customizable keybind.<LINE><LINE>Key Features:<LINE>- 3 Target Modes: Slugcats Only / All Entities / All Except Slugcats<LINE>- Per-player toggle: Choose which specific players (P1-P4) are affected<LINE>- Customizable upward force strength in the Remix menu<LINE>- Like Infinite Throw, anti-gravity is automatically disabled in Rain Meadow to prevent potential issues.
+trans_name=[游戏机制] 上，下，上上下下！
+trans_desc=通过可自定义的按键在游戏中切换反重力。<LINE><LINE>主要功能：<LINE>- 3种目标模式：仅蛞蝓猫 / 所有实体 / 除蛞蝓猫外的所有实体<LINE>- 每玩家切换：选择受影响的特定玩家（P1-P4）<LINE>- 在混音菜单中自定义向上的力量强度<LINE>- 像无限投掷一样，反重力在雨草原中会自动禁用，以防止潜在问题。
+
+[tpd1864blake.vanillaintros]
+name=Vanilla Intros Continued
+desc=Enjoy custom art of the original trio on launch. Now includes modded Slugcat support! Should be fully compatible with future updates.
+trans_name=[外观] 继续使用原版开场
+trans_desc=在启动时欣赏原版三人组的自定义艺术。现在包含模组蛞蝓猫支持！应与未来更新完全兼容。
+
+[rainstormpilgrim.funnierspitterspiders]
+name=Venomous Spitter Spiders
+desc=After having lots of fun in Underhang&The Leg I got this idea: Why don't I make Spitter Spider more dangerous?
+trans_name=[生物] 毒液喷射蛛
+trans_desc=在悬桥和腿部区域玩得很开心之后，我有了这个想法：为什么不让喷射蛛变得更危险呢？
+
+[frostbird347.vestiges]
+name=Vestiges
+desc=Upon death, you will leave a temporary remnant for other players to find.
+trans_name=[无障碍] 残留物
+trans_desc=死亡后，你将留下一个暂时的残留物供其他玩家发现。
+
+[darkninja.ModInExplorerButton]
+name=View Mod in File Explorer Button
+desc=A fork of "Workshop Button" that adds a button to view the mod in your file explorer
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[visibleshrooms]
+name=Visible Fetid Glen Mushrooms
+desc=Makes the invisible mushrooms in Fetid Glen visible.
+trans_name=[无障碍] 可见的恶臭林地蘑菇
+trans_desc=使恶臭林地中隐形的蘑菇变得可见。
+
+[warp]
+name=Warp Menu
+desc=A utility for quickly teleporting to new rooms and regions via the Pause Menu.
+trans_name=[工具] 传送菜单
+trans_desc=一个通过暂停菜单快速传送到新房间和区域的工具。
+
+[warpmenumultilanguagefix]
+name=Warp Menu Multi-Language Fix
+desc=Make Warp Menu to support multi-language
+trans_name=[翻译] 传送菜单多语言修复
+trans_desc=使传送菜单支持多语言。
+
+[shrub.watcherregionart]
+name=Watcher Region Art
+desc=Adds region art for Watcher regions
+trans_name=[外观,观望者] 观望者区域艺术
+trans_desc=为观望者区域添加区域艺术图。
+
+[jes_v.watcher_rooms_vanilla]
+name=Watcher to Vanilla Consistency
+desc=Brings 2 rooms (wow!) from The Watcher's rotted regions to their vanilla equivalents:<LINE>- A shelter from Crumbling Fringes to Outskirts (WSUR_S06)<LINE>- A tower from Infested Wastes to Garbage Wastes (WGWR_Disposal)
+trans_name=[无障碍] 观望者房间与原版一致性
+trans_desc=将观望者腐烂区域中的2个房间（哇！）移植到对应的原版区域中：<LINE>- 从破碎边缘的一个避难所移植到外围（WSUR_S06）<LINE>- 从感染垃圾堆的一个塔移植到垃圾堆（WGWR_Disposal）
+
+[harvie.watcherdevtoolsfix]
+name=WatcherDevToolsFix
+desc=Fix devtools object page bug
+trans_name=[工具,观望者] 观望者开发者工具修复
+trans_desc=修复开发者工具对象页面错误。
+
+[WetandHot]
+name=Wet and Hot
+desc=This is a mod that provides high temperature and humidity effects for objects and creatures
+trans_name=[游戏机制] 湿热
+trans_desc=这是一个为物体和生物提供高温和湿度效果的模组。
+
+[Jimarad.WhatsInMyPocket]
+name=What's in My Pocket?
+desc=Shows icons of held items.
+trans_name=[外观] 我口袋里有什么？
+trans_desc=显示持有物品的图标。
+
+[ShinyKelp.WhoEatsWhom]
+name=Who Eats Whom
+desc=Modify creature relationships.
+trans_name=[游戏机制] 谁吃谁
+trans_desc=修改生物关系。
+
+[Lvye_AnotherNameForMods]
+name=模组信息手动覆写器
+desc=目前版本只支持添加中文翻译！<LINE>你可使用此模组手动为没有中文翻译的模组添加你自己翻译的中文。<LINE>（或者是你理解的....啊管他，注释你自己能看懂就够了！）<LINE>现在可以让整个模组列表的模组全部都是中文了！<LINE>养眼！舒服！前提是你足够耐心给哪几百个模组都手动翻译一遍！<LINE>只是移除此模组就可使所有添加的修改失效<LINE>（实际上也可以覆盖已有中文翻译信息的翻译文本）
+trans_name=[翻译] 模组信息手动覆写器
+trans_desc=目前版本只支持添加中文翻译！<LINE>你可使用此模组手动为没有中文翻译的模组添加你自己翻译的中文。<LINE>（或者是你理解的……啊管他，注释你自己能看懂就够了！）<LINE>现在可以让整个模组列表的模组全部都是中文了！<LINE>养眼！舒服！前提是你足够耐心给那几百个模组都手动翻译一遍！<LINE>只是移除此模组就可使所有添加的修改失效。<LINE>（实际上也可以覆盖已有中文翻译信息的翻译文本。）
+
+[0fpexpansion]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[0topicular.lancer]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[0urufudoggo.theescort]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[3ch0-1fy.thegalleryever]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[ALIVE_FonabA]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[ASE]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Anthill]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[April.MD]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[BEST.MOD.EVER]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Barrenwastes]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[CITY_FonabA]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[CRID]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Community.Gallery2]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Croken.Mimic]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Croken.bombardier]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[District4B]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Eventide_two]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[FCES_mod]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Forgotten]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Forgotten_Underground]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[GBS.Clandestine]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Garlide.TheTrusted]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[GrimmChildren.ColdSnap]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[HallowedGrotto]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[HySt]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[IDDC]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[IndUnderpass]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[InfiniteSpears]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Ire.MusicVolumeAdjuster]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[LadyLampblack.florist]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[LostRailway]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[MXPexpo]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[NH_FonabA]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[NoirCatto.NoirCatto]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Nytrok07.ForsakkenFactory]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[OlderHunter]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[PainWorld]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[PoOlRoOmS]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Quaint.SunsetRegion]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[RAW53ATHV4TS]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[RW.JRoads]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[RWDS.MDW_Demo]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[RWJR.Rm]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Rezillo.slugSpider]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[SCP-354]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[SPEARMASTERPREVIEWURBANEXPANSE.]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Sewage_Water.thechampion]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[ShinyKelp.ExpeditionsExpanded]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[SideHouse]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[SideHouse2]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[SimplifiedMoveset]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Skys]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[SnowBee.Snow]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Spearslug]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Storage Compartments]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[TOTO_FonabA]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[TaintedOverpass]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[TcanDesertBus]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[TeslaGrad_FonabA]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[The Castaway]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Translator]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=翻译器
+trans_desc=# 在此行添加翻译描述
+
+[TrynsEvergreen]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Underbelly]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[VirtuaVirtue.Beached]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[WIRE]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[WatcherExpeditions]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Weeping_Edifice]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[WesternForest]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[WesternForestExpansion]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[Zigzoo3.BetterPrince]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[a10slab]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[aaahhtoohot]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[abyssalclimb]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[adventurer]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[alduris.jigsaw]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[amidstthedeluge]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[andrew.theflamboyant]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[andrewrooms]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[anti-gravitycaves]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[antn.drippingtime]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[ap.thinks.its.always.all.about.her]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[aqueducts]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[archaicfacility]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[archdruidbookwalter.archdruidsadditions]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[ashenbow]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[auxiliaryintake]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[av3ry.eastcoast]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[aveskori.guide]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[awfulmaliciouspole]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[badlands]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[beeworld]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[bio]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[blizzrd.amputation]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[blue.mistymarish]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[bodminstheboxesregion]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[budgermination]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[centipede]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[cgytrus.unlimited-saves]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[chronophobia]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[citadel]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[cloakedslugcat]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[coastalconstruct]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[coldancientcity]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[coral.caves]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[crimspires]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[crippledmines]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[customexpo]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[damoonlord.foundry]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[darkgran.karmaappetite]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[darkgran.solemnquarry]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[darkmeadows]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[darkpipework]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[decaying_deadlands]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[dg_littletower]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[dietpebsi.boiler]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[dietpebsi.desolatetowers]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[dietpebsi.intercitystation]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[dietpebsi.martyr]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[dietpebsi.oilrig]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[dietpebsi.svcfc]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[dietpebsi.thecity]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[dinstallation]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[dododonut.unshackledcoop]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[don.desertedwastelands]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[dreamsofa10]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[drop]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[drought]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[easternexpanse]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[edenstonne.beyondthewest]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[emeralds_features]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[ethan.lonescug]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[expeditionenhanced]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[far_shore]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[fargegoty.HardcoreMode]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[ferroussteppes]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[firmly]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[fishy.CitySkyline]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[fishy.CorrosiveGeysers]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[fishy.SludgeTunnels]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[floodforge_jam]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[flotsamcove]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[fluffball.expeditionregionsupport]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[forgottenshore]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[fpexpansion]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[fr0st.artgallery]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[fractured_foundry.flan]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[ftns]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[fusioncore]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[gatescanner]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[gayurban]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[gelbi.faster]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[gloamingrefinery]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[global_hyper_transit]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[gluttonyslugcat]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[grinder]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[harvie.thedronemaster]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[hb.relationshipicons]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[homeo.measurer]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[hpbar]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[hyps_hillypumps]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[ikayblythe.sunshower]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[improved]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[industrialsupplement]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[infestedcorals]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[ittr_sr]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[jam.gildedsanctuary]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[jam.moonlitacres]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[javadog.gateNames]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[jevmen.drainagesystemplus]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[keepthatawayfromme]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[kingmaxthe2.gravelslug]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[lapis_ott]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[lb]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[lb-fgf-m4r-ik.candy-cane-spears]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[lesbitropical.vocalmod]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[lessslugcats]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[lga.LostCranny]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[lifeslice_сh1]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[limecultivist.forgottenboiler]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[limecultivist.testingsimulation]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[lostworldofa10]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[lunapolis]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[lunaraerie]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[lunarcanyon]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[lurzard.pitchblack]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[maxdubstep.steelmill]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[maxi]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[maxi-mol.fivepebblespong]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[measurer]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[midnightmeadows]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[mills888.DeadLands]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[mk.barnacleworld]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[mlfunctioningbatteriy]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[mojosoup.sloptown]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[moon.spookcat]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[morerotregions.elsafogen]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[mountceleste]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[mudpools]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[musicalmiracle.wingcat]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[myr.chasing_wind]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[myr.moss_fields]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[myr.necropolis]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[myr.seer]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[nacu_shrub.bingomode]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[neuronforest]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[neworldsbya10]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[ngg_FonabA]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[nicolasdreams.thepipe]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[nineteen]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[nograndideas]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[norippleneeded]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[np.aetherforall]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[np.westernintake]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[nyctophobia]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[obsoletereactor]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[olaycolay.thevinki]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[onh]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[osha]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[otherlandbya10]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[overflowbeta]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[overgrownfacility]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[overgrowth]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[peripheralwreckager]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[peterklaus.amalgamation]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[peterklaus.cannibal]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[peterklaus.eng]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[peterklaus.jester]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[peterklaus.subtitles]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[peterklaus.yeti]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[phace.impulse]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[phoneonadrawingtablet.sprinklingdrifts]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[physicsspeed]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[pilgrims_ascent]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[plop]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[pocky]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[pocky-raisin.disarray]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[pocky-raisin.theestranged]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[powerplant]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[pqrail]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[presto.lambent]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[propane.fastRegion]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[propane_begoniaCat]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[pu.theoutline]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[puzzlemod2]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[qtpi.coastland-sector]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[quietgardens]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[radiosphere]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[ravagedskyline]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[reclaimingentropy]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[rivuletouterexpanse]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[ruccn_simple]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[rufflesfloodedpipeways]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[rumblingcascade]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[rwhk]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[rwslugcat_exrainworld]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[saltedsour.desiccation2]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[scaggytowny]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[scorched_district]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[scrappedpeak]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[screen]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[seafloor]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[sequesteredfacility]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[sequoia.parascutigera]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[seven_winding_tunnles]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[shrouded_assembly]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[shrubfromtomorrow.tickTicker]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[slagpits]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[slime]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[slime-cubed.inputdisplay]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[slime-cubed.sandeater]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[slm1]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[soaringlookout]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[sov]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[sp3.SL-LM]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[spire.awfulmaze]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[splugpack]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[splugpack.DEVONLY]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[sss]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[sticks.nht_seafloorbarrens]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[stonehead]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[stormy_coast]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[stygiandepths]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[styxnstonez.motherscug]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[submergedconduits]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[sunpwplnt]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[supermariobrosworldone]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[surrealist]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[t1ws.moreflora]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[tIgErByA10]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[taintedbranch]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[tcan.RustedFactorySF]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[tcan.SacredGarden]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[tcan.marshlandwastes]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[theWarrior]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[the_aquaflora]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[the_rainy_facility]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[theannex]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[thecusp]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[thefriend]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[theincandescent]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[thelosttunnels]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[theroot_will]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[thetower]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[thurmaturge]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[toothandclaw.slugpack]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[topicular.lancer]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[toxi.wimdyplacethingy]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[trialbyfire]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[tsunochizu.barrenstreets]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[turt.curiousascent]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[tyxaar.nymph]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[ultharequinox.Hubert]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[underwatercomplex]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[urufudoggo.theescort]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[utterlydeviousspire]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[verde.levelfixes]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[watcher-character]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[watcherskyislands]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[wcf]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[weakenedplatform]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[wooga123.firstmod]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[wr-beta]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[wrayk.floatingisles]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[wrayk.lushwire]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[wrayk.undersea]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[xuanzebufeng.saintsouterexpanse]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[yardsofsteam]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[zeldack.theparasite]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[zeldak974.silkslug]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[znery.backrooms]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
+[ĘPUWU]
+name= # 模组未安装，原始名称未知
+desc= # 模组未安装，原始描述未知
+trans_name=# 在此行添加翻译名称
+trans_desc=# 在此行添加翻译描述
+
