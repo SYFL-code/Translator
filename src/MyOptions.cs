@@ -1215,7 +1215,7 @@ namespace Translator
 		{
 			bool found = false;
 
-			// 第一优先级：更新当前可见的 UI 元素（原有逻辑，可保留）
+			// 更新当前可见的 UI 元素
 			foreach (UIelement uIelement in ConfigContainer.instance.GetFocusables())
 			{
 				if (uIelement is MenuModList.ModButton modButton)
@@ -1229,7 +1229,7 @@ namespace Translator
 				}
 			}
 
-			// 若可见元素中未找到，从模组列表中直接查找（第二优先级）
+			// 若可见元素中未找到，从模组列表中直接查找
 			Log.LogDebug($"found:{found}");
 			if (!found)
 			{
@@ -1332,7 +1332,7 @@ namespace Translator
 			//	}
 			//}
 		}
-		// 辅助方法：更新单个按钮的显示
+		// 更新单个按钮的显示
 		private static void UpdateButton(MenuModList.ModButton button, string modID, string modName, string moddic)
 		{
 			if (modName != "--unchange--")
@@ -1358,7 +1358,7 @@ namespace Translator
 			// 同时更新预览面板中的标签（如果当前预览的是该模组）
 			if (ConfigContainer.OptItfs[0] is InternalOI_Stats internalOI_Stats)
 			{
-                if (modName != "--unchange--")
+				if (modName != "--unchange--")
 				{
 					if (!string.IsNullOrWhiteSpace(modName))
 					{
@@ -1398,14 +1398,14 @@ namespace Translator
 					}
 				}
 
-                // 如果当前预览的模组就是被更新的模组，刷新预览面板以重新布局
-                //if (needRefresh)
-                //{
-                //	internalOI_Stats._RefreshStats();
-                //}
+				// 如果当前预览的模组就是被更新的模组，刷新预览面板以重新布局
+				//if (needRefresh)
+				//{
+				//	internalOI_Stats._RefreshStats();
+				//}
 
-                internalOI_Stats._PreviewMod(button);
-            }
+				internalOI_Stats._PreviewMod(button);
+			}
 		}
 		public static bool IsKeyInStrings(string key)
 		{

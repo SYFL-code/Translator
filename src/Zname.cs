@@ -44,71 +44,72 @@ using ObjType = AbstractPhysicalObject.AbstractObjectType;
 using Random = UnityEngine.Random;
 #endregion
 namespace Scrap;
+#pragma warning disable CS0169
 [Obsolete("Scrap 废案")]
 [EditorBrowsable(EditorBrowsableState.Never)]
 internal class Zname//Scrap 废案
 {
-    #region Items
-    #endregion
-    #region Creatures
-    #endregion
+	#region Items
+	#endregion
+	#region Creatures
+	#endregion
 
 
 
-    #region Start
+	#region Start
 
-    // | mklink /H（最稳）				| 链接 单个文件（如.csproj, .dll, .jpg）且不怕改文件名 |
-    // | mklink（不加参数）				| 链接 单个文件 但需要跨分区或想一眼看出是链接 |
-    // | mklink /J						| 链接 整个文件夹 且项目路径绝对固定（不搬家 |
-    // | mklink /D（推荐用相对路径创建）| 链接 整个文件夹 且项目可能会整体拷贝 / 迁移（如Git仓库） |
+	// | mklink /H（最稳）				| 链接 单个文件（如.csproj, .dll, .jpg）且不怕改文件名 |
+	// | mklink（不加参数）				| 链接 单个文件 但需要跨分区或想一眼看出是链接 |
+	// | mklink /J						| 链接 整个文件夹 且项目路径绝对固定（不搬家 |
+	// | mklink /D（推荐用相对路径创建）| 链接 整个文件夹 且项目可能会整体拷贝 / 迁移（如Git仓库） |
 
-    // mklink /H "C:\Users\Revision-Extra\AppData\LocalLow\Videocult\Rain World\ly.ModRename_stringsSave.txt" "C:\Users\Revision-Extra\AppData\LocalLow\Videocult\Rain World\ModConfigs\ly.ModRename_stringsSave.txt"
-    // mklink "E:\SteamLibrary\steamapps\workshop\content\312520\3759456473\text\text_chi\strings.txt" "C:\Users\Revision-Extra\AppData\LocalLow\Videocult\Rain World\ModConfigs\ly.ModRename_stringsSave.txt"
-    // mklink /j "E:\SteamLibrary\steamapps\common\Rain World\RainWorld_Data\StreamingAssets\mods\EnderPearl" "E:\Other\EnderPearl\mod"
-    // fsutil hardlink list "C:\你的文件.txt"
-    // certutil -hashfile D:\setup.exe SHA256
+	// mklink /H "C:\Users\Revision-Extra\AppData\LocalLow\Videocult\Rain World\ly.ModRename_stringsSave.txt" "C:\Users\Revision-Extra\AppData\LocalLow\Videocult\Rain World\ModConfigs\ly.ModRename_stringsSave.txt"
+	// mklink "E:\SteamLibrary\steamapps\workshop\content\312520\3759456473\text\text_chi\strings.txt" "C:\Users\Revision-Extra\AppData\LocalLow\Videocult\Rain World\ModConfigs\ly.ModRename_stringsSave.txt"
+	// mklink /j "E:\SteamLibrary\steamapps\common\Rain World\RainWorld_Data\StreamingAssets\mods\EnderPearl" "E:\Other\EnderPearl\mod"
+	// fsutil hardlink list "C:\你的文件.txt"
+	// certutil -hashfile D:\setup.exe SHA256
 
-    // \Rain World\BepInEx\config\BepInEx.cfg里面有个[Logging.Console] 的Enabled改成true
+	// \Rain World\BepInEx\config\BepInEx.cfg里面有个[Logging.Console] 的Enabled改成true
 
-    // PowerShell
-    // $env:RainWorldDir = "E:\SteamLibrary\steamapps\common\Rain World"
+	// PowerShell
+	// $env:RainWorldDir = "E:\SteamLibrary\steamapps\common\Rain World"
 
-    // # Windows CMD 设置 
-    // set RainWorldDir=C:\Program Files (x86)\Steam\steamapps\common\Rain World
-    // # 验证
-    // echo %RainWorldDir%
-    #endregion
+	// # Windows CMD 设置 
+	// set RainWorldDir=C:\Program Files (x86)\Steam\steamapps\common\Rain World
+	// # 验证
+	// echo %RainWorldDir%
+	#endregion
 
 #if DEBUG
-    // 只在调试模式下生效的代码（比如打印日志）
-    // <DefineConstants>MYDEBUG</DefineConstants>
+	// 只在调试模式下生效的代码（比如打印日志）
+	// <DefineConstants>MYDEBUG</DefineConstants>
 #else
 	// 正式发布时的代码（不打印调试日志）
 #endif
 
-    // UnityExplorer
-    // HopToDesk
+	// UnityExplorer
+	// HopToDesk
 
-    // https://gist.github.com/EtiTheSpirit/655d8e81732ba516ca768dbd7410ddf4 这里有一个文档讲了一些关于rw shader的注意事项
-    // 可以看看Menu.StoryGameStasticsScreen里的AddBkgIllustration
+	// https://gist.github.com/EtiTheSpirit/655d8e81732ba516ca768dbd7410ddf4 这里有一个文档讲了一些关于rw shader的注意事项
+	// 可以看看Menu.StoryGameStasticsScreen里的AddBkgIllustration
 
-    /*在用 slugbase 的情况下，将你的头像图片命名为 multiplayerportrait<X><Y>-<Z>.png，
+	/*在用 slugbase 的情况下，将你的头像图片命名为 multiplayerportrait<X><Y>-<Z>.png，
 	其中 X 取 0~4，0~3 对应竞技场 1~4 号头像，4 对应探险模式头像；
 	Y 取 0~1，0 对应死亡头像，1 对应生存头像；
 	Z 取猫的 Name 值（大小写须与代码中相同）。
 	注意，图片尺寸必须为 84×84，否则需要另外 hook 处理。
 	完成后，将图片放入你的模组根文件夹下的 illustrations（注意大小写一致）文件夹即可*/
 
-    // 就是开发者工具里面可以按
-    // i->重播这一段的画面
-    // m->出现可以更改整体cg移动方向的线，可以用鼠标拖动来改变移动轨迹
-    // b->保存cg变换的更改
-    // n->拖动鼠标所在位置的贴图
+	// 就是开发者工具里面可以按
+	// i->重播这一段的画面
+	// m->出现可以更改整体cg移动方向的线，可以用鼠标拖动来改变移动轨迹
+	// b->保存cg变换的更改
+	// n->拖动鼠标所在位置的贴图
 
-    // spawn_raw EnderPearl
+	// spawn_raw EnderPearl
 
 
-    public static string Z()
+	public static string Z()
 	{
 		/*// 1. 获取整个字典
 		var dict = ExtensionLib.GlobalVar.playerVars;
@@ -163,28 +164,28 @@ internal class Zname//Scrap 废案
 		return "";
 	}
 
-    // bool ? true : false
+	// bool ? true : false
 
-    // tree /f
-    // 文件目录树
+	// tree /f
+	// 文件目录树
 
-    // Before
-    // After
+	// Before
+	// After
 
-    /*
+	/*
 	测试	多场景测试：吞咽、吐出、消化、存档读档、容量满、超容读档
 	日志	保留关键日志，方便排查问题
 	配置	考虑将容量设为可配置选项
 	兼容性	测试与其他 Mod 的兼容性
 	*/
 
-    #region DateTime
-    #endregion
+	#region DateTime
+	#endregion
 
-    #region 反编译
+	#region 反编译
 
-    #region On 钩子
-    public void OnEnable()
+	#region On 钩子
+	public void OnEnable()
 	{
 		On.Player.CanBeSwallowed += On_Player_CanBeSwallowed;
 		IL.Player.CanBeSwallowed += IL_Player_CanBeSwallowed;
@@ -205,9 +206,9 @@ internal class Zname//Scrap 废案
 
 		ILLabel? proceedCond = c.Prev.Operand as ILLabel;
 
-        c.Goto(0);
+		c.Goto(0);
 
-        c.Emit(OpCodes.Ldarg_0);
+		c.Emit(OpCodes.Ldarg_0);
 		c.Emit(OpCodes.Ldarg_1);
 		c.EmitDelegate<Func<Player, PhysicalObject, bool>> ((player, testObj) =>
 		{
@@ -229,22 +230,22 @@ internal class Zname//Scrap 废案
 	{
 		// 2. Prefix：在原方法执行前运行
 		//    __instance 指 Player 实例，ref int damage 允许修改传入的参数
-        static bool Prefix(Player __instance, PhysicalObject testObj, ref bool __result)
-        {
-            if (testObj is Rock)
-            {
-                __result = true;
-                return false; // 跳过原方法
-            }
-            return true;
-        }
+		static bool Prefix(Player __instance, PhysicalObject testObj, ref bool __result)
+		{
+			if (testObj is Rock)
+			{
+				__result = true;
+				return false; // 跳过原方法
+			}
+			return true;
+		}
 
-        // 也可以写 Postfix（执行后）或 Transpiler（修改IL中间码）
+		// 也可以写 Postfix（执行后）或 Transpiler（修改IL中间码）
 
-        static bool Postfix(Player __instance, PhysicalObject testObj, ref bool __result)
-        {
-            return true;
-        }
+		static bool Postfix(Player __instance, PhysicalObject testObj, ref bool __result)
+		{
+			return true;
+		}
 
 		// Transpiler 必须返回 IEnumerable<CodeInstruction>
 		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -270,15 +271,15 @@ internal class Zname//Scrap 废案
 			return codes;
 		}
 
-        // 用 CodeMatcher 改写上面的例子（更稳健）
-        static void Transpiler(CodeMatcher matcher)
-        {
-            matcher.MatchForward(false,
-                new CodeMatch(System.Reflection.Emit.OpCodes.Ldc_I4_S, 100) // 查找 100
-            ).SetOperandAndAdvance(200); // 改成 200
-        }
+		// 用 CodeMatcher 改写上面的例子（更稳健）
+		static void Transpiler(CodeMatcher matcher)
+		{
+			matcher.MatchForward(false,
+				new CodeMatch(System.Reflection.Emit.OpCodes.Ldc_I4_S, 100) // 查找 100
+			).SetOperandAndAdvance(200); // 改成 200
+		}
 
-        static void A()
+		static void A()
 		{
 			// 在模组加载时执行一次：
 			Harmony.CreateAndPatchAll(typeof(Player_CanBeSwallowed_Patch));
@@ -526,6 +527,7 @@ xml
 	#endregion
 
 	#endregion
+
 
 	#region LINQ & Lambda 表达式
 	/*
@@ -7601,3 +7603,4 @@ namespace EnderPearl
 	}*/
 	#endregion
 }
+#pragma warning restore CS0169
