@@ -1,17 +1,21 @@
 ﻿#region using
 using BepInEx;
+using BepInEx.Logging;
 using Expedition;
 using HarmonyLib;
 using HUD;
 using JetBrains.Annotations;
 using Menu.Remix.MixedUI;
 using Menu.Remix.MixedUI.ValueTypes;
+using Mono.Cecil;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using MonoMod.RuntimeDetour;
+using MonoMod.Utils;
 using MoreSlugcats;
 using Newtonsoft.Json.Linq;
 using Noise;
+using RainMeadow;
 using RWCustom;
 using SlugBase.Features;
 using Steamworks;
@@ -32,10 +36,6 @@ using System.Windows.Forms;
 using System.Xml.Schema;
 using Unity.Mathematics;
 using UnityEngine;
-using BepInEx.Logging;
-using Mono.Cecil;
-using MonoMod.Utils;
-using RainMeadow;
 using static MonoMod.InlineRT.MonoModRule;
 using static SlugBase.Features.FeatureTypes;
 using static UnityEngine.Input;
@@ -189,6 +189,25 @@ internal class Zname//Scrap 废案
 	{
 		On.Player.CanBeSwallowed += On_Player_CanBeSwallowed;
 		IL.Player.CanBeSwallowed += IL_Player_CanBeSwallowed;
+
+
+		// 插件 A
+		On.Player.Update += (orig, self, eu) => {
+			orig(self, eu);
+			UnityEngine.Debug.Log("来自插件 A 的日志");
+		};
+
+		// 插件 B（稍后加载）
+		On.Player.Update += (orig, self, eu) => {
+			orig(self, eu);
+			UnityEngine.Debug.Log("来自插件 B 的日志");
+		};
+
+		//[Info: Unity Log] 来自插件 A 的日志
+		//[Info: Unity Log] 来自插件 B 的日志
+		//[Info: Unity Log] 来自插件 A 的日志
+		//[Info: Unity Log] 来自插件 B 的日志...
+
 	}
 
 	public static bool On_Player_CanBeSwallowed(On.Player.orig_CanBeSwallowed orig, Player player, PhysicalObject testObj)
@@ -200,9 +219,10 @@ internal class Zname//Scrap 废案
 
 	public static void IL_Player_CanBeSwallowed(ILContext il) // 随便写的
 	{
-		ILCursor c = new ILCursor(il);
-
-		c.Index = 17;
+		ILCursor c = new ILCursor(il)
+		{
+			Index = 17
+		};
 
 		ILLabel? proceedCond = c.Prev.Operand as ILLabel;
 
@@ -360,10 +380,10 @@ internal class Zname//Scrap 废案
 
 		return "反编译";
 	}
-	#endregion
+    #endregion
 
-	#region 反射 + 委托
-	public class LegacyHook
+    #region 反射 + 委托
+    public static class LegacyHook
 	{
 		private static Player? _targetPlayer; // 假设需要实例
 		private static MethodInfo? _originalMethod;
@@ -529,6 +549,36 @@ xml
 	#endregion
 
 
+	#region 文件目录
+	static string save = UnityEngine.Application.persistentDataPath;
+	static string gameRoot = System.AppDomain.CurrentDomain.BaseDirectory;
+    private static string? _cachedModRoot;
+	static string modRoot
+	{
+		get
+		{
+			if (_cachedModRoot != null) return _cachedModRoot;
+
+			// 获取当前 DLL 所在目录
+			string? dllDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+			// 从 DLL 目录逐级向上查找 modinfo.json
+			string? dir = dllDir;
+			while (dir != null)
+			{
+				if (File.Exists(Path.Combine(dir, "modinfo.json")))
+				{
+					_cachedModRoot = dir;
+					Log.LogInfo($"模组根目录已缓存: {dir}");
+					return dir;
+				}
+				dir = Path.GetDirectoryName(dir);
+			}
+			throw new FileNotFoundException("无法找到 modinfo.json");
+		}
+	}
+	#endregion
+
 	#region LINQ & Lambda 表达式
 	/*
 	LINQ的基本概念
@@ -562,7 +612,7 @@ xml
 	// 假设我们有一个整数列表，想要找出其中的所有偶数并按降序排列：
 	private void LINQLambda()
 	{
-		List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+		List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 		var evenNumbers = from n in numbers
 						  where n % 2 == 0
@@ -577,7 +627,7 @@ xml
 		// Lambda 表达式与 LINQ
 		// Lambda 表达式在 LINQ 查询中被广泛使用。
 		// 简单的 LINQ 查询
-		numbers = new List<int> { 1, 2, 3, 4, 5 };
+		numbers = [1, 2, 3, 4, 5];
 
 		// 筛选出大于 3 的数字
 		var result = numbers.Where(x => x > 3);
@@ -588,7 +638,7 @@ xml
 		}
 
 		// 使用 Select 转换数据
-		numbers = new List<int> { 1, 2, 3 };
+		numbers = [1, 2, 3];
 
 		// 将每个数字平方
 		var squares = numbers.Select(x => x * x);

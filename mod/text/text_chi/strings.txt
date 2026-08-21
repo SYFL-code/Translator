@@ -47,8 +47,8 @@ RSMacrocosmSpawnSwaps-name|[游戏机制] Macrocosm生成替换
 RSMacrocosmSpawnSwaps-description|为Macrocosm的生物添加简单的生成替换器支持，作为对模组区域的部分支持方式，并为这些生物提供实际的生成点。
 a_template_to_help_you_do_world_file_formatting-name|[工具] 世界文件格式化帮助模板
 a_template_to_help_you_do_world_file_formatting-description|你好，我之前没见过有模组做过类似的事情，所以我做了这个。现在开始，当你下载模组后，你需要去 D:teamLibraryteamappsorkshopontent12520 这是你找到创意工坊模组的方式。现在在里面找到此模组的ID，完成后将文件夹复制到 D:teamLibraryteamappsommonain WorldainWorld_DatatreamingAssetsods 之后，给你想要的文件夹命名，并按照我添加到文件夹中的说明操作。
-3518645564-name|3518645564？
-3518645564-description|无描述？/n?<LINE>@<LINE>1<LINE>2<LINE>3
+3518645564-name|3518645564？？？
+3518645564-description|无描述？？？/n?<LINE>@
 temp-name|[区域] 区域模组 模板
 temp-description|模板
 Blaze.Lurker-name|[Slugcat] 潜伏者（模板）

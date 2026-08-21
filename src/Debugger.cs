@@ -20,10 +20,24 @@ using Translator;
 #endif
 
 #endregion
-//[BepInPlugin("DebugArray.Redlyn", "DebugArray", "1.0.0")]
-public class Debugger// : BaseUnityPlugin
+public class Debugger
 {
-	private enum ArrayType { None, Float, Bool, Vector }
+    public static Debugger Instance
+    {
+        get
+        {
+            instance ??= new Debugger();
+            return instance;
+        }
+    }
+    private static Debugger? instance;
+    public Debugger()
+    {
+        Plugin.OnUpdate += Update;
+    }
+
+
+    private enum ArrayType { None, Float, Bool, Vector }
 	private enum InputState { None, SelectingIndex, EnteringValue }
 
 	private static ArrayType _selectedType = ArrayType.None;
@@ -33,7 +47,7 @@ public class Debugger// : BaseUnityPlugin
 	// 公共访问方法
 	public static float GetFloat(int index, float defaultValue = default, string name = "")
 	{
-        _floats[index].Item2 = name;
+		_floats[index].Item2 = name;
 		return _floats[index].Item1 ??= defaultValue;
 	}
 	public static bool GetBool(int index, bool defaultValue = default, string name = "")
@@ -45,7 +59,7 @@ public class Debugger// : BaseUnityPlugin
 	{
 		_Vectors[index].Item2 = name;
 		return _Vectors[index].Item1 ??= defaultValue;
-    }
+	}
 
 	public static void SetFloat(int index, float value, string name = "")
 		=> _floats[index] = (value, name);
@@ -180,11 +194,7 @@ public class Debugger// : BaseUnityPlugin
 		//}
 		return IsMarked(instance);
 	}
-	#endregion
-
-
-
-
+    #endregion
 
 	public static void Update()
 	{
@@ -291,9 +301,9 @@ public class Debugger// : BaseUnityPlugin
 		{
 			if (array[i] is ITuple tuple && tuple[0] != null)
 			{
-                Log.LogInfo($"{type}[{i}] = {array[i]}");
+				Log.LogInfo($"{type}[{i}] = {array[i]}");
 
-                hasValue = true;
+				hasValue = true;
 			}
 		}
 		if (!hasValue)
@@ -358,8 +368,8 @@ public class Debugger// : BaseUnityPlugin
 		{
 			if (float.TryParse(_inputBuffer, NumberStyles.Any, CultureInfo.InvariantCulture, out float result))
 			{
-                _floats[_selectedIndex] = (result, _floats[_selectedIndex].Item2);
-                Log.LogInfo($"float_{_selectedIndex} = {result}");
+				_floats[_selectedIndex] = (result, _floats[_selectedIndex].Item2);
+				Log.LogInfo($"float_{_selectedIndex} = {result}");
 				_state = InputState.SelectingIndex;
 				_inputBuffer = "";
 			}
@@ -399,9 +409,9 @@ public class Debugger// : BaseUnityPlugin
 			{
 				Vector2 vec = _Vectors[_selectedIndex].Item1 ?? default;  // 获取值
 				vec.x = result;
-                _Vectors[_selectedIndex] = (vec, _Vectors[_selectedIndex].Item2);  // 重新赋值
+				_Vectors[_selectedIndex] = (vec, _Vectors[_selectedIndex].Item2);  // 重新赋值
 
-                Log.LogInfo($"Vec_{_selectedIndex}.x = {result}");
+				Log.LogInfo($"Vec_{_selectedIndex}.x = {result}");
 				_inputBuffer = "";
 				Log.LogInfo("输入 Y 值");
 			}

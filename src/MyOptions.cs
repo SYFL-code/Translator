@@ -16,7 +16,7 @@ namespace Translator
 {
 	internal class MyOptions : OptionInterface
 	{
-		public static MyOptions? Instance;
+		public static MyOptions? Instance { get; private set; }
 
 		public static RainWorld RainWorld => Custom.rainWorld;
 		public static InGameTranslator inGameTranslator => RainWorld.inGameTranslator;
@@ -30,7 +30,7 @@ namespace Translator
 
 		public MyOptions()
 		{
-			Instance = this;
+			MyOptions.Instance = this;
 
 			// 配置4: 目标模组 ID 输入框绑定的配置值
 			this.idc = this.config.Bind<string>("LYR_ChModList_idc", "", new ConfigurableInfo("targetID", null, "", Array.Empty<object>()));
@@ -65,7 +65,7 @@ namespace Translator
 
 		public override void Initialize()
 		{
-			this.by1 = (this.by2 = (this.by3 = 570f));
+			this.by1 = this.by2 = this.by3 = 570f;
 
 			base.Initialize();
 
@@ -255,8 +255,8 @@ namespace Translator
 		// 将当前语言 strings.txt 中的全部键值同步到游戏翻译器内存，保证运行时修改/补齐后立即生效
 		public static void ReloadShortStrings()
 		{
-			List<string> keys = new();
-			List<string> values = new();
+			List<string> keys = [];
+			List<string> values = [];
 
 			foreach (string line in GetStrings())
 			{
@@ -514,7 +514,7 @@ namespace Translator
 				string filePath = GetAllMods();
 
 				// 1. 收集所有需要导出的模组ID
-				HashSet<string> idsToExport = new HashSet<string>();
+				HashSet<string> idsToExport = [];
 
 				// 一次性构建键索引缓存
 				string[] allStrings = GetStrings();
@@ -727,7 +727,7 @@ namespace Translator
 				this.tips!.text = T("TransFile_Failed");
 			}
 		}
-		private void ImportAllButton_OnClick(UIfocusable trigger)
+        private void ImportAllButton_OnClick(UIfocusable trigger)
 		{
 			try
 			{
@@ -755,7 +755,7 @@ namespace Translator
 
 				string[] lines = File.ReadAllLines(filePath, Encoding.UTF8);
 
-				List<(string id, string transName, string transDesc)> entries = new List<(string, string, string)>();
+				List<(string id, string transName, string transDesc)> entries = [];
 
 				int i = 0;
 				int successCount = 0;
@@ -829,8 +829,8 @@ namespace Translator
 
 
 						// 变更检测的对比基准
-						bool nameChanged = (transName != lastTransName);
-						bool descChanged = (transDesc != lastTransDesc);
+						bool nameChanged = transName != lastTransName;
+						bool descChanged = transDesc != lastTransDesc;
 						if (nameChanged || descChanged)
 						{
 							successCount++;
@@ -877,8 +877,8 @@ namespace Translator
 					try
 					{
 						// 准备键值对
-						List<string> keys = new List<string>();
-						List<string> values = new List<string>();
+						List<string> keys = [];
+						List<string> values = [];
 
 						keys.Add(entry.id + "-name");
 						values.Add(entry.transName);
@@ -923,7 +923,7 @@ namespace Translator
 				this.tips!.text = T("Trans_Apply_Failed");
 			}
 		}
-		private string GetCurrentTranslation(string id, string type, Dictionary<string, int> cache, string[] allStrings)
+		private static string GetCurrentTranslation(string id, string type, Dictionary<string, int> cache, string[] allStrings)
 		{
 			string key = id + "-" + type;
 			if (cache.TryGetValue(key, out int idx))

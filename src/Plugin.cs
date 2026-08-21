@@ -31,21 +31,24 @@ using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using UnityEngine;
 using Watcher;
-using static PhysicalObject;
 using static Helper;
+using static PhysicalObject;
 #endregion
 namespace Translator;
 
 [BepInPlugin(Plugin.GUID, Plugin.NAME, Plugin.VERSION)]
 public sealed class Plugin : BaseUnityPlugin
 {
+	#region 信息
 	public const string GUID = "Lvye_Translator";
 	public const string NAME = "Translator";
 	public const string VERSION = "0.1.0";
 
 	public const string version = "0.1.0";
 	public const string Name = "Translator";
+	#endregion
 
+	#region Release & DEBUG
 #if DEBUG
 	public static bool DebugMode { get; set; } = true;//  false
 	private static bool EnableStartScreen = true;// true
@@ -55,104 +58,153 @@ public sealed class Plugin : BaseUnityPlugin
 	private const bool EnableStartScreen = true;
 	public const bool EnableLog = false;
 #endif
+	#endregion
 
 
-	private static bool isEnabled;
+	private bool isEnabled;
+	public bool inited;
 
+	#region Awake & Update
 	public void Awake()
 	{
+		Log.LogInfo($"{Name} Mod Awake");
 	}
+
+	[field: DebuggerBrowsable(DebuggerBrowsableState.Never)]
+	internal static event System.Action? OnUpdate;
 	void Update()
 	{
+		Plugin.OnUpdate?.Invoke();
+
 		Debugger.Update();
 	}
+	#endregion
 
-	// 已注册的钩子委托实例，OnDisable 时据此准确注销
-	private static On.RainWorld.hook_OnModsInit? _onModsInitHook;
-	private static On.Menu.Remix.InternalOI_Stats.hook_Initialize? _statsInitHook;
-	private static On.Menu.Remix.InternalOI_Stats.hook__PreviewMod? _statsPreviewHook;
 	public void OnEnable()
 	{
-		if (Plugin.isEnabled)
+		if (this.isEnabled)
 		{
 			return;
 		}
-		Plugin.isEnabled = true;
-
-		Log.SetLog(base.Logger);
+		this.isEnabled = true;
 
 		// Put your custom hooks here!-在此放置你自己的钩子
-		// 保存委托实例，保证 OnDisable 时能准确注销
-		_onModsInitHook = Extras.WrapInit(LoadResources);
-		On.RainWorld.OnModsInit += _onModsInitHook;
-	}
+		On.RainWorld.OnModsInit += On_RainWorld_OnModsInit;
+		On.RainWorld.OnModsDisabled += On_RainWorld_OnModsDisabled;
 
+
+		Log.LogInfo($"{Name} Mod OnEnable!");
+	}
 	public void OnDisable()
 	{
-		if (!Plugin.isEnabled)
-		{
+		if (!this.isEnabled)
 			return;
-		}
-		Plugin.isEnabled = false;
+		this.isEnabled = false;
 
 		// Remove your custom hooks here!-在此取消你的钩子
-		if (_onModsInitHook != null)
-		{
-			On.RainWorld.OnModsInit -= _onModsInitHook;
-			_onModsInitHook = null;
-		}
-		if (_statsInitHook != null)
-		{
-			On.Menu.Remix.InternalOI_Stats.Initialize -= _statsInitHook;
-			_statsInitHook = null;
-		}
-		if (_statsPreviewHook != null)
-		{
-			On.Menu.Remix.InternalOI_Stats._PreviewMod -= _statsPreviewHook;
-			_statsPreviewHook = null;
-		}
+		On.RainWorld.OnModsInit -= On_RainWorld_OnModsInit;
+		On.RainWorld.OnModsDisabled -= On_RainWorld_OnModsDisabled;
 
-		// 允许禁用后重新启用时再次执行 LoadResources
-		Extras.ResetInitialized();
+
+		HookManager.UninitializeAll();
+
+		Log.LogInfo($"{Name} Mod OnDisable!");
 	}
 
 
 	// Load any resources, such as sprites or sounds-加载任何资源 包括图像素材和音效
-	private void LoadResources(RainWorld rainWorld)
+	private void On_RainWorld_OnModsInit(On.RainWorld.orig_OnModsInit orig, RainWorld self)
 	{
-		// 各初始化步骤相互隔离：任一步失败都不影响其余步骤
-		try
-		{
-			MachineConnector.SetRegisteredOI(GUID, new MyOptions());
-		}
-		catch (Exception e)
-		{
-			Log.LogError($"注册设置页失败: {e}");
-		}
+		orig?.Invoke(self);
+
+
+		Log.LogInfo($"OnModsInit inited: {inited}");
+
+		if (this.inited)
+			return;
+		this.inited = true;
 
 		try
 		{
+			// Put your custom hooks here!-在此放置你自己的钩子
 			TrySyncStringsFile();
+
+			HookManager.Register("On.Menu.Remix.InternalOI_Stats.Initialize", new HookManager.HookData
+			{
+				InitializeHooks = () => On.Menu.Remix.InternalOI_Stats.Initialize += InternalOI_Stats_InitializeHook,
+				UnInitializeHooks = () => On.Menu.Remix.InternalOI_Stats.Initialize -= InternalOI_Stats_InitializeHook
+			});
+			HookManager.Register("On.Menu.Remix.InternalOI_Stats._PreviewMod", new HookManager.HookData
+			{
+				InitializeHooks = () => On.Menu.Remix.InternalOI_Stats._PreviewMod += InternalOI_Stats__PreviewModHook,
+				UnInitializeHooks = () => On.Menu.Remix.InternalOI_Stats._PreviewMod -= InternalOI_Stats__PreviewModHook
+			});
+
+			Plugin.RegisterOI();
+
+			HookManager.Initialize();
 		}
 		catch (Exception e)
 		{
 			Log.LogError($"同步字符串文件失败: {e}");
 		}
+	}
+
+	private void On_RainWorld_OnModsDisabled(On.RainWorld.orig_OnModsDisabled orig, RainWorld self, ModManager.Mod[] mods)
+	{
+		orig?.Invoke(self, mods);
+
+
+		Log.LogInfo($"OnModsDisabled inited: {inited}");
+
+		if (!this.inited)
+			return;
+		this.inited = false;
 
 		try
 		{
-			_statsInitHook = new On.Menu.Remix.InternalOI_Stats.hook_Initialize(this.InternalOI_Stats_InitializeHook);
-			On.Menu.Remix.InternalOI_Stats.Initialize += _statsInitHook;
+			// Remove your custom hooks here!-在此取消你的钩子
 
-			_statsPreviewHook = new On.Menu.Remix.InternalOI_Stats.hook__PreviewMod(this.InternalOI_Stats__PreviewModHook);
-			On.Menu.Remix.InternalOI_Stats._PreviewMod += _statsPreviewHook;
+			HookManager.UninitializeAll();
 		}
 		catch (Exception e)
 		{
-			Log.LogError($"注册模组信息页钩子失败: {e}");
+			Log.LogError($"Fail to load resources: {e}");
 		}
 	}
 
+	public static void RegisterOI()
+	{
+		try
+		{
+			if (MyOptions.Instance == null)
+			{
+				new MyOptions();
+			}
+			if (MachineConnector.GetRegisteredOI(GUID) != MyOptions.Instance)
+			{
+				MachineConnector.SetRegisteredOI(GUID, MyOptions.Instance);
+
+				Log.LogDebug("Config interface registered successfully");
+			}
+			else
+			{
+				Log.LogWarning("Config interface registered failed");
+			}
+		}
+		catch (Exception ex)
+		{
+			Log.LogError(Plugin.Translate("Error registering option interface: ##").Replace("##", string.Format("{0}", ex)));
+		}
+	}
+
+	public static string Translate(string text)
+	{
+		string TranslateText = Custom.rainWorld.inGameTranslator.Translate(text);
+
+		return (string.IsNullOrEmpty(TranslateText) || TranslateText == "!NO TRANSLATION!")
+			? text : TranslateText;
+	}
 
 	public OpSimpleImageButton? renameButton; // 模组信息页的编辑按钮
 	public static ModManager.Mod? CurrentPreviewMod { get; private set; }
@@ -192,6 +244,62 @@ public sealed class Plugin : BaseUnityPlugin
 		MyOptions.ClearTempFile();
 	}
 
+	// 初始化时在模组信息界面添加按钮
+	private void InternalOI_Stats_InitializeHook(On.Menu.Remix.InternalOI_Stats.orig_Initialize orig, InternalOI_Stats self)
+	{
+		orig.Invoke(self);
+
+		Futile.atlasManager.LoadAtlas("assets/ModRenameButton_Icons");
+		this.renameButton = new OpSimpleImageButton(new Vector2(520f, 510f), new Vector2(30f, 30f), "ModRenameButton_Icon")// 560f 440f
+		{
+			description = T("Rename_Button_Desc"),
+		};
+		this.renameButton.OnClick += RenameButton_OnClick;
+		// 索引1 模组列表标签页?
+		self.Tabs[1].AddItems([ this.renameButton ]);
+	}
+
+	private void InternalOI_Stats__PreviewModHook(On.Menu.Remix.InternalOI_Stats.orig__PreviewMod orig, InternalOI_Stats self, MenuModList.ModButton button)
+	{
+		orig.Invoke(self, button);
+
+		CurrentPreviewMod = self.previewMod;
+		if (this.renameButton != null)
+		{
+			//if (Custom.rainWorld.processManager.mySteamManager != null)
+			if (true)
+			{
+				this.renameButton.Show();
+			}
+			else
+			{
+				this.renameButton.Hide();
+			}
+		}
+	}
+
+	// 点击按钮时的处理逻辑
+	private static void RenameButton_OnClick(UIfocusable trigger)
+	{
+		if (MyOptions.CheckTempFile())
+		{
+			if (MyOptions.CheckTempFileFor(CurrentPreviewMod?.id))
+			{
+				MyOptions.AddToStrings(CurrentPreviewMod?.id);
+			}
+			else
+			{
+				// 修复 bug2：临时文件属于其它模组时，不要误应用；为当前预览模组重新打开临时文件
+				Log.LogWarning($"临时文件属于模组 {MyOptions.TempFileModId}，当前预览为 {CurrentPreviewMod?.id}。已为当前模组重新打开临时文件，原内容将被覆盖。");
+				MyOptions.OpenTempFile(CurrentPreviewMod?.id);
+			}
+		}
+		else
+		{
+			MyOptions.OpenTempFile(CurrentPreviewMod?.id);
+		}
+	}
+
 
 	// 从 "key|value" 行中取出 key；不含 '|' 的行返回 null
 	public static string? GetKey(string line)
@@ -200,8 +308,8 @@ public sealed class Plugin : BaseUnityPlugin
 		string[] parts = line.Split(new char[] { '|' }, 2);
 		return parts.Length == 2 ? parts[0] : null;
 	}
-    // 判断是否为模组翻译键（ModID-name / ModID-description），用于与 UI 译文键区分
-    public static bool IsModKey(string? key)
+	// 判断是否为模组翻译键（ModID-name / ModID-description），用于与 UI 译文键区分
+	public static bool IsModKey(string? key)
 	{
 		return key != null && (key.EndsWith("-name") || key.EndsWith("-description"));
 	}
@@ -215,7 +323,7 @@ public sealed class Plugin : BaseUnityPlugin
 		string[] fromLines = File.ReadAllLines(fromPath);
 		string[] toLines = File.Exists(toPath) ? File.ReadAllLines(toPath) : Array.Empty<string>();
 
-		HashSet<string> seen = new HashSet<string>();
+		HashSet<string> seen = [];
 		List<string> merged = new List<string>(toLines.Length + fromLines.Length);
 
 		foreach (string line in toLines)
@@ -240,8 +348,8 @@ public sealed class Plugin : BaseUnityPlugin
 		string[] uiLines = File.ReadAllLines(stringsPath);
 		string[] saveLines = File.Exists(savePath) ? File.ReadAllLines(savePath) : Array.Empty<string>();
 
-		List<string> result = new List<string>();
-		HashSet<string> seen = new HashSet<string>();
+		List<string> result = [];
+		HashSet<string> seen = [];
 
 		foreach (string line in uiLines)
 		{
@@ -265,8 +373,8 @@ public sealed class Plugin : BaseUnityPlugin
 	private static void WriteModStringsToSaveFile(string stringsPath, string savePath)
 	{
 		string[] stringsLines = File.ReadAllLines(stringsPath);
-		List<string> result = new List<string>();
-		HashSet<string> seen = new HashSet<string>();
+		List<string> result = [];
+		HashSet<string> seen = [];
 
 		foreach (string line in stringsLines)
 		{
@@ -277,64 +385,6 @@ public sealed class Plugin : BaseUnityPlugin
 		}
 
 		File.WriteAllLines(savePath, result);
-	}
-
-	
-
-	// 初始化时在模组信息界面添加按钮
-	private void InternalOI_Stats_InitializeHook(On.Menu.Remix.InternalOI_Stats.orig_Initialize orig, InternalOI_Stats self)
-	{
-		orig.Invoke(self);
-
-		Futile.atlasManager.LoadAtlas("assets/ModRenameButton_Icons");
-		this.renameButton = new OpSimpleImageButton(new Vector2(520f, 510f), new Vector2(30f, 30f), "ModRenameButton_Icon")// 560f 440f
-		{
-			description = T("Rename_Button_Desc"),
-        };
-		this.renameButton.OnClick += RenameButton_OnClick;
-		// 索引1 模组列表标签页?
-		self.Tabs[1].AddItems(new UIelement[] { this.renameButton });
-	}
-
-	// 点击按钮时的处理逻辑
-	private void RenameButton_OnClick(UIfocusable trigger)
-	{
-		if (MyOptions.CheckTempFile())
-		{
-			if (MyOptions.CheckTempFileFor(CurrentPreviewMod?.id))
-			{
-				MyOptions.AddToStrings(CurrentPreviewMod?.id);
-			}
-			else
-			{
-				// 修复 bug2：临时文件属于其它模组时，不要误应用；为当前预览模组重新打开临时文件
-				Log.LogWarning($"临时文件属于模组 {MyOptions.TempFileModId}，当前预览为 {CurrentPreviewMod?.id}。已为当前模组重新打开临时文件，原内容将被覆盖。");
-				MyOptions.OpenTempFile(CurrentPreviewMod?.id);
-			}
-		}
-		else
-		{
-			MyOptions.OpenTempFile(CurrentPreviewMod?.id);
-		}
-	}
-
-	private void InternalOI_Stats__PreviewModHook(On.Menu.Remix.InternalOI_Stats.orig__PreviewMod orig, InternalOI_Stats self, MenuModList.ModButton button)
-	{
-		orig.Invoke(self, button);
-
-		CurrentPreviewMod = self.previewMod;
-		if (this.renameButton != null)
-		{
-			//if (Custom.rainWorld.processManager.mySteamManager != null)
-			if (true)
-			{
-				this.renameButton.Show();
-			}
-			else
-			{
-				this.renameButton.Hide();
-			}
-		}
 	}
 
 
