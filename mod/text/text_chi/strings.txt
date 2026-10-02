@@ -47,8 +47,6 @@ RSMacrocosmSpawnSwaps-name|[游戏机制] Macrocosm生成替换
 RSMacrocosmSpawnSwaps-description|为Macrocosm的生物添加简单的生成替换器支持，作为对模组区域的部分支持方式，并为这些生物提供实际的生成点。
 a_template_to_help_you_do_world_file_formatting-name|[工具] 世界文件格式化帮助模板
 a_template_to_help_you_do_world_file_formatting-description|你好，我之前没见过有模组做过类似的事情，所以我做了这个。现在开始，当你下载模组后，你需要去 D:teamLibraryteamappsorkshopontent12520 这是你找到创意工坊模组的方式。现在在里面找到此模组的ID，完成后将文件夹复制到 D:teamLibraryteamappsommonain WorldainWorld_DatatreamingAssetsods 之后，给你想要的文件夹命名，并按照我添加到文件夹中的说明操作。
-3518645564-name|3518645564？？？
-3518645564-description|无描述？？？/n?<LINE>@
 temp-name|[区域] 区域模组 模板
 temp-description|模板
 Blaze.Lurker-name|[Slugcat] 潜伏者（模板）
@@ -421,6 +419,155 @@ scugshots-name|[体验优化] 截图！
 scugshots-description|拍摄截图，录制标准或高品质的MP4视频，或录制GIF动图，然后在游戏内的图库中查看。
 MiffyL.FoodRegenTime-name|[工具] 食物再生
 MiffyL.FoodRegenTime-description|允许您控制食物再生所需的循环次数。<LINE>默认再生循环次数：2-3（食物将在2或3个循环内随机再生），可在Remix菜单中进行设置。
-Translator-name|翻译器
+Translator-name|[翻译,工具] 翻译器
 xuanzebufeng.advancedtranslationcore-name|[翻译] 高级翻译核心
 xuanzebufeng.advancedtranslationcore-description|终极翻译工具，一款基于众多真实翻译场景开发的模组，可解决90%的翻译问题。
+nat.100_catch_spear-name|[游戏机制] 100%空手接矛
+nat.100_catch_spear-description|蛞蝓猫可以空手接住飞来的长矛。
+alduris.entities-name|[物品,生物] Alduris 的合集
+alduris.entities-description|为雨世界添加一些有趣的小玩意和可爱小家伙。可自由用于区域。
+the_fucking_barnacle-name|[生物] 畜生藤壶!!
+sdfxf.backgroundprofiles-name|[外观] 背景配置
+sdfxf.backgroundprofiles-description|为原版、倾盆大雨和观望者背景提供的简单预设。
+badpixelremover-name|[修复,外观] 坏像素移除器
+badpixelremover-description|替换蜥蜴腿/臂精灵中带坏像素的贴图 >:( ……这次应该能用了。
+falesk.bestiary-name|[工具,体验优化] 生物图鉴
+falesk.bestiary-description|添加生物图鉴，记录你的进度并发现各种实体的有趣且有价值的信息。
+xuanzebufeng.bettermeadowmode-name|[游戏模式] 更好的草原模式
+xuanzebufeng.bettermeadowmode-description|我非常喜欢这个可爱的游戏模式。
+betterpaws-name|[游戏机制,无障碍] 更好的爪子
+betterpaws-description|使用手柄右摇杆或键盘上的独立按键控制蛞蝓猫的手。
+bindlemod-name|[物品,游戏机制] 包袱
+bindlemod-description|基于物理的包袱模组。<LINE><LINE>包袱为空时像布片一样铺在地上；放入石头等物品后，物体会在里面真实滚动并相互碰撞。放入量越多包袱越鼓越大，放太多会撕裂爆开。<LINE><LINE>制作中。
+harvie.biography-name|[工具,体验优化] 传记 [测试版]
+harvie.biography-description|为所有雨世界生物提供游戏内传记。
+naugam.camera_scroll_fix-name|[修复,体验优化] 摄像机滚动修复
+naugam.camera_scroll_fix-description|为 SBCameraScroll 加载预渲染的完整房间图像，以避免摄像机屏幕之间的错位。
+sdfxf.craftingjournal-name|[工具,体验优化] 制作日志
+sdfxf.craftingjournal-description|在游戏内浏览和发现饕餮与工匠的制作配方。
+fluffball.custompassages-name|[工具,依赖项] 自定义通行证支持
+fluffball.custompassages-description|将此模组作为依赖项，为你的模组创建自定义通行证。此模组提供创建新通行证内容所需的所有钩子。你的模组仍需挂钩你想追踪的游戏部分，但其余工作此模组会为你完成。文档：https://docs.google.com/document/d/18WD_4yc5ELGuKkLAAB_MTI8pSxnjSX95gTlY74Tf7P0/edit
+XuYangJerry.DetailedIcon-name|[外观,体验优化] 详细图标
+ShinyKelp.DoubleJump-name|[游戏机制] 二段跳
+ShinyKelp.DoubleJump-description|赋予你二段跳。
+elderraindeer-name|[生物] 长老雨鹿
+elderraindeer-description|一种自定义雨鹿变种，添加长老雨鹿。
+syhnne.gametweaks-name|[修复,体验优化] Emily 的修复与调整
+syhnne.gametweaks-description|我为雨世界做的一些修复和调整。
+sdfxf.excollection-name|[物品,体验优化] 扩展收藏
+sdfxf.excollection-description|扩展的珍珠与广播收藏，包含原版和模组内容，具有投影、动画、音频、文本和广播。
+gelbi.faster-world-extra-name|[体验优化] 更快世界 扩展
+gelbi.faster-world-extra-description|一个傻乎乎的模组，包含更多傻乎乎的优化。
+tpz.floweryworldsounds-name|[音效] 花花无处不在
+tpz.floweryworldsounds-description|当周围的世界一直像……某个特定的人那样说话时，一只普通蛞蝓猫该怎么办？
+Shan-FlyingWhimsies-name|[物品,生物] 飞行奇想
+Shan-FlyingWhimsies-description|为你的游戏引入一些迷人的飞行小装置。
+kass.grabcarrycombined-name|[游戏机制,工具] 抓取与搬运
+kass.grabcarrycombined-description|针对生物和物品的完整抓取模式配置。可抓取清醒/昏迷/驯服的生物。基于热键轻松搬运重物。
+deepspacerunner.internalregionnames-name|[外观,体验优化] 内部区域名称
+deepspacerunner.internalregionnames-description|将区域名称替换为内部名称。
+tpz.jaronacyans-name|[外观] 青蜥炫彩
+tpz.jaronacyans-description|青蜥蜴现在跳跃或做任何事时都会更爱炫耀一点。
+LavaandAsh-name|[区域] 熔岩与灰烬
+LavaandAsh-description|愚人节快乐！
+000rwx64ll-name|[工具,依赖项] 库加载器
+000rwx64ll-description|雨世界现在会在所有模组文件夹中搜索本机库（x86/x86_64）。
+lightninglizard-name|[生物] 闪电蜥蜴
+lightninglizard-description|添加闪电蜥蜴。
+MapOptions-name|[工具,菜单优化] 地图选项
+MapOptions-description|添加用于配置地图的选项。
+Kridi8606.ModSetManager-name|[菜单优化,工具] 模组集管理器
+Kridi8606.ModSetManager-description|允许你保存模组配置并只需点击几下即可切换。再也不用在切换不同模组包时手动启用和禁用几十个模组。
+lb-fgf-m4r-ik.modded-unlocks-name|[竞技场] 模组解锁
+lb-fgf-m4r-ik.modded-unlocks-description|解锁所有非原版、非倾盆大雨、非观望者的竞技场关卡和竞技场生物。
+more_slug_hud-name|[外观,体验优化] 更多蛞蝓HUD
+more_slug_hud-description|若干额外 HUD。
+zeldak974.MouseDragExplorer-name|[工具] 鼠标拖拽浏览器
+zeldak974.MouseDragExplorer-description|允许你使用 Unity Explorer 打开任何物理对象。
+myslugcat.redlyn-name|[Slugcat] 我的蛞蝓猫
+myslugcat.redlyn-description|我的蛞蝓猫。
+noodlefly-name|[生物] 针蝇
+noodlefly-description|一种没有耐心、新陈代谢高的捕食者，是面条蝇家族的后裔。
+zohnannor.nohiddenpipes-name|[无障碍,体验优化] 无隐藏管道
+zohnannor.nohiddenpipes-description|使所有隐藏管道可见。<LINE><LINE>选项：<LINE><LINE>- 显示隐藏管道（默认开启）<LINE>- 显示隐藏死路（默认关闭）<LINE>- 显示破损避难所（默认开启）<LINE><LINE>适用于任何模组内容。<LINE><LINE>你可以在混音菜单中切换功能，无需重启游戏。<LINE><LINE>https://github.com/zohnannor/NoHiddenPipes
+RSMoreLizardVoices-name|[音效,生物] 不再有哑巴蜥蜴
+RSMoreLizardVoices-description|为无声蜥蜴（火车蜥蜴和观望者蜥蜴）添加声音。
+oreo-name|[Slugcat] 奥利奥 青色蛞蝓猫
+oreo-description|添加一只名为奥利奥的自定义蛞蝓猫！<LINE><LINE>DMS 皮肤由 HomeoBox 制作<LINE><LINE>缩略图、选择界面和休眠界面美术由 Luchik 制作！
+magica.paletteeditor-name|[工具,外观] 调色板编辑器
+magica.paletteeditor-description|用于实时创建区域调色板的工具。
+pearlcat-name|[Slugcat] 珍珠猫
+pearlcat-description|一位好奇的学者，拥有利用珍珠为己所用的非凡能力。<LINE><LINE>通过混音配置来设置输入、难度、作弊等！<LINE><LINE>更多蛞蝓猫为可选，但强烈推荐。
+kass.meetarchive-name|[工具,多人] 玩家历史
+kass.meetarchive-description|记录在多人游戏中遇到的玩家。
+gelbi.profiler-name|[工具] 性能分析器
+gelbi.profiler-description|雨世界性能分析器。启用全局分析会使加载时间增加约4秒，并在某些情况下降低性能。
+rwimgui-name|[工具,依赖项] 雨世界 ImGUI API
+rwimgui-description|当你生活中需要 Dear ImGUI 时使用。
+rainbowcat-name|[Slugcat,外观] 彩虹猫
+rainbowcat-description|谁不喜欢一只彩虹蛞蝓猫呢？<LINE><LINE>更改模组配置：Rain World\BepInEx\config\rainbowcat.cfg
+randombuff-name|[游戏机制] 随机增益
+randombuff-description|无原始描述。
+rebinddevtools-name|[工具,无障碍] 重新绑定开发者工具
+rebinddevtools-description|提供混音配置来重新绑定所有默认开发者工具按键！<LINE><LINE>还提供配置以决定开发者工具是否默认启用。<LINE><LINE>来源：https://github.com/forthbridge/rebind-dev-tools
+vigaro.roomscreenshot-name|[工具] 房间截图
+vigaro.roomscreenshot-description|为我的小猫制作。
+zeldak974.ShadersTester-name|[工具,外观] 着色器测试器
+zeldak974.ShadersTester-description|一个用来寻找酷效果的烂模组。
+zohnannor.showkillsondeath-name|[体验优化,外观] 死亡时显示击杀数
+zohnannor.showkillsondeath-description|即使死亡也显示击杀数。这纯粹是视觉变化，不影响你的统计数据。
+Shuqing-name|[Slugcat] 舒晴
+Shuqing-description|寻找失去的幸福，一起寻找你的亲人……
+henpemaz_splitscreencoop-name|[游戏模式,多人] 分屏合作
+henpemaz_splitscreencoop-description|基础游戏的双人分屏合作；如果使用惬意合作，最多四名玩家共享两个或四个摄像机。<LINE><LINE>支持玩家分开到很远的地方并在不同避难所休眠（使用惬意合作时未完全支持）。目前两名玩家仍会在同一避难所醒来。<LINE><LINE>计划功能：<LINE>- 在不同避难所保存<LINE>- 玩家2颜色选择器<LINE><LINE>最初由 Henpemaz 制作<LINE>Github 链接：https://github.com/henpemaz/RemixMods<LINE>特别感谢：<LINE>- Intikus，帮助制作预告片<LINE>- NoirCatto，游玩测试和支持<LINE>- Kert，实现4路分屏和缩放功能！
+harvie.strongscavs-name|[游戏机制,生物] 强力拾荒者
+harvie.strongscavs-description|在扮演工匠时生成强得多的拾荒者，准备好迎接挑战了吗？<LINE><LINE>（附注：拾荒者之王的ID被修改为26456，这是我最喜欢的拾荒者之一哈哈）
+sunhat-name|[外观,DMS] 太阳帽
+sunhat-description|给蛞蝓猫一顶可爱的太阳帽！除圣徒和幼崽外所有角色都可用。附带免费染料。<LINE><LINE>代码位于 github.com/Dual-Iron/sun-hat
+theaccommodator.LH-name|[Slugcat] 适应者
+theaccommodator.LH-description|从遥远的海岸漂流而来，带着残破的身躯，游荡到这个地方。<LINE>面对残酷的世界，生命自会找到出路……
+tigerlizard-name|[生物] 虎蜥蜴
+tigerlizard-description|添加虎蜥蜴，一种大型装甲伏击捕食者，具有独特的狩猎行为、可破坏的背部鳞甲、爬墙能力、自定义视觉和声音、生态系统互动，并完全支持原版蜥蜴驯服。
+tlns-name|[生物,游戏机制] 虎蜥蜴自然生成
+tlns-description|允许虎蜥蜴自然生成，偶尔替换白蜥蜴的生成点。
+Lvye_Translator-name|[翻译,工具] 翻译器
+Lvye_Translator-description|为已安装模组手动添加翻译名称与简介。<LINE>Add translated names and descriptions to installed mods.
+infinite_spear-name|[物品,游戏机制] 三叉戟长矛
+infinite_spear-description|雨世界也要有自己的三叉戟——投出矛后会自动飞回手中。
+LazyCowboy.TrueParallax-name|[外观,体验优化] 真实视差
+LazyCowboy.TrueParallax-description|为雨世界重制、更准确的视差效果，通过根据关卡几何扭曲整个屏幕，使游戏看起来略微放大且具有3D感。此效果类似高级形式的视差遮蔽映射。<LINE><LINE>为支持多种设备和玩家偏好，此模组高度可配置。请查看此模组的混音/配置菜单并浏览可用预设。或者，如果你喜欢冒险，可以调整设置并制作自己的预设！<LINE><LINE>如果你遇到低帧率，可能应禁用此模组。<LINE><LINE>模组兼容性：<LINE>* SBCameraScroll：此模组专为与 SBCameraScroll 兼容而设计。不幸的是，SBCameraScroll 的实验性缩放功能有一些我无法修复的着色器错误。<LINE>* Camera Scroll Fix：强烈推荐与此模组一起使用！Camera Scroll Fix 消除了房间中的接缝，而此模组为其增加深度。<LINE>* Sharpener：Sharpener 完全不会造成问题。而且由于此模组会略微放大摄像机，我推荐使用 Sharpener！<LINE>* Stick Together Co-op + SBCameraScroll：Stick Together Co-op 的动态缩小功能在技术上与此模组兼容，但在视差下看起来很差，所以我不推荐。<LINE>* 分屏合作：大部分不兼容。视差仅对第一个摄像机有效，其他摄像机会自动禁用。因此，启用此模组应该不会造成问题，因为它被设计为在分屏时自动禁用。
+NoirCat.TryCatch-name|[工具,修复] 异常捕获
+NoirCat.TryCatch-description|在 RainWorld.Update 周围放置 try-catch，并将异常记录到 BepInEx 日志中。
+Kridi8606.UnbeatenPaths-name|[游戏机制,区域] 未踏之路
+Kridi8606.UnbeatenPaths-description|当当前战役存在通过模组区域的路径时（或配置为所有原版-原版连接），使用 OELock 锁定原版-原版区域门。可选：隐藏通往被封锁门和供给走廊的管道高亮。
+zrydnoob.UnityExplorer-name|[工具] Unity 浏览器
+zrydnoob.UnityExplorer-description|雨世界中的 Unity Explorer。<LINE>用于探索、调试和修改 Unity 游戏的游戏内 UI。<LINE>Unity Explorer (github)：https://github.com/sinai-dev/UnityExplorer <LINE>模组开源 (github)：https://github.com/zrydnoob/UnityExplorer-in-RainWorld
+darkninja.ModInExplorerButton-name|[工具,菜单优化] 在文件资源管理器中查看模组按钮
+darkninja.ModInExplorerButton-description|“创意工坊按钮”的分支，添加一个按钮用于在文件资源管理器中查看模组。
+web-spinning spider-name|[生物] 织网蜘蛛
+web-spinning spider-description|添加织网蜘蛛，它可以在墙上织网！！！
+alduris.wikiutil-name|[工具] Wiki 工具
+alduris.wikiutil-description|为 Wiki 人员提供的实用模组。
+0gelbi.silly-lib-name|[工具,依赖项] gelbi 的傻乎乎库
+0gelbi.silly-lib-description|包含一些傻乎乎方法的库。拥有你能想象的一切，同时毫无用处。
+noisypups_expand-name|[体验优化] 吵闹幼崽扩展
+noisypups_expand-description|基于原模组添加了更多对话。
+WikiMap.ID-name|[工具,无障碍] 内置Wiki地图
+WikiMap.ID-description|在输入设置中设置地图按键，在游戏内按下按键即可显示wiki地图，按下跳跃地图放大，抓取缩小。在mod文件夹下的image文件夹下可以添加或修改蛞蝓猫和地图<LINE><LINE>1.1.0更新日志：现在游戏会记录并保存地图位置大小，下次开启游戏时自动读取。
+litrovski.tinkerer-name|[Slugcat] 修补匠（测试版）
+litrovski.tinkerer-description|一位充满关爱的母亲。
+NR.DevGit-name|[工具,开发] 开发 Git
+NR.DevGit-description|原作者是 NR（实际为 ChatGPT）。
+xuanzebufeng.ExtendedJokeRifle-name|[物品,游戏机制] 扩展玩笑步枪
+xuanzebufeng.ExtendedJokeRifle-description|超级火力。
+forsaken_station-name|[区域] 被遗忘的车站
+forsaken_station-description|一个广阔的区域，所有轨道在此汇聚于一个共同之地，随时间流逝而被遗忘。
+healthbars-name|[外观,体验优化] 生命条
+healthbars-description|为有生命值的生物添加生命条！
+frabjouspolygon.raingarden-name|[区域] 雨水花园
+frabjouspolygon.raingarden-description|一半是径流控制，一半是公园，这个杂草丛生的区域虽被忽视却仍在运转。虽然好客，但可能需要偏离常规路径才能找到它。试着在设施外围的边界之外寻找。
+overgrownvents-name|[区域] 蔓生通风口
+overgrownvents-description|一个糟糕的区域模组，连接工业区，包含秘密区域和一个新物品。
+the_fucking_barnacle-description|将藤壶改回观望者刚发布时的特性，并新增更多“畜生”功能。<LINE><LINE>[h1]藤壶护盾[/h1]<LINE>可在设置中开启后拾取藤壶作为护盾，格挡拾荒者长矛等攻击并电击其他生物开路。<LINE>沙盒/竞技场已解锁藤壶，可调整大小改变格挡范围。<LINE>工匠开局额外获得一只藤壶。<LINE><LINE>[h1]新特性[/h1]<LINE>反击机制：用矛或石头攻击藤壶会被愤怒的藤壶追着电。<LINE>扩展生成地点：海岸线、海滨设施、冷冽海岸、垃圾堆、排水系统、外层空间。<LINE>水中也会追击电击，且不会溺水或释放氧气。<LINE>爆炸后藤壶群会立刻重新列队，破壳机制已移除。<LINE><LINE>[h1]生物互动重置[/h1]<LINE>保留蜥蜴弗斯特性；波动龟与藤壶互相电击；落网虫、利维坦会捕食藤壶；雨鹿会与藤壶疯狂互电；青蛙会被电死；琵琶鱼会挑衅后被电；拾荒者会攻击藤壶，被电怕后会逃跑。<LINE><LINE>此模组不再需要观望者DLC，仅需基础游戏。
+XuYangJerry.DetailedIcon-description|让多人游戏中右下角的小图标符合你使用的蛞蝓猫，而不仅仅是求生者。<LINE>同时让打开地图时显示的图标、Region/Safair 按钮图标也更改成对应的蛞蝓猫。<LINE>支持自定义蛞蝓猫，详情请见 GitHub。<LINE>github：https://github.com/YangXu636/DetailedIcon
+Translator-description|模组未安装，原始描述未知。

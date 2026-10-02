@@ -1,5 +1,7 @@
 ﻿#region using
 using BepInEx;
+using CommonUtils;
+using CommonUtils.Core;
 using CoralBrain;
 using Expedition;
 using Fisobs.Core;
@@ -21,7 +23,6 @@ using System;
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Drawing.Printing;
@@ -36,7 +37,6 @@ using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Translator;
 using UnityEngine;
 using UnityEngine.UI;
 using Watcher;
@@ -44,98 +44,64 @@ using static Player.ObjectGrabability;
 using static SlugBase.Features.FeatureTypes;
 #endregion
 
-public static class Helper
+namespace Translator
 {
+	internal static class Helper
+	{
 
-	#region Translate
-	public static InGameTranslator Translator => Custom.rainWorld.inGameTranslator;
+		#region UITranslate
+		public static RainWorld RainWorld => Custom.rainWorld;
+		public static InGameTranslator inGameTranslator => RainWorld.inGameTranslator;
+		public static InGameTranslator Translator => inGameTranslator;
+		public static InGameTranslator Trans => inGameTranslator;
 
-	public static string Tra(this string originalName)
-	{
-		return Translator.Translate(originalName);
-	}
-	public static string Translate(this string originalName)
-	{
-		return Translator.Translate(originalName);
-	}
-	public static string[] Translate(this IEnumerable<string> originalNames)
-	{
-		List<string> items = new();
-		foreach (string name in originalNames)
+
+		public static string? currentLang;
+		private static Dictionary<string, string> _dict = [];
+		private static Dictionary<string, string> Dict
 		{
-			items.Add(Translator.Translate(name));
-		}
-		return items.ToArray();
-	}
-	public static ListItem[] ToListItem(this IEnumerable<string> originalNames)
-	{
-		List<ListItem> items = new();
-
-		int i = 0;
-		foreach (string name in originalNames)
-		{
-			// name 作为实际值，displayName 使用翻译后的文本
-			items.Add(new ListItem(name, Translator.Translate(name), i));
-			i += 1;
-		}
-		return items.ToArray();
-	}
-	#endregion
-
-	#region UITranslate
-	public static string? currentLang;
-	private static Dictionary<string, string> _dict = new();
-	private static Dictionary<string, string> Dict
-	{
-		get
-		{
-			if (currentLang != LocalizationTranslator.LangShort(Translator.currentLanguage))
+			get
 			{
-				currentLang = LocalizationTranslator.LangShort(Translator.currentLanguage);
-
-				string path = MyOptions.GetTranslatorPath();
-				if (File.Exists(path))
+				if (currentLang != LocalizationTranslator.LangShort(Translator.currentLanguage))
 				{
-					_dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(path)) ?? new();
-				}
-				else
-				{
-					Log.LogError("找不到语言文件: " + currentLang);
+					currentLang = LocalizationTranslator.LangShort(Translator.currentLanguage);
 
-					path = MyOptions.GetTranslatorPath("eng");
+					string path = MyOptions.GetTranslatorPath();
 					if (File.Exists(path))
 					{
-						_dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(path)) ?? new();
+						_dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(path)) ?? [];
 					}
 					else
 					{
-						Log.LogError("找不到默认语言文件: eng");
-						_dict = new();
+						Log.LogError("找不到语言文件: " + currentLang);
+
+						path = MyOptions.GetTranslatorPath("eng");
+						if (File.Exists(path))
+						{
+							_dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(path)) ?? [];
+						}
+						else
+						{
+							Log.LogError("找不到默认语言文件: eng");
+							_dict = [];
+						}
 					}
+					return _dict;
 				}
-				return _dict;
-			}
-			else
-			{
-				return _dict;
+				else
+				{
+					return _dict;
+				}
 			}
 		}
-	}
-	public static string T(string key)
-	{
-		return Dict.TryGetValue(key, out var val) ? val : key;
-	}
-    public static string T(string key, object arg0) => string.Format(T(key), arg0);
-    public static string T(string key, object arg0, object arg1) => string.Format(T(key), arg0, arg1);
-    public static string T(string key, params object[] args) => string.Format(T(key), args);
-    #endregion
 
-    #region String
-    public static string ReplaceLineEndings(this string s, string lineEndings = "\r\n")
-	{
-		return s.Replace("\r\n", "\n")
-				.Replace("\r", "\n")
-				.Replace("\n", lineEndings);
+
+		extension(string key)
+		{
+			public string Translation => Dict.TryGetValue(key, out var val) ? val : key;
+		}
+		public static string Translation(string key, params object[] args) => string.Format(key.Translation, args);
+		#endregion
+
 	}
-	#endregion
 }

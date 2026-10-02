@@ -23,7 +23,7 @@
   "Tip_Add_Success": "添加成功！",
   
   "Batch_Trans_File_Guide_1": "批量翻译文件使用说明",
-  "Batch_Trans_File_Guide_2": "1. 每个模组以 '|模组ID' 开始，后跟四行：",
+  "Batch_Trans_File_Guide_2": "1. 每个模组以 '[模组ID]' 开始，后跟四行：",
   "Batch_Trans_File_Guide_3": "   原始名称、原始描述、翻译名称、翻译描述。",
   "Batch_Trans_File_Guide_4": "2. 翻译名称和翻译描述：",
   "Batch_Trans_File_Guide_5": "   - 填写您想要的翻译内容。",

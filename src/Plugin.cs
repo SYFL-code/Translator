@@ -1,6 +1,8 @@
 #region using
 using BepInEx;
 using BepInEx.Logging;
+using CommonUtils;
+using CommonUtils.Core;
 using Fisobs;
 using Fisobs.Core;
 using Fisobs.Items;
@@ -19,7 +21,6 @@ using Smoke;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -31,8 +32,8 @@ using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using UnityEngine;
 using Watcher;
-using static Helper;
 using static PhysicalObject;
+using static Translator.Helper;
 #endregion
 namespace Translator;
 
@@ -44,19 +45,19 @@ public sealed class Plugin : BaseUnityPlugin
 	public const string NAME = "Translator";
 	public const string VERSION = "0.1.0";
 
-	public const string version = "0.1.0";
 	public const string Name = "Translator";
+
+	public static string version = BuildInfo.Version;
+	public static string buildTime = BuildInfo.BuildTime;
 	#endregion
 
 	#region Release & DEBUG
 #if DEBUG
-	public static bool DebugMode { get; set; } = true;//  false
-	private static bool EnableStartScreen = true;// true
-	public static bool EnableLog = true;// false
+	public static bool DebugMode { get; } = true;
+	public static bool ForceLog { get; } = true;
 #else
 	public const bool DebugMode = false;
-	private const bool EnableStartScreen = true;
-	public const bool EnableLog = false;
+	public const bool ForceLog = false;
 #endif
 	#endregion
 
@@ -64,39 +65,48 @@ public sealed class Plugin : BaseUnityPlugin
 	private bool isEnabled;
 	public bool inited;
 
-	#region Awake & Update
-	public void Awake()
+	#region Unity
+
+	public void Awake()// Awake → OnEnable → Start
 	{
-		Log.LogInfo($"{Name} Mod Awake");
+		CommonUtils.Plugin.GUID = Plugin.GUID;
+		CommonUtils.Plugin.NAME = Plugin.NAME;
+		CommonUtils.Plugin.VERSION = Plugin.VERSION;
+		CommonUtils.Plugin.Name = Plugin.Name;
+		CommonUtils.Plugin.version = Plugin.version;
+		CommonUtils.Plugin.buildTime = Plugin.buildTime;
+
+		Log.LogDebug($"{Name} Mod Awake");
+	}
+	public void Start()
+	{
+		Log.LogDebug($"{Name} Mod Start");
+	}
+	public void Update()
+	{
+		CommonUtils.Plugin.plugin.Update();
 	}
 
-	[field: DebuggerBrowsable(DebuggerBrowsableState.Never)]
-	internal static event System.Action? OnUpdate;
-	void Update()
-	{
-		Plugin.OnUpdate?.Invoke();
-
-		Debugger.Update();
-	}
 	#endregion
 
 	public void OnEnable()
 	{
+		Log.LogDebug($"{Name} Mod OnEnable! isEnabled: {isEnabled}");
+
 		if (this.isEnabled)
-		{
 			return;
-		}
 		this.isEnabled = true;
+
 
 		// Put your custom hooks here!-在此放置你自己的钩子
 		On.RainWorld.OnModsInit += On_RainWorld_OnModsInit;
 		On.RainWorld.OnModsDisabled += On_RainWorld_OnModsDisabled;
 
-
-		Log.LogInfo($"{Name} Mod OnEnable!");
 	}
 	public void OnDisable()
 	{
+		Log.LogDebug($"{Name} Mod OnDisable! isEnabled: {isEnabled}");
+
 		if (!this.isEnabled)
 			return;
 		this.isEnabled = false;
@@ -106,19 +116,16 @@ public sealed class Plugin : BaseUnityPlugin
 		On.RainWorld.OnModsDisabled -= On_RainWorld_OnModsDisabled;
 
 
-		HookManager.UninitializeAll();
-
-		Log.LogInfo($"{Name} Mod OnDisable!");
+		HookManager.UnInitializeAll();
 	}
 
 
 	// Load any resources, such as sprites or sounds-加载任何资源 包括图像素材和音效
-	private void On_RainWorld_OnModsInit(On.RainWorld.orig_OnModsInit orig, RainWorld self)
+	private void On_RainWorld_OnModsInit(On.RainWorld.orig_OnModsInit orig, RainWorld rainWorld)
 	{
-		orig?.Invoke(self);
+		orig?.Invoke(rainWorld);
 
-
-		Log.LogInfo($"OnModsInit inited: {inited}");
+		Log.LogInfo($"{Name} Mod OnModsInit! inited: {inited}");
 
 		if (this.inited)
 			return;
@@ -127,35 +134,34 @@ public sealed class Plugin : BaseUnityPlugin
 		try
 		{
 			// Put your custom hooks here!-在此放置你自己的钩子
+
 			TrySyncStringsFile();
 
-			HookManager.Register("On.Menu.Remix.InternalOI_Stats.Initialize", new HookManager.HookData
-			{
-				InitializeHooks = () => On.Menu.Remix.InternalOI_Stats.Initialize += InternalOI_Stats_InitializeHook,
-				UnInitializeHooks = () => On.Menu.Remix.InternalOI_Stats.Initialize -= InternalOI_Stats_InitializeHook
-			});
-			HookManager.Register("On.Menu.Remix.InternalOI_Stats._PreviewMod", new HookManager.HookData
-			{
-				InitializeHooks = () => On.Menu.Remix.InternalOI_Stats._PreviewMod += InternalOI_Stats__PreviewModHook,
-				UnInitializeHooks = () => On.Menu.Remix.InternalOI_Stats._PreviewMod -= InternalOI_Stats__PreviewModHook
-			});
+			HookManager.Register(
+				Hook: () => On.Menu.Remix.InternalOI_Stats.Initialize += InternalOI_Stats_InitializeHook,
+				UnHook: () => On.Menu.Remix.InternalOI_Stats.Initialize -= InternalOI_Stats_InitializeHook
+			);
+			HookManager.Register(
+				Hook: () => On.Menu.Remix.InternalOI_Stats._PreviewMod += InternalOI_Stats__PreviewModHook,
+				UnHook: () => On.Menu.Remix.InternalOI_Stats._PreviewMod -= InternalOI_Stats__PreviewModHook
+			);
 
 			Plugin.RegisterOI();
 
+
 			HookManager.Initialize();
 		}
-		catch (Exception e)
+		catch (Exception ex)
 		{
-			Log.LogError($"同步字符串文件失败: {e}");
+			Log.LogException(ex);
 		}
 	}
 
-	private void On_RainWorld_OnModsDisabled(On.RainWorld.orig_OnModsDisabled orig, RainWorld self, ModManager.Mod[] mods)
+	private void On_RainWorld_OnModsDisabled(On.RainWorld.orig_OnModsDisabled orig, RainWorld rainWorld, ModManager.Mod[] newlyDisabledMods)
 	{
-		orig?.Invoke(self, mods);
+		orig?.Invoke(rainWorld, newlyDisabledMods);
 
-
-		Log.LogInfo($"OnModsDisabled inited: {inited}");
+		Log.LogInfo($"{Name} Mod OnModsDisabled! inited: {inited}");
 
 		if (!this.inited)
 			return;
@@ -165,11 +171,11 @@ public sealed class Plugin : BaseUnityPlugin
 		{
 			// Remove your custom hooks here!-在此取消你的钩子
 
-			HookManager.UninitializeAll();
+			HookManager.UnInitializeAll();
 		}
-		catch (Exception e)
+		catch (Exception ex)
 		{
-			Log.LogError($"Fail to load resources: {e}");
+			Log.LogException(ex);
 		}
 	}
 
@@ -184,7 +190,7 @@ public sealed class Plugin : BaseUnityPlugin
 			if (MachineConnector.GetRegisteredOI(GUID) != MyOptions.Instance)
 			{
 				MachineConnector.SetRegisteredOI(GUID, MyOptions.Instance);
-
+				MachineConnector.ReloadConfig(MyOptions.Instance);
 				Log.LogDebug("Config interface registered successfully");
 			}
 			else
@@ -197,6 +203,7 @@ public sealed class Plugin : BaseUnityPlugin
 			Log.LogError(Plugin.Translate("Error registering option interface: ##").Replace("##", string.Format("{0}", ex)));
 		}
 	}
+
 
 	public static string Translate(string text)
 	{
@@ -252,7 +259,7 @@ public sealed class Plugin : BaseUnityPlugin
 		Futile.atlasManager.LoadAtlas("assets/ModRenameButton_Icons");
 		this.renameButton = new OpSimpleImageButton(new Vector2(520f, 510f), new Vector2(30f, 30f), "ModRenameButton_Icon")// 560f 440f
 		{
-			description = T("Rename_Button_Desc"),
+			description = "Rename_Button_Desc".Translation,
 		};
 		this.renameButton.OnClick += RenameButton_OnClick;
 		// 索引1 模组列表标签页?

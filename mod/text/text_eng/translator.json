@@ -1,0 +1,63 @@
+{
+  "Rename_Button_Desc": "Add a translated name and description for this mod (leave empty to remove the translation)",
+
+  "Option": "Options",
+  "Op_Translator": "Mod Translator",
+  "Op_ID_Input_Tip": "Enter mod ID here",
+  "Op_Add_Trans": "Add Translation",
+  "Op_Add_Trans_Desc": "Add a translation for the currently entered mod ID",
+  "Op_Confirm_Replace": "Confirm Add",
+  "Op_Confirm_Replace_Desc": "Read the file content and add the translation to this mod (save the file first)",
+  "Op_Batch_Trans": "Batch Translation",
+  "Op_Batch_Trans_Desc": "Add translations for all mods in bulk",
+  "Op_Apply_All": "Apply All",
+  "Op_Apply_All_Desc": "Read the file content and apply translations in bulk",
+  "Op_Batch_Tip": "Click \"Apply All\" after batch translation",
+  "Op_Enable_File_Tip": "Enable file format tips",
+
+  "Tip_Uninstalled_Mod": "No installed mod found matching ID {0}!\nIf you are sure you want to add a translation for this ID, click again.",
+  "Tip_Opening_File": "Trying to open the file...",
+
+  "Tip_Invalid_File": "Invalid file content! Did you forget to save the temp file?",
+  "Tip_Wrong_Mod": "The temp file belongs to mod ID {0} and cannot be applied to mod ID {1}.",
+  "Tip_Add_Success": "Added successfully!",
+
+  "Batch_Trans_File_Guide_1": "Batch Translation File Guide",
+  "Batch_Trans_File_Guide_2": "1. Each mod starts with a line like '[ModID]', followed by four key=value lines:",
+  "Batch_Trans_File_Guide_3": "   name, desc, trans_name, trans_desc.",
+  "Batch_Trans_File_Guide_4": "2. Translated name and description:",
+  "Batch_Trans_File_Guide_5": "   - Fill in the translation you want.",
+  "Batch_Trans_File_Guide_6": "   - Leave empty or write '# comment' to remove this translation.",
+  "Batch_Trans_File_Guide_7": "3. 'name' and 'desc' are for reference only; editing them has no effect.",
+  "Batch_Trans_File_Guide_8": "4. To insert a line break in the description, use the <LINE> tag (e.g. 'first line<LINE>second line').",
+  "Batch_Trans_File_Guide_9": "5. After editing, save the file, return to the game settings page, and click \"Apply All\".",
+  "Batch_Trans_File_Guide_10": "6. All changes are automatically backed up to the mod's backup folder. If something goes wrong, restore the file to:",
+  "Batch_Trans_File_Guide_11": "   - C:/Users/{your username}/AppData/LocalLow/Videocult/Rain World/ModConfigs/ModTranslatorSave_{your language}.txt",
+  "Batch_Trans_File_Guide_12": "7. Due to the translation index mechanism, if this mod is not at the top of the mod load order, some translations may not take effect.",
+  "Batch_Trans_File_Guide_13": "8. Lines starting with '#' are comments and will be ignored.",
+
+  "No_Name": "No original name",
+  "No_Desc": "No original description",
+  "Name_Unknown": "Mod not installed, original name unknown",
+  "Desc_Unknown": "Mod not installed, original description unknown",
+  "Trans_Name_Unknown": "Add translated name on this line",
+  "Trans_Desc_Unknown": "Add translated description on this line",
+  "TransFile_Success": "Batch translation file generated. Edit and save it, then click \"Apply All\".",
+  "TransFile_Failed": "Generation failed, please check the log.",
+
+  "TransFile_NotFound": "Batch translation file not found. Please click \"Batch Translation\" first.",
+  "No_New_TransLines": "All translations are up to date; skipped {0} mod(s).",
+  "No_Valid_TransLines": "No valid translation entries found.",
+  "Trans_Apply_Complete": "Applied: updated {0} mod(s), failed {1}, skipped {2} (no changes).",
+  "Trans_Apply_Failed": "Failed to apply translations, please check the log.",
+
+  "Mod_Not_Installed": "Mod not installed",
+
+  "Comments": "Comments",
+  "TempFile_Guide_1": "Write the text you want to replace in this file. The first line is the translated name; the remaining lines are the translated description (use <LINE> for line breaks).",
+  "TempFile_Guide_2": "If you leave the translated name or description empty, the translation will be removed and reverted to the original. Save and close the file after editing, then click \"Confirm Add\".",
+  "TempFile_Guide_3": "Lines starting with '#' are comments and will be ignored.",
+  "TempFile_Guide_4": "You can disable file format tips in settings; these four lines will no longer appear next time you open the file.",
+  "TempFile_Warning_Name": "Note: This mod already has a translated name! Continuing will overwrite the previous change.",
+  "TempFile_Warning_Desc": "Note: This mod already has a translated description! Continuing will overwrite the previous change."
+}
