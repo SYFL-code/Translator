@@ -382,3 +382,4 @@ mod/newest/plugins/
 # Windows 系统文件
 Desktop.ini
 Thumbs.db
+/.workbuddy/memory

@@ -23,7 +23,7 @@
   "Tip_Add_Success": "追加しました！",
 
   "Batch_Trans_File_Guide_1": "一括翻訳ファイルの説明",
-  "Batch_Trans_File_Guide_2": "1. 各MODは '[MODID]' の行で始まり、その後に4つの key=value 行が続きます：",
+  "Batch_Trans_File_Guide_2": "1. 各MODは '[ModID]' の行で始まり、その後に4つの key=value 行が続きます：",
   "Batch_Trans_File_Guide_3": "   name=元の名前、desc=元の説明、trans_name=翻訳名、trans_desc=翻訳説明。",
   "Batch_Trans_File_Guide_4": "2. 翻訳名と翻訳説明：",
   "Batch_Trans_File_Guide_5": "   - 希望する翻訳を記入してください。",

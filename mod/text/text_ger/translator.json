@@ -8,7 +8,7 @@
   "Op_Add_Trans_Desc": "Eine Übersetzung für die aktuell eingegebene Mod-ID hinzufügen",
   "Op_Confirm_Replace": "Hinzufügen bestätigen",
   "Op_Confirm_Replace_Desc": "Dateiinhalt lesen und die Übersetzung zu diesem Mod hinzufügen (Datei zuerst speichern)",
-  "Op_Batch_Trans": "Stapelübersetzung",
+  "Op_Batch_Trans": "Massenübersetzung",
   "Op_Batch_Trans_Desc": "Übersetzungen für alle Mods stapelweise hinzufügen",
   "Op_Apply_All": "Alle anwenden",
   "Op_Apply_All_Desc": "Dateiinhalt lesen und Übersetzungen stapelweise anwenden",

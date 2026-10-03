@@ -25,6 +25,11 @@ namespace Translator
 		public static InGameTranslator Trans => inGameTranslator;
 		public static string lang => LocalizationTranslator.LangShort(Trans.currentLanguage);
 
+		// LangShort 返回的是首字母大写的形式（例如 "Chi"），而模组的语言目录是小写（text_chi）。
+		// Windows 大小写不敏感所以一直没暴露，Linux 下会导致找不到 translator.json、
+		// 并额外创建出一个游戏不读取的 text_Chi 目录，因此拼接目录名时统一转小写。
+		public static string langFolder => lang.ToLowerInvariant();
+
 		public Configurable<string> idc;
 		//public Configurable<bool> startc;
 		//public Configurable<bool> openc;
@@ -209,7 +214,7 @@ namespace Translator
 		}
 		public static string GetStringsPath()
 		{
-			string langDir = Path.Combine(MyOptions.GetPath(), "text", "text_" + lang);
+			string langDir = Path.Combine(MyOptions.GetPath(), "text", "text_" + langFolder);
 			string path = Path.Combine(langDir, "strings.txt");
 
 			// 对应的 text_<语言> 目录
@@ -225,7 +230,7 @@ namespace Translator
 		}
 		public static string GetTranslatorPath(string? language = null)
 		{
-			string langDir = Path.Combine(MyOptions.GetPath(), "text", "text_" + (language ?? lang));
+			string langDir = Path.Combine(MyOptions.GetPath(), "text", "text_" + (language ?? lang).ToLowerInvariant());
 			string path = Path.Combine(langDir, "translator.json");
 
 			Directory.CreateDirectory(langDir);

@@ -13,7 +13,7 @@
   "Op_Apply_All": "Tout appliquer",
   "Op_Apply_All_Desc": "Lire le contenu du fichier et appliquer les traductions en masse",
   "Op_Batch_Tip": "Cliquez sur « Tout appliquer » après la traduction en masse",
-  "Op_Enable_File_Tip": "Activer les astuces de format de fichier",
+  "Op_Enable_File_Tip": "Activer les conseils de format de fichier",
 
   "Tip_Uninstalled_Mod": "Aucun mod installé trouvé pour l'ID {0} !\nSi vous êtes sûr de vouloir ajouter une traduction pour cet ID, cliquez à nouveau.",
   "Tip_Opening_File": "Tentative d'ouverture du fichier...",
