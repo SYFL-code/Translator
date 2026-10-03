@@ -296,7 +296,8 @@ public sealed class Plugin : BaseUnityPlugin
 			}
 			else
 			{
-				// 修复 bug2：临时文件属于其它模组时，不要误应用；为当前预览模组重新打开临时文件
+				// 临时文件属于其它模组时，不要误应用
+				// 为当前预览模组重新打开临时文件
 				Log.LogWarning($"临时文件属于模组 {MyOptions.TempFileModId}，当前预览为 {CurrentPreviewMod?.id}。已为当前模组重新打开临时文件，原内容将被覆盖。");
 				MyOptions.OpenTempFile(CurrentPreviewMod?.id);
 			}

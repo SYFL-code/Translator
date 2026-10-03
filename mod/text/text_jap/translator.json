@@ -1,0 +1,63 @@
+{
+  "Rename_Button_Desc": "このMODの翻訳名と説明を追加します（空欄にすると翻訳が削除されます）",
+
+  "Option": "オプション",
+  "Op_Translator": "MOD翻訳ツール",
+  "Op_ID_Input_Tip": "ここにMOD IDを入力",
+  "Op_Add_Trans": "翻訳を追加",
+  "Op_Add_Trans_Desc": "現在入力されているMOD IDに翻訳を追加します",
+  "Op_Confirm_Replace": "追加を確定",
+  "Op_Confirm_Replace_Desc": "ファイルの内容を読み取り、このMODに翻訳を追加します（先にファイルを保存してください）",
+  "Op_Batch_Trans": "一括翻訳",
+  "Op_Batch_Trans_Desc": "すべてのMODの翻訳を一括で追加します",
+  "Op_Apply_All": "すべて適用",
+  "Op_Apply_All_Desc": "ファイルの内容を読み取り、翻訳を一括で適用します",
+  "Op_Batch_Tip": "一括翻訳後に「すべて適用」をクリックしてください",
+  "Op_Enable_File_Tip": "ファイル形式のヒントを有効にする",
+
+  "Tip_Uninstalled_Mod": "ID {0} に対応するインストール済みMODが見つかりません！\nこのIDに翻訳を追加する場合は、もう一度クリックしてください。",
+  "Tip_Opening_File": "ファイルを開いています……",
+
+  "Tip_Invalid_File": "ファイルの内容が無効です！tempファイルを保存し忘れていませんか？",
+  "Tip_Wrong_Mod": "tempファイルはMOD ID {0} のものであり、MOD ID {1} には適用できません。",
+  "Tip_Add_Success": "追加しました！",
+
+  "Batch_Trans_File_Guide_1": "一括翻訳ファイルの説明",
+  "Batch_Trans_File_Guide_2": "1. 各MODは '[MODID]' の行で始まり、その後に4つの key=value 行が続きます：",
+  "Batch_Trans_File_Guide_3": "   name=元の名前、desc=元の説明、trans_name=翻訳名、trans_desc=翻訳説明。",
+  "Batch_Trans_File_Guide_4": "2. 翻訳名と翻訳説明：",
+  "Batch_Trans_File_Guide_5": "   - 希望する翻訳を記入してください。",
+  "Batch_Trans_File_Guide_6": "   - 空欄にするか '# コメント' と書くと、この翻訳が削除されます。",
+  "Batch_Trans_File_Guide_7": "3. 'name' と 'desc' は参照用です。編集しても効果はありません。",
+  "Batch_Trans_File_Guide_8": "4. 説明に改行を入れる場合は <LINE> タグを使用してください（例：'1行目<LINE>2行目'）。",
+  "Batch_Trans_File_Guide_9": "5. 編集後、ファイルを保存してゲームの設定ページに戻り、「すべて適用」をクリックしてください。",
+  "Batch_Trans_File_Guide_10": "6. すべての変更はMODの backup フォルダに自動的にバックアップされます。問題が発生した場合は、次の場所にファイルを復元してください：",
+  "Batch_Trans_File_Guide_11": "   - C:/Users/<ユーザー名>/AppData/LocalLow/Videocult/Rain World/ModConfigs/ModTranslatorSave_<言語>.txt",
+  "Batch_Trans_File_Guide_12": "7. 翻訳インデックスの仕組みにより、このMODがロード順の最上位にない場合、一部の翻訳が反映されないことがあります。",
+  "Batch_Trans_File_Guide_13": "8. '#' で始まる行はコメントとして無視されます。",
+
+  "No_Name": "元の名前がありません",
+  "No_Desc": "元の説明がありません",
+  "Name_Unknown": "MODがインストールされていないため、元の名前は不明です",
+  "Desc_Unknown": "MODがインストールされていないため、元の説明は不明です",
+  "Trans_Name_Unknown": "この行に翻訳名を追加してください",
+  "Trans_Desc_Unknown": "この行に翻訳説明を追加してください",
+  "TransFile_Success": "一括翻訳ファイルを生成しました。編集して保存し、「すべて適用」をクリックしてください。",
+  "TransFile_Failed": "生成に失敗しました。ログを確認してください。",
+
+  "TransFile_NotFound": "一括翻訳ファイルが見つかりません。先に「一括翻訳」をクリックしてください。",
+  "No_New_TransLines": "すべての翻訳は最新です。{0} 件のMODをスキップしました。",
+  "No_Valid_TransLines": "有効な翻訳項目が見つかりませんでした。",
+  "Trans_Apply_Complete": "適用完了：{0} 件のMODを更新、{1} 件失敗、{2} 件スキップ（変更なし）。",
+  "Trans_Apply_Failed": "翻訳の適用に失敗しました。ログを確認してください。",
+
+  "Mod_Not_Installed": "MODがインストールされていません",
+
+  "Comments": "コメント",
+  "TempFile_Guide_1": "このファイルに置き換えたいテキストを書き込んでください。1行目は翻訳名、残りの行は翻訳説明です（説明の改行には <LINE> を使用できます）。",
+  "TempFile_Guide_2": "翻訳名または説明を空欄にすると、その翻訳が削除され元のテキストに戻ります。編集後はファイルを保存して閉じ、「追加を確定」をクリックしてください。",
+  "TempFile_Guide_3": "'#' で始まる行はコメントとして無視されます。",
+  "TempFile_Guide_4": "設定でファイル形式のヒントを無効にできます。次回ファイルを開いたとき、この4行は表示されなくなります。",
+  "TempFile_Warning_Name": "注意：このMODには既に翻訳名が設定されています！続行すると前回の変更が上書きされます。",
+  "TempFile_Warning_Desc": "注意：このMODには既に翻訳説明が設定されています！続行すると前回の変更が上書きされます。"
+}

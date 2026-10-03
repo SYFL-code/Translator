@@ -89,11 +89,11 @@ namespace Translator
 			this.opentempfile = new OpSimpleButton(new Vector2(30f, this.GetnextY(30f, 0, "null")), new Vector2(200f, 30f), "Op_Add_Trans".Translation)
 			{
 				description = "Op_Add_Trans_Desc".Translation
-            };
+			};
 			this.startAdd = new OpSimpleButton(new Vector2(30f, this.GetnextY(35f, 0, "null")), new Vector2(200f, 30f), "Op_Confirm_Replace".Translation)
 			{
 				description = "Op_Confirm_Replace_Desc".Translation
-            };
+			};
 
 			// 批量翻译按钮
 			this.exportAllButton = new OpSimpleButton(new Vector2(30f, this.GetnextY(70f, 0, "null")), new Vector2(200f, 30f), "Op_Batch_Trans".Translation)
@@ -212,7 +212,8 @@ namespace Translator
 			string langDir = Path.Combine(MyOptions.GetPath(), "text", "text_" + lang);
 			string path = Path.Combine(langDir, "strings.txt");
 
-			// 修复 bug1：所有语言都应该有对应的 text_<语言> 目录，先创建目录，避免 File.Create 抛 DirectoryNotFoundException
+			// 对应的 text_<语言> 目录
+			// 避免 File.Create 抛 DirectoryNotFoundException
 			Directory.CreateDirectory(langDir);
 
 			if (!File.Exists(path))
@@ -332,9 +333,12 @@ namespace Translator
 			return path;
 			//return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ModRename_allMods.txt");
 		}
-		public static string GetGameRoot()
+		public static string GameRoot
 		{
-			return AppDomain.CurrentDomain.BaseDirectory;
+			get
+			{
+				return AppDomain.CurrentDomain.BaseDirectory;
+			}
 		}
 
 		static int maxBackups = 20;

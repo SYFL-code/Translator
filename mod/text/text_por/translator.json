@@ -1,0 +1,63 @@
+{
+  "Rename_Button_Desc": "Adicionar um nome e uma descrição traduzidos para este mod (deixe vazio para remover a tradução)",
+
+  "Option": "Opções",
+  "Op_Translator": "Tradutor de Mods",
+  "Op_ID_Input_Tip": "Insira o ID do mod aqui",
+  "Op_Add_Trans": "Adicionar Tradução",
+  "Op_Add_Trans_Desc": "Adicionar uma tradução para o ID do mod inserido",
+  "Op_Confirm_Replace": "Confirmar Adição",
+  "Op_Confirm_Replace_Desc": "Ler o conteúdo do arquivo e adicionar a tradução a este mod (salve o arquivo primeiro)",
+  "Op_Batch_Trans": "Tradução em Lote",
+  "Op_Batch_Trans_Desc": "Adicionar traduções para todos os mods em lote",
+  "Op_Apply_All": "Aplicar Tudo",
+  "Op_Apply_All_Desc": "Ler o conteúdo do arquivo e aplicar as traduções em lote",
+  "Op_Batch_Tip": "Clique em \"Aplicar Tudo\" após a tradução em lote",
+  "Op_Enable_File_Tip": "Ativar dicas de formato de arquivo",
+
+  "Tip_Uninstalled_Mod": "Nenhum mod instalado encontrado para o ID {0}!\nSe você tem certeza de que deseja adicionar uma tradução para este ID, clique novamente.",
+  "Tip_Opening_File": "Tentando abrir o arquivo...",
+
+  "Tip_Invalid_File": "Conteúdo de arquivo inválido! Você esqueceu de salvar o arquivo temp?",
+  "Tip_Wrong_Mod": "O arquivo temp pertence ao mod ID {0} e não pode ser aplicado ao mod ID {1}.",
+  "Tip_Add_Success": "Adicionado com sucesso!",
+
+  "Batch_Trans_File_Guide_1": "Guia do Arquivo de Tradução em Lote",
+  "Batch_Trans_File_Guide_2": "1. Cada mod começa com uma linha '[ModID]', seguida por quatro linhas chave=valor:",
+  "Batch_Trans_File_Guide_3": "   name=nome original, desc=descrição original, trans_name=nome traduzido, trans_desc=descrição traduzida.",
+  "Batch_Trans_File_Guide_4": "2. Nome e descrição traduzidos:",
+  "Batch_Trans_File_Guide_5": "   - Preencha a tradução desejada.",
+  "Batch_Trans_File_Guide_6": "   - Deixe vazio ou escreva '# comentário' para remover esta tradução.",
+  "Batch_Trans_File_Guide_7": "3. 'name' e 'desc' são apenas para referência; editá-los não tem efeito.",
+  "Batch_Trans_File_Guide_8": "4. Para inserir uma quebra de linha na descrição, use a tag <LINE> (ex.: 'primeira linha<LINE>segunda linha').",
+  "Batch_Trans_File_Guide_9": "5. Após editar, salve o arquivo, volte à página de configurações do jogo e clique em \"Aplicar Tudo\".",
+  "Batch_Trans_File_Guide_10": "6. Todas as alterações são automaticamente salvas na pasta backup do mod. Se algo der errado, restaure o arquivo em:",
+  "Batch_Trans_File_Guide_11": "   - C:/Users/<seu nome de usuário>/AppData/LocalLow/Videocult/Rain World/ModConfigs/ModTranslatorSave_<seu idioma>.txt",
+  "Batch_Trans_File_Guide_12": "7. Devido ao mecanismo de índice de tradução, se este mod não estiver no topo da ordem de carregamento, algumas traduções podem não ter efeito.",
+  "Batch_Trans_File_Guide_13": "8. Linhas que começam com '#' são comentários e serão ignoradas.",
+
+  "No_Name": "Sem nome original",
+  "No_Desc": "Sem descrição original",
+  "Name_Unknown": "Mod não instalado, nome original desconhecido",
+  "Desc_Unknown": "Mod não instalado, descrição original desconhecida",
+  "Trans_Name_Unknown": "Adicione o nome traduzido nesta linha",
+  "Trans_Desc_Unknown": "Adicione a descrição traduzida nesta linha",
+  "TransFile_Success": "Arquivo de tradução em lote gerado. Edite e salve-o, depois clique em \"Aplicar Tudo\".",
+  "TransFile_Failed": "Falha na geração, verifique o log.",
+
+  "TransFile_NotFound": "Arquivo de tradução em lote não encontrado. Clique em \"Tradução em Lote\" primeiro.",
+  "No_New_TransLines": "Todas as traduções estão atualizadas; {0} mod(s) ignorado(s).",
+  "No_Valid_TransLines": "Nenhuma entrada de tradução válida encontrada.",
+  "Trans_Apply_Complete": "Aplicado: {0} mod(s) atualizado(s), {1} falha(s), {2} ignorado(s) (sem alterações).",
+  "Trans_Apply_Failed": "Falha ao aplicar as traduções, verifique o log.",
+
+  "Mod_Not_Installed": "Mod não instalado",
+
+  "Comments": "Comentários",
+  "TempFile_Guide_1": "Escreva neste arquivo o texto que deseja substituir. A primeira linha é o nome traduzido; as linhas restantes são a descrição traduzida (use <LINE> para quebras de linha).",
+  "TempFile_Guide_2": "Se você deixar o nome ou a descrição traduzidos em branco, a tradução será removida e revertida para o original. Salve e feche o arquivo após editar, depois clique em \"Confirmar Adição\".",
+  "TempFile_Guide_3": "Linhas que começam com '#' são comentários e serão ignoradas.",
+  "TempFile_Guide_4": "Você pode desativar as dicas de formato de arquivo nas configurações; estas quatro linhas não aparecerão mais na próxima vez que você abrir o arquivo.",
+  "TempFile_Warning_Name": "Nota: este mod já tem um nome traduzido! Continuar irá sobrescrever a alteração anterior.",
+  "TempFile_Warning_Desc": "Nota: este mod já tem uma descrição traduzida! Continuar irá sobrescrever a alteração anterior."
+}

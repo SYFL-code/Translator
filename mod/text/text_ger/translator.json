@@ -1,0 +1,63 @@
+{
+  "Rename_Button_Desc": "Übersetzten Namen und Beschreibung für diesen Mod hinzufügen (leer lassen, um die Übersetzung zu entfernen)",
+
+  "Option": "Optionen",
+  "Op_Translator": "Mod-Übersetzer",
+  "Op_ID_Input_Tip": "Mod-ID hier eingeben",
+  "Op_Add_Trans": "Übersetzung hinzufügen",
+  "Op_Add_Trans_Desc": "Eine Übersetzung für die aktuell eingegebene Mod-ID hinzufügen",
+  "Op_Confirm_Replace": "Hinzufügen bestätigen",
+  "Op_Confirm_Replace_Desc": "Dateiinhalt lesen und die Übersetzung zu diesem Mod hinzufügen (Datei zuerst speichern)",
+  "Op_Batch_Trans": "Stapelübersetzung",
+  "Op_Batch_Trans_Desc": "Übersetzungen für alle Mods stapelweise hinzufügen",
+  "Op_Apply_All": "Alle anwenden",
+  "Op_Apply_All_Desc": "Dateiinhalt lesen und Übersetzungen stapelweise anwenden",
+  "Op_Batch_Tip": "Nach der Stapelübersetzung auf „Alle anwenden“ klicken",
+  "Op_Enable_File_Tip": "Dateiformat-Hinweise aktivieren",
+
+  "Tip_Uninstalled_Mod": "Kein installierter Mod für die ID {0} gefunden!\nWenn Sie sicher sind, dass Sie eine Übersetzung für diese ID hinzufügen möchten, klicken Sie erneut.",
+  "Tip_Opening_File": "Datei wird geöffnet...",
+
+  "Tip_Invalid_File": "Ungültiger Dateiinhalt! Haben Sie vergessen, die temp-Datei zu speichern?",
+  "Tip_Wrong_Mod": "Die temp-Datei gehört zu Mod-ID {0} und kann nicht auf Mod-ID {1} angewendet werden.",
+  "Tip_Add_Success": "Erfolgreich hinzugefügt!",
+
+  "Batch_Trans_File_Guide_1": "Anleitung für die Stapelübersetzungsdatei",
+  "Batch_Trans_File_Guide_2": "1. Jeder Mod beginnt mit einer Zeile '[ModID]', gefolgt von vier key=value-Zeilen:",
+  "Batch_Trans_File_Guide_3": "   name=ursprünglicher Name, desc=ursprüngliche Beschreibung, trans_name=übersetzter Name, trans_desc=übersetzte Beschreibung.",
+  "Batch_Trans_File_Guide_4": "2. Übersetzter Name und Beschreibung:",
+  "Batch_Trans_File_Guide_5": "   - Geben Sie die gewünschte Übersetzung ein.",
+  "Batch_Trans_File_Guide_6": "   - Leer lassen oder '# Kommentar' schreiben, um diese Übersetzung zu entfernen.",
+  "Batch_Trans_File_Guide_7": "3. 'name' und 'desc' dienen nur als Referenz; ihre Bearbeitung hat keine Wirkung.",
+  "Batch_Trans_File_Guide_8": "4. Um einen Zeilenumbruch in die Beschreibung einzufügen, verwenden Sie das Tag <LINE> (z. B. 'erste Zeile<LINE>zweite Zeile').",
+  "Batch_Trans_File_Guide_9": "5. Nach der Bearbeitung speichern Sie die Datei, kehren zur Spiel-Einstellungsseite zurück und klicken auf „Alle anwenden“.",
+  "Batch_Trans_File_Guide_10": "6. Alle Änderungen werden automatisch im backup-Ordner des Mods gesichert. Bei Problemen stellen Sie die Datei wieder her unter:",
+  "Batch_Trans_File_Guide_11": "   - C:/Users/<Ihr Benutzername>/AppData/LocalLow/Videocult/Rain World/ModConfigs/ModTranslatorSave_<Ihre Sprache>.txt",
+  "Batch_Trans_File_Guide_12": "7. Aufgrund des Übersetzungsindexmechanismus können einige Übersetzungen nicht wirksam werden, wenn dieser Mod nicht an der Spitze der Ladereihenfolge steht.",
+  "Batch_Trans_File_Guide_13": "8. Zeilen, die mit '#' beginnen, sind Kommentare und werden ignoriert.",
+
+  "No_Name": "Kein ursprünglicher Name",
+  "No_Desc": "Keine ursprüngliche Beschreibung",
+  "Name_Unknown": "Mod nicht installiert, ursprünglicher Name unbekannt",
+  "Desc_Unknown": "Mod nicht installiert, ursprüngliche Beschreibung unbekannt",
+  "Trans_Name_Unknown": "Übersetzten Namen in dieser Zeile hinzufügen",
+  "Trans_Desc_Unknown": "Übersetzte Beschreibung in dieser Zeile hinzufügen",
+  "TransFile_Success": "Stapelübersetzungsdatei erstellt. Bearbeiten und speichern Sie sie, dann klicken Sie auf „Alle anwenden“.",
+  "TransFile_Failed": "Erstellung fehlgeschlagen, siehe Protokoll.",
+
+  "TransFile_NotFound": "Stapelübersetzungsdatei nicht gefunden. Bitte zuerst auf „Stapelübersetzung“ klicken.",
+  "No_New_TransLines": "Alle Übersetzungen sind aktuell; {0} Mod(s) übersprungen.",
+  "No_Valid_TransLines": "Keine gültigen Übersetzungseinträge gefunden.",
+  "Trans_Apply_Complete": "Angewendet: {0} Mod(s) aktualisiert, {1} fehlgeschlagen, {2} übersprungen (keine Änderung).",
+  "Trans_Apply_Failed": "Anwenden der Übersetzungen fehlgeschlagen, siehe Protokoll.",
+
+  "Mod_Not_Installed": "Mod nicht installiert",
+
+  "Comments": "Kommentare",
+  "TempFile_Guide_1": "Schreiben Sie den Text, den Sie ersetzen möchten, in diese Datei. Die erste Zeile ist der übersetzte Name; die restlichen Zeilen sind die übersetzte Beschreibung (verwenden Sie <LINE> für Zeilenumbrüche).",
+  "TempFile_Guide_2": "Wenn Sie den übersetzten Namen oder die Beschreibung leer lassen, wird die Übersetzung entfernt und auf das Original zurückgesetzt. Speichern und schließen Sie die Datei nach der Bearbeitung, dann klicken Sie auf „Hinzufügen bestätigen“.",
+  "TempFile_Guide_3": "Zeilen, die mit '#' beginnen, sind Kommentare und werden ignoriert.",
+  "TempFile_Guide_4": "Sie können die Dateiformat-Hinweise in den Einstellungen deaktivieren; diese vier Zeilen erscheinen dann beim nächsten Öffnen der Datei nicht mehr.",
+  "TempFile_Warning_Name": "Hinweis: Dieser Mod hat bereits einen übersetzten Namen! Fortfahren überschreibt die vorherige Änderung.",
+  "TempFile_Warning_Desc": "Hinweis: Dieser Mod hat bereits eine übersetzte Beschreibung! Fortfahren überschreibt die vorherige Änderung."
+}
