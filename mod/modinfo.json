@@ -1,10 +1,13 @@
-﻿{
-    "id": "Lvye_Translator",
-    "name": "Translator",
-    "version": "0.1.0",
-    "authors": "绿叶_NL Lvye & Redlyn",
-    "description": "为已安装模组手动添加翻译名称与简介。<LINE>Add translated names and descriptions to installed mods.",
-    "requirements": [],
-    "requirements_names": [],
-    "tags": [ "Tools", "Translations", "Mod Manager" ]
+{
+  "id": "Lvye_Translator",
+  "name": "Translator",
+  "version": "0.1.0",
+  "authors": "绿叶_NL Lvye & Redlyn",
+  "description": "为已安装模组手动添加翻译名称与简介。<LINE>Add translated names and descriptions to installed mods.",
+  "requirements": [],
+  "requirements_names": [],
+  "tags": [
+    "Tools",
+    "Translations"
+  ]
 }

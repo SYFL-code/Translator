@@ -1,4 +1,5 @@
 English（英语）
+Translator
 [h3] Description [/h3]
 The original author has not updated the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3759456473]original mod[/url] for a long time, so this alternative version was made with some additions and adjustments.
 
@@ -61,7 +62,73 @@ Due to the translation indexing mechanism, the last loaded translation wins.
 [url=https://github.com/SYFL-code/Translator]GitHub[/url]
 
 
+繁體中文（繁体中文）
+翻譯器
+[h3] 描述 [/h3]
+由於原作者遲遲未更新 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3759456473]原模組[/url]，
+所以製作了此版本，增加與調整了部分內容。
+
+This is a mod that makes it easy for players to add translated names and descriptions
+(or notes) to installed mods. It does not modify the mods themselves; it uses Rain World's
+built-in translator, so removing this mod restores the original names and descriptions.
+
+[h3] 功能 [/h3]
+- 手動為任意模組新增自訂名稱 / 簡介
+- 批次匯出 / 匯入所有模組的翻譯
+- 介面支援 11 種語言（中 / 繁 / 英 / 法 / 德 / 義 / 日 / 韓 / 葡 / 俄 / 西）
+- 僅修改模組**名稱與簡介**，不是通用欄位翻譯工具
+
+[h3] 使用方法 [/h3]
+
+[b]1. 快捷按鈕（單一模組）[/b]
+點擊模組預覽介面右上方的「重新命名」按鈕。
+在開啟的 temp.txt 中按提示編輯：
+  · 第一行 = 翻譯名稱
+  · 其餘行 = 翻譯描述（可用 <LINE> 表示換行）
+儲存並關閉檔案，回到遊戲再次點擊「重新命名」按鈕完成套用。
+若名稱為空，則刪除該模組的翻譯並回復為原文。
+
+[b]2. 批次翻譯（推薦）[/b]
+在模組設定頁點擊「批次翻譯」，產生 ModRename_allMods.txt。
+檔案格式：
+    [ModID]
+    name=原始名稱
+    desc=原始描述
+    trans_name=翻譯名稱
+    trans_desc=翻譯描述
+逐項填寫 trans_name / trans_desc 後儲存關閉，
+回到模組設定頁點擊「套用全部」即可。
+
+[b]3. 手動索引（依 ID 操作）[/b]
+在模組設定頁輸入目標模組 ID，點擊「新增翻譯」。
+按提示編輯 temp.txt，儲存關閉，然後點擊「確認新增」。
+
+[b]4. 複製他人翻譯檔案[/b]
+可將他人的存檔檔案複製到：
+C:\Users\{你的使用者名稱}\AppData\LocalLow\Videocult\Rain World\ModConfigs\ModTranslatorSave_{語言}.txt
+{語言} 可選：Chi / Tra / Eng / Fre / Ger / Ita / Jap / Kor / Por / Rus / Spa。
+
+[h3] 實作原理 [/h3]
+透過遊戲內建翻譯器以「翻譯」的方式覆蓋模組顯示的名稱與描述，未對模組本身進行任何修改。
+移除此模組即可還原所有變更。
+
+使用者自訂翻譯儲存在：
+- 執行存檔：C:\Users\{你的使用者名稱}\AppData\LocalLow\Videocult\Rain World\ModConfigs\ModTranslatorSave_{語言}.txt
+- 模組隨附翻譯：<模組目錄>\text\text_{語言}\strings.txt
+- 自動備份：<模組目錄>\backup\ModTranslatorSave_{語言}_{時間戳記}.txt（最多保留 20 份）
+舊版存檔 `ly.ModRename_stringsSave.txt` 會在首次啟動時自動遷移並合併。
+
+[h3] 載入優先順序 [/h3]
+- 若需本模組的翻譯[b]優先於[/b]其他翻譯模組：將本模組排在它們[b]之上[/b]。
+- 若只想補充其他翻譯模組尚未涵蓋的內容：將本模組排在它們[b]之下[/b]。
+由於翻譯索引機制的限制，遊戲將採用最後載入的那個翻譯。
+
+[h3] 原始碼 [/h3]
+[url=https://github.com/SYFL-code/Translator]GitHub[/url]
+
+
 Français（法语）
+Traducteur
 [h3] Description [/h3]
 L'auteur original n'ayant pas mis à jour le [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3759456473]mod original[/url] depuis longtemps, cette version alternative a été créée avec quelques modifications et ajouts.
 
@@ -127,6 +194,7 @@ En raison de l'indexation des traductions, c'est la dernière traduction chargé
 
 
 Deutsch（德语）
+Übersetzer
 [h3] Beschreibung [/h3]
 Da der Originalautor das [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3759456473]Originalmod[/url] lange nicht aktualisiert hat, wurde diese Alternativversion mit einigen Änderungen und Ergänzungen erstellt.
 
@@ -192,6 +260,7 @@ Wegen der Übersetzungsindizierung gewinnt die zuletzt geladene Übersetzung.
 
 
 Italiano（意大利语）
+Traduttore
 [h3] Descrizione [/h3]
 Poiché l'autore originale non aggiorna da tempo il [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3759456473]mod originale[/url], è stata creata questa versione alternativa con alcune modifiche e aggiunte.
 
@@ -257,6 +326,7 @@ Per via dell'indicizzazione, vince la traduzione caricata per ultima.
 
 
 日本語（日语）
+翻訳ツール
 [h3] 説明 [/h3]
 原作者が[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3759456473]元のMOD[/url]を長らく更新していないため、一部内容を追加・調整した代替版を作成しました。
 
@@ -322,6 +392,7 @@ C:\Users\{ユーザー名}\AppData\LocalLow\Videocult\Rain World\ModConfigs\ModT
 
 
 한국어（韩语）
+번역기
 [h3] 설명 [/h3]
 원작자가 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3759456473]원본 모드[/url]를 오랫동안 업데이트하지 않아, 일부를 수정·추가한 대체 버전을 제작했습니다.
 
@@ -387,6 +458,7 @@ C:\Users\{사용자 이름}\AppData\LocalLow\Videocult\Rain World\ModConfigs\Mod
 
 
 Português（葡萄牙语）
+Tradutor
 [h3] Descrição [/h3]
 Como o autor original não atualiza o [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3759456473]mod original[/url] há muito tempo, foi criada esta versão alternativa com alguns ajustes e adições.
 
@@ -452,6 +524,7 @@ Devido à indexação de traduções, vale a última tradução carregada.
 
 
 Русский（俄语）
+Переводчик
 [h3] Описание [/h3]
 Поскольку автор оригинала давно не обновлял [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3759456473]оригинальный мод[/url], была сделана эта альтернативная версия с некоторыми изменениями и дополнениями.
 
@@ -517,6 +590,7 @@ C:\Users\{имя пользователя}\AppData\LocalLow\Videocult\Rain World
 
 
 Español（西班牙语）
+Traductor
 [h3] Descripción [/h3]
 Como el autor original no ha actualizado el [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3759456473]mod original[/url] desde hace tiempo, se creó esta versión alternativa con algunos ajustes y añadidos.
 

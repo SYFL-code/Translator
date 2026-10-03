@@ -1,0 +1,63 @@
+{
+  "Rename_Button_Desc": "新增此模組的翻譯名稱與描述（留空則刪除翻譯）",
+
+  "Option": "選項",
+  "Op_Translator": "模組翻譯器",
+  "Op_ID_Input_Tip": "在此輸入模組ID",
+  "Op_Add_Trans": "新增翻譯",
+  "Op_Add_Trans_Desc": "為目前輸入的模組ID新增翻譯",
+  "Op_Confirm_Replace": "確認新增",
+  "Op_Confirm_Replace_Desc": "讀取檔案內容並將翻譯新增至此模組（需先儲存檔案）",
+  "Op_Batch_Trans": "批次翻譯",
+  "Op_Batch_Trans_Desc": "為所有模組批次新增翻譯",
+  "Op_Apply_All": "套用全部",
+  "Op_Apply_All_Desc": "讀取檔案內容並批次套用翻譯",
+  "Op_Batch_Tip": "批次翻譯後點擊「套用全部」",
+  "Op_Enable_File_Tip": "啟用檔案格式提示",
+
+  "Tip_Uninstalled_Mod": "找不到 ID {0} 對應的已安裝模組！\n如果你確定要為該ID新增翻譯，請再次點擊。",
+  "Tip_Opening_File": "正在嘗試開啟檔案……",
+
+  "Tip_Invalid_File": "檔案內容無效！是否忘記儲存temp檔案？",
+  "Tip_Wrong_Mod": "temp檔案屬於ID為 {0} 的模組，不能套用到ID為 {1} 的模組。",
+  "Tip_Add_Success": "新增成功！",
+
+  "Batch_Trans_File_Guide_1": "批次翻譯檔案使用說明",
+  "Batch_Trans_File_Guide_2": "1. 每個模組以 '[ModID]' 開頭，隨後是四個鍵值對行：",
+  "Batch_Trans_File_Guide_3": "   name=原始名稱，desc=原始描述，trans_name=翻譯名稱，trans_desc=翻譯描述。",
+  "Batch_Trans_File_Guide_4": "2. 翻譯名稱與翻譯描述：",
+  "Batch_Trans_File_Guide_5": "   - 填寫您想要的翻譯內容。",
+  "Batch_Trans_File_Guide_6": "   - 留空 或寫為 '# 註解' 表示刪除此翻譯。",
+  "Batch_Trans_File_Guide_7": "3. name 與 desc 僅供參照，修改它們不會生效。",
+  "Batch_Trans_File_Guide_8": "4. 若描述中有換行，請使用 <LINE> 標記（例如 '第一行<LINE>第二行'）。",
+  "Batch_Trans_File_Guide_9": "5. 編輯完成後，儲存檔案並回到遊戲設定頁，點擊「套用全部」。",
+  "Batch_Trans_File_Guide_10": "6. 所有修改都會自動備份到模組的 backup 資料夾下，如有問題可還原檔案至：",
+  "Batch_Trans_File_Guide_11": "   - C:/Users/<你的使用者名稱>/AppData/LocalLow/Videocult/Rain World/ModConfigs/ModTranslatorSave_<你的語言>.txt",
+  "Batch_Trans_File_Guide_12": "7. 因翻譯索引機制的限制，若本模組不在模組排序頂部，部分翻譯可能無法生效",
+  "Batch_Trans_File_Guide_13": "8. 以 '#' 開頭的行是註解，會被忽略。",
+
+  "No_Name": "沒有原始名稱",
+  "No_Desc": "沒有原始描述",
+  "Name_Unknown": "模組未安裝，原始名稱未知",
+  "Desc_Unknown": "模組未安裝，原始描述未知",
+  "Trans_Name_Unknown": "在此行新增翻譯名稱",
+  "Trans_Desc_Unknown": "在此行新增翻譯描述",
+  "TransFile_Success": "已產生批次翻譯檔案，請編輯儲存後點擊「套用全部」。",
+  "TransFile_Failed": "產生失敗，請查看日誌。",
+
+  "TransFile_NotFound": "未找到批次翻譯檔案，請先點擊「批次翻譯」。",
+  "No_New_TransLines": "所有翻譯均已是最新，跳過 {0} 個模組。",
+  "No_Valid_TransLines": "沒有找到任何有效的翻譯條目。",
+  "Trans_Apply_Complete": "套用完成：更新 {0} 個模組，失敗 {1} 個，跳過 {2} 個（無變更）。",
+  "Trans_Apply_Failed": "套用翻譯失敗，請查看日誌。",
+
+  "Mod_Not_Installed": "模組未安裝",
+
+  "Comments": "註解內容",
+  "TempFile_Guide_1": "在此檔案中寫入你想替換的文字。第一行作為翻譯名稱，其餘行作為翻譯描述（描述可使用 <LINE> 換行）。",
+  "TempFile_Guide_2": "若將翻譯名稱或描述留空，則表示刪除該翻譯並回復為原文。編輯完成後請儲存並關閉檔案，然後點擊「確認新增」。",
+  "TempFile_Guide_3": "以 '#' 開頭的行是註解，會被忽略。",
+  "TempFile_Guide_4": "你可以在設定中關閉檔案格式提示，下次開啟檔案時將不再顯示這四行說明。",
+  "TempFile_Warning_Name": "提示：該模組已設定過翻譯名稱！繼續操作將覆蓋上次的修改。",
+  "TempFile_Warning_Desc": "提示：該模組已設定過翻譯描述！繼續操作將覆蓋上次的修改。"
+}
